@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
     <head>
         <meta charset="utf-8" />
         <meta name="author" content="Демченко В.О." />
@@ -19,16 +19,104 @@
     <!-- основная навигация (8)-->
     <nav>
         <ul>
-            <a  title="main">Главная (9)</a>
-            <a href="" title="empty">Главная (10)</a>
-            <a href="https://www.google.ru/" rel="nofollow">nofollow (11)</a>
-            <a href="https://www.google.ru/" rel="nofollow,noindex">nofollow+noindex (12)</noindex></a>
-            
+            <li><a  title="main">Главная (9)</a></li>
+            <li><a href="" title="empty">Главная (10)</a></li>
+           <li> <a href="https://www.google.ru/" rel="nofollow">nofollow (11)</a></li>
+
+            <li><!--noindex--><a href="https://www.google.ru/" rel="nofollow">nofollow+noindex (12)</a><!--/noindex--></li>
         </ul>
     </nav>
-    <p>Lorem ipsum dolal sit amet. <a href="https://yandex.ru/">Контекстная(13)</a> ссылка</p>
-    <form id="myForm">
 
+    <p>Lorem ipsum dolal sit amet. <a href="https://yandex.ru/">Контекстная(13)</a> ссылка</p>
+    <a href="https://reactjs.org/"><img alt="react" width="500" height="400" src="images/react.png"></a> <!-- (14) -->
+    <br>
+    <img src="images/cats.jpg" alt="cat" width="500" height="400" usemap="#cat">
+    <map name="cat" id="cat"> <!-- (15) -->
+        <area shape="rect" coords="0,0,259,396" alt="cat" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%88%D0%BA%D0%B0">
+        <area shape="circle" coords="346,266,31" alt="nose_dog" href="https://zen.yandex.ru/media/pitomec/10-udivitelnyh-faktov-o-nose-sobaki-5b027470d7bf21cc7b764809">
+    </map>
+    <br>
+    <a href="./index.html">Это та же самая страница(16)</a>
+    <a href="./about/about.html">About(17)</a>
+    <a href="./other.html">Other(18)</a>
+    <a href="../other.html">Other(19)</a>
+    <a href="index.html">Главная(20)</a>
+    <a href="/inside">Inside(21)</a>
+    <br>
+    <h2>Форма</h2>
+    <form id="myForm" method="POST" action="/">
+      <label>
+           Имя: <br>
+           <input type="text" name="field-name" />
+
+      </label>
+      <br>
+      <label>
+        Email: <br>
+        <input type="email" name="field-email" />
+
+   </label>
+
+   <br>
+   <label>
+    Дата рождения: <br>
+    <input type="date" name="field-birth" />
+
+</label>
+<br>
+Пол:<br>
+<label>
+    
+    <input type="radio" checked="checked" value="female" name="radio-group-gender">
+    Женский
+</label>
+<br>
+<label>
+    
+    <input type="radio"  value="male" name="radio-group-gender">
+    Мужской
+</label>
+<br>
+Количество конечностей:
+<br>
+<label>
+   
+   <input type="radio" value="0" name="radio-group-counter">
+   0
+</label>
+<br>
+<label>
+   
+   <input type="radio" value="gt0" name="radio-group-counter">
+   > 0
+</label>
+<br>
+<label>
+    Сверхспособности:
+    <br>
+    <select name="field-options[]" multiple>
+       <option value="nodeath">бессмертие</option>
+       <option value="through">прохождение сквозь стены</option>
+       <option value="levitation">левитация</option>
+    </select>
+</label>
+<br>
+<label>
+    Биография:
+    <br>
+    <textarea name="field-info">
+
+    </textarea>
+</label>
+<br>
+<label>
+    
+    <input type="checkbox" checked="checked" name="check-true">
+    С контрактом ознакомлен
+</label>
+
+<br>
+<input type="submit" value="Отправить">
     </form>
     </body>
 </html>
