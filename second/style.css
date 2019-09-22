@@ -64,7 +64,7 @@ tr:nth-child(2n) {
 tr:nth-child(2n + 1) {
 	background:lightgoldenrodyellow;
 }
-nav ,.list-menu , table, form, footer{
+nav ,.list-menu , table, form{
 	max-width:960px;
 	margin:0 auto;
 }
