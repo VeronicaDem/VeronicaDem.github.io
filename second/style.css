@@ -46,7 +46,7 @@ body {
 .menu-nav {
 	background:lightslategray;
 }
-header {
+header,footer {
 	
 	background:lightgreen;
 }
