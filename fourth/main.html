@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+	<link rel="stylesheet" href="style.css" />
+	<meta name="author" content="Демченко В.О." />
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<title>HTML</title>
+  </head>
+  <body class="bg">
+     <header>
+     <div class="header-content d-flex flex-row mx-auto justify-content-md-start justify-content-between">
+	    <div class="logo ">
+		</div>
+		<div class="title mx-1">
+		  Название сайта
+		</div>
+	  </div>
+	 </header>
+	 <main>
+        <div class="main-content d-flex flex-column mx-auto ">
+	    <nav class="menu-nav p-2">
+		  <ul class="d-flex  flex-md-row flex-sm-row justify-content-sm-between flex-column"> 
+		    <li ><a href="#menu">Меню</a></li>
+			<li ><a href="link2.html">Ссылка 2</a></li>
+			<li ><a href="link3.html">Ссылка 3</a></li>
+		  </ul>
+		</nav>
+		<div class="list-menu p-2" id="menu">
+		   <ul>
+		     <li><a href="about.html">О нас</a></li>
+			 <li><a href="entertainment.html">Развлечения</a></li>
+			 <li><a href="services.html">Услуги</a></li>
+			
+		   </ul>
+		</div>
+		
+		<table class=" order-2 order-md-1">
+		    <caption class="cps-top">Таблица сотрудников</caption>
+			<tr class="p-1">
+			    <th>ФИО</th>
+			    <th>Номер телефона</th>
+			    <th>2 Номер телефона(если есть)</th>
+			</tr>
+			<tr >
+				<td>Вероника</td>
+				<td colspan="2">256324289</td>
+				
+			</tr>
+			<tr >
+				<td>Олег</td>
+				<td>897562</td>
+				<td>872354</td>
+			</tr>
+			<tr>
+				<td>Варя</td>
+				<td >89456</td>
+				<td>87554</td>
+			</tr>
+			<tr>
+				<td>Оля</td>
+				<td colspan="2">78965</td>
+				
+			</tr>
+			<tr>
+				<td>Лина</td>
+				<td colspan="2">78957</td>
+				
+			</tr>
+		</table>
+	    <form class="order-1 order-md-2 p-2" id="myForm" method="POST" action="/">
+			<label>
+				 Имя: <br>
+				 <input type="text" name="field-name" />
+	  
+			</label>
+			<br>
+						<label>
+			  Email: <br>
+			  <input type="email" name="field-email" />
+	  
+			</label>
+	  
+			<br>
+		   <label>
+		  Дата рождения: <br>
+		  <input type="date" name="field-birth" />
+	  
+		  </label>
+		 <br>
+		 Пол:<br>
+		 <label>
+		  
+		  <input type="radio" checked="checked" value="female" name="radio-group-gender">
+		  Женский
+		 </label>
+		 <br>
+		<label>
+		  
+		  <input type="radio"  value="male" name="radio-group-gender">
+		  Мужской
+		</label>
+		<br>
+		Количество конечностей:
+		<br>
+		<label>
+		 
+		 <input type="radio" value="0" name="radio-group-counter">
+		 0
+		</label>
+	   <br>
+		<label>
+		 
+		 <input type="radio" value="gt0" name="radio-group-counter">
+		 > 0
+		</label>
+		<br>
+		<label>
+		  Сверхспособности:
+		  <br>
+		  <select name="field-options[]" multiple>
+			 <option value="nodeath">бессмертие</option>
+			 <option value="through">прохождение сквозь стены</option>
+			 <option value="levitation">левитация</option>
+		  </select>
+		</label>
+		<br>
+		<label>
+		  Биография:
+		  <br>
+		  <textarea name="field-info">
+	  
+		  </textarea>
+		</label>
+	   <br>
+		<label>
+		  
+		  <input type="checkbox" checked="checked" name="check-true">
+		  С контрактом ознакомлен
+		</label>
+	  
+	   <br>
+		  <input type="submit" value="Отправить">
+		</form>
+         </div>
+	 </main>
+	 <footer>
+		 <p>(c)Вероника Демченко 2019</p>
+	 </footer>
+  </body>
+</html>
