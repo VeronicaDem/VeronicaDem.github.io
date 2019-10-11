@@ -9,7 +9,7 @@ body {
 	margin:0;
 	font-size:1.5em;
 }
-.menu-nav, .list-menu, table, form {
+.menu-nav, .list-menu,  form {
 	padding:5px;
 }
 
