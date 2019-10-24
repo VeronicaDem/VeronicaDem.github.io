@@ -1,614 +1,399 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
+
+<head>
 	<meta charset="utf-8">
 	<title>Пивипчичи | Быстрая и вкусная еда на дом</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Демченко В.О." />
-	<meta name="description" content="Купить с доставкой на дом горячие домашние лаваши, пироги, сладости недорого Краснодар"/>
+	<meta name="description" content="Купить с доставкой на дом горячие домашние лаваши, пироги, сладости недорого Краснодар" />
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-	<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <script
-	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	  <link rel="stylesheet" href="style.css" />
-	<script defer src="script.js" ></script>
-	
-  </head>
-  <body class="bg" >
-     <header>
-     <div class="header-content d-flex flex-row mx-auto justify-content-md-start justify-content-between">
-	    <div class="logo ">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="style.css" />
+	<script defer src="script.js"></script>
+</head>
+
+<body class="bg">
+	<header>
+		<div class="header-content d-flex flex-row mx-auto justify-content-md-start justify-content-between">
+			<div class="logo "> </div>
+			<div class="title mx-1"> Пивипчичи </div>
 		</div>
-		<div class="title mx-1">
-		  Пивипчичи
-		</div>
-	  </div>
-	 </header>
-	 <main>
-        <div class="main-content d-flex flex-column mx-auto ">
-	    <nav class="menu-nav p-2">
-		  <ul class="d-flex  flex-md-row flex-sm-row justify-content-sm-between flex-column"> 
-		    <li ><a href="#vegan">Вегетарианские блюда</a></li>
-			<li ><a href="#meat">Мясные блюда</a></li>
-			<li ><a href="#desert">Десерты</a></li>
-		  </ul>
-		</nav>
-		<div class="about p-2 my-2">
-			Пивипчичи - название нашего главного блюда. Это горячий хрустящий лаваш с различной начинкой. Их можно есть на завтрак, обед, ужин. Приятного аппетита! 
-		</div>
-		
-		
-		<h2 class="mx-2" id="vegan">Вегетарианские блюда</h2>
-		<div class="vegan-tovar d-flex flex-row flex-wrap">
-       
-			<div class="tovar mx-2 my-2" itemscope itemtype="http://schema.org/Product" data-name="весна">
-			   <meta itemprop="mpn" content="925872" />
-               <img src="вегетарианские.jpg" alt="весна лаваш"/>
-			   <div class="info">
-				 <h3 class="name" itemprop="name">Весна</h3> 
-				 <div hidden itemprop="description">Вкусный сочный лаваш</div>
-				 <ul class="ingredients">
-					<li>Свежий салат</li>
-					<li>Сладкий красный перец</li>
-					<li>Хрустящие огурцы</li>
-					<li>Лук и вегетарианский сыр</li>
-				 </ul>
-				 <h4 class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">Цена <span itemprop="price">100</span> <meta itemprop="priceCurrency" content="RUB"/>р.
+	</header>
+	<main>
+		<div class="main-content d-flex flex-column mx-auto ">
+			<nav class="menu-nav p-2">
+				<ul class="d-flex  flex-md-row flex-sm-row justify-content-sm-between flex-column">
+					<li><a href="#vegan">Вегетарианские блюда</a></li>
+					<li><a href="#meat">Мясные блюда</a></li>
+					<li><a href="#desert">Десерты</a></li>
+				</ul>
+			</nav>
+			<div class="about p-2 my-2"> Пивипчичи - название нашего главного блюда. Это горячий хрустящий лаваш с различной начинкой. Их можно есть на завтрак, обед, ужин. Приятного аппетита! </div>
+			<h2 class="mx-2" id="vegan">Вегетарианские блюда</h2>
+			<div class="vegan-tovar d-flex flex-row flex-wrap">
+				<div class="tovar mx-2 my-2" itemscope itemtype="http://schema.org/Product" data-name="весна">
+					<meta itemprop="mpn" content="925872" /> <img src="вегетарианские.jpg" alt="весна лаваш" />
+					<div class="info">
+						<h3 class="name" itemprop="name">Весна</h3>
+						<div hidden itemprop="description">Вкусный сочный лаваш</div>
+						<ul class="ingredients">
+							<li>Свежий салат</li>
+							<li>Сладкий красный перец</li>
+							<li>Хрустящие огурцы</li>
+							<li>Лук и вегетарианский сыр</li>
+						</ul>
+						<h4 class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">Цена <span itemprop="price">100</span> <meta itemprop="priceCurrency" content="RUB"/>р.
                   <meta itemprop="availability" hidden content="https://schema.org/InStock" />
                   <meta hidden itemprop="priceValidUntil" content="2021-11-05" />
                   <link hidden itemprop="url" href="/" />
                  </h4>
-                 <link itemprop="image" href="./вегетарианские.jpg" hidden/>
-                 <div itemprop="brand" hidden itemtype="http://schema.org/Brand" itemscope>
-      <meta itemprop="name" content="Пивипчичи" />
-    </div>
-			     <div itemprop="aggregateRating" hidden itemscope itemtype="http://schema.org/AggregateRating" >
-<meta itemprop="bestRating" content="5"> <meta itemprop="ratingValue" content="5"> <meta itemprop="ratingCount" content="1"> </div>
-				</div>
-				
-				<div itemprop="review" hidden itemtype="http://schema.org/Review" itemscope>
-					<a itemprop="url" href="/" hidden>Пивипчичи</a>
-					<div itemprop="author" itemtype="http://schema.org/Person" itemscope>
-					  <meta itemprop="name" content="Fred Benson" />
+						<link itemprop="image" href="./вегетарианские.jpg" hidden/>
+						<div itemprop="brand" hidden itemtype="http://schema.org/Brand" itemscope>
+							<meta itemprop="name" content="Пивипчичи" /> </div>
+						<div itemprop="aggregateRating" hidden itemscope itemtype="http://schema.org/AggregateRating">
+							<meta itemprop="bestRating" content="5">
+							<meta itemprop="ratingValue" content="5">
+							<meta itemprop="ratingCount" content="1"> </div>
 					</div>
-					<meta itemprop="datePublished"  content="2019-10-18"> 18.10.2019
-					<div itemprop="description">
-						Оч вкусно
-					</div>
-					<div itemprop="reviewRating" itemtype="http://schema.org/Rating" itemscope>
-					  <meta itemprop="ratingValue" content="4" />
-					  <meta itemprop="bestRating" content="5" />
-					  
-					</div>
-					<span itemprop="itemReviewed" itemtype="http://schema.org/Organization" itemscope hidden>
+					<div itemprop="review" hidden itemtype="http://schema.org/Review" itemscope> <a itemprop="url" href="/" hidden>Пивипчичи</a>
+						<div itemprop="author" itemtype="http://schema.org/Person" itemscope>
+							<meta itemprop="name" content="Fred Benson" /> </div>
+						<meta itemprop="datePublished" content="2019-10-18"> 18.10.2019
+						<div itemprop="description"> Оч вкусно </div>
+						<div itemprop="reviewRating" itemtype="http://schema.org/Rating" itemscope>
+							<meta itemprop="ratingValue" content="4" />
+							<meta itemprop="bestRating" content="5" /> </div> <span itemprop="itemReviewed" itemtype="http://schema.org/Organization" itemscope hidden>
 					
 						<span itemprop="name" hidden>
 							Пивипчичи
 	
-						</span>
-						
-						<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+						</span> <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 							Адрес:
-							<span itemprop="streetAddress">Ставропольская, 149</span>
-							<span itemprop="postalCode">350000</span>
-							<span itemprop="addressLocality">Краснодар</span>
-						</span>
-						Телефон: <span itemprop="telephone">+7 918 124 13 00</span>
-						Факс: <span itemprop="faxNumber">8(861)219-95-17</span>
-						Электронная почта: <span itemprop="email">VD13101978@yandex.ru</span>
-					</span>
-				  </div>
-	
-      <meta itemprop="sku" content="123456789" />
-      
-               <div class="add">Добавить</div>
-	</div>
-			<div class="tovar mx-2 my-2" itemscope itemtype="http://schema.org/Product" data-name="морковный поцелуй">
+							<span itemprop="streetAddress">Ставропольская, 149</span> <span itemprop="postalCode">350000</span> <span itemprop="addressLocality">Краснодар</span> </span> Телефон: <span itemprop="telephone">+7 918 124 13 00</span> Факс: <span itemprop="faxNumber">8(861)219-95-17</span> Электронная почта: <span itemprop="email">VD13101978@yandex.ru</span> </span>
+					</div>
+					<meta itemprop="sku" content="123456789" />
+					<div class="add">Добавить</div>
+				</div>
+				<div class="tovar mx-2 my-2" itemscope itemtype="http://schema.org/Product" data-name="морковный поцелуй">
 					<meta itemprop="mpn" content="925872" />
-					<div itemprop="review" hidden itemtype="http://schema.org/Review" itemscope>
-						<a itemprop="url" href="/" hidden>Пивипчичи</a>
+					<div itemprop="review" hidden itemtype="http://schema.org/Review" itemscope> <a itemprop="url" href="/" hidden>Пивипчичи</a>
 						<div itemprop="author" itemtype="http://schema.org/Person" itemscope>
-						  <meta itemprop="name" content="Fred Benson" />
-						</div>
-						<meta itemprop="datePublished"  content="2019-10-18"> 18.10.2019
-						<div itemprop="description">
-							Оч вкусно
-						</div>
+							<meta itemprop="name" content="Fred Benson" /> </div>
+						<meta itemprop="datePublished" content="2019-10-18"> 18.10.2019
+						<div itemprop="description"> Оч вкусно </div>
 						<div itemprop="reviewRating" itemtype="http://schema.org/Rating" itemscope>
-						  <meta itemprop="ratingValue" content="4" />
-						  <meta itemprop="bestRating" content="5" />
-						  
-						</div>
-						<span itemprop="itemReviewed" itemtype="http://schema.org/Organization" itemscope hidden>
+							<meta itemprop="ratingValue" content="4" />
+							<meta itemprop="bestRating" content="5" /> </div> <span itemprop="itemReviewed" itemtype="http://schema.org/Organization" itemscope hidden>
 						
 							<span itemprop="name" hidden>
 								Пивипчичи
 		
-							</span>
-							
-							<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+							</span> <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 								Адрес:
-								<span itemprop="streetAddress">Ставропольская, 149</span>
-								<span itemprop="postalCode">350000</span>
-								<span itemprop="addressLocality">Краснодар</span>
-							</span>
-							Телефон: <span itemprop="telephone">+7 918 124 13 00</span>
-							Факс: <span itemprop="faxNumber">8(861)219-95-17</span>
-							Электронная почта: <span itemprop="email">VD13101978@yandex.ru</span>
-						</span>
-	
-					  </div>
-                    <img src="вегетарианские2.webp" alt="морковный поцелуй лаваш"/>
+								<span itemprop="streetAddress">Ставропольская, 149</span> <span itemprop="postalCode">350000</span> <span itemprop="addressLocality">Краснодар</span> </span> Телефон: <span itemprop="telephone">+7 918 124 13 00</span> Факс: <span itemprop="faxNumber">8(861)219-95-17</span> Электронная почта: <span itemprop="email">VD13101978@yandex.ru</span> </span>
+					</div> <img src="вегетарианские2.webp" alt="морковный поцелуй лаваш" />
 					<div class="info">
-					  <h3 class="name" itemprop="name">Морковный поцелуй</h3> 
-					  <div hidden itemprop="description">Вкусный сочный красивый лаваш</div>
-					  <ul class="ingredients">
-						 <li>Тофу</li>
-						 <li>Корейская морковь</li>
-						 <li>Хрустящие огурцы</li>
-						 <li>Помидоры</li>
-					  </ul>
-					  <h4 class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">Цена <span itemprop="price">150</span> <meta itemprop="priceCurrency" content="RUB"/>p.
+						<h3 class="name" itemprop="name">Морковный поцелуй</h3>
+						<div hidden itemprop="description">Вкусный сочный красивый лаваш</div>
+						<ul class="ingredients">
+							<li>Тофу</li>
+							<li>Корейская морковь</li>
+							<li>Хрустящие огурцы</li>
+							<li>Помидоры</li>
+						</ul>
+						<h4 class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">Цена <span itemprop="price">150</span> <meta itemprop="priceCurrency" content="RUB"/>p.
                        <meta itemprop="availability" hidden content="https://schema.org/InStock" />
                        <meta hidden itemprop="priceValidUntil" content="2021-11-05" />
                        <link hidden itemprop="url" href="/" />
                       </h4>
-                          <div itemprop="brand" hidden itemtype="http://schema.org/Brand" itemscope>
-      <meta itemprop="name" content="Пивипчичи" />
-     
-    </div>
-    <link itemprop="image" href="./fifth/вегетарианские2.webp" hidden/>
-					   <div itemprop="aggregateRating" hidden itemscope itemtype="http://schema.org/AggregateRating" >
-<meta itemprop="bestRating" content="5"> <meta itemprop="ratingValue" content="5"> <meta itemprop="ratingCount" content="1"> </div>
+						<div itemprop="brand" hidden itemtype="http://schema.org/Brand" itemscope>
+							<meta itemprop="name" content="Пивипчичи" /> </div>
+						<link itemprop="image" href="./fifth/вегетарианские2.webp" hidden/>
+						<div itemprop="aggregateRating" hidden itemscope itemtype="http://schema.org/AggregateRating">
+							<meta itemprop="bestRating" content="5">
+							<meta itemprop="ratingValue" content="5">
+							<meta itemprop="ratingCount" content="1"> </div>
+					</div>
+					<meta itemprop="sku" content="123456789" />
+					<div class="add">Добавить</div>
 				</div>
-				 
-      <meta itemprop="sku" content="123456789" />
-				<div class="add">Добавить</div>
-                    </div>
-					
-				 
-				 <div class="tovar mx-2 my-2" itemscope itemtype="http://schema.org/Product" data-name="сырный">
-						<meta itemprop="mpn" content="925872" />
-						<div itemprop="review" hidden itemtype="http://schema.org/Review" itemscope>
-							<a itemprop="url" href="/" hidden>Пивипчичи</a>
-							<div itemprop="author" itemtype="http://schema.org/Person" itemscope>
-							  <meta itemprop="name" content="Fred Benson" />
-							</div>
-							<meta itemprop="datePublished"  content="2019-10-18"> 18.10.2019
-							<div itemprop="description">
-								Оч вкусно
-							</div>
-							<div itemprop="reviewRating" itemtype="http://schema.org/Rating" itemscope>
-							  <meta itemprop="ratingValue" content="4" />
-							  <meta itemprop="bestRating" content="5" />
-							  
-							</div>
-							<span itemprop="itemReviewed" itemtype="http://schema.org/Organization" itemscope hidden>
+				<div class="tovar mx-2 my-2" itemscope itemtype="http://schema.org/Product" data-name="сырный">
+					<meta itemprop="mpn" content="925872" />
+					<div itemprop="review" hidden itemtype="http://schema.org/Review" itemscope> <a itemprop="url" href="/" hidden>Пивипчичи</a>
+						<div itemprop="author" itemtype="http://schema.org/Person" itemscope>
+							<meta itemprop="name" content="Fred Benson" /> </div>
+						<meta itemprop="datePublished" content="2019-10-18"> 18.10.2019
+						<div itemprop="description"> Оч вкусно </div>
+						<div itemprop="reviewRating" itemtype="http://schema.org/Rating" itemscope>
+							<meta itemprop="ratingValue" content="4" />
+							<meta itemprop="bestRating" content="5" /> </div> <span itemprop="itemReviewed" itemtype="http://schema.org/Organization" itemscope hidden>
 							
 								<span itemprop="name" hidden>
 									Пивипчичи
 			
-								</span>
-								
-								<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+								</span> <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 									Адрес:
-									<span itemprop="streetAddress">Ставропольская, 149</span>
-									<span itemprop="postalCode">350000</span>
-									<span itemprop="addressLocality">Краснодар</span>
-								</span>
-								Телефон: <span itemprop="telephone">+7 918 124 13 00</span>
-								Факс: <span itemprop="faxNumber">8(861)219-95-17</span>
-								Электронная почта: <span itemprop="email">VD13101978@yandex.ru</span>
-							</span>
-		
-						  </div>
-                        <img src="вегетарианские3.jpg" alt="сырный лаваш"/>
-						<div class="info">
-						  <h3 class="name" itemprop="name">Сырный</h3> 
-						  <div hidden itemprop="description">Вкусный лаваш</div>
-						  <ul class="ingredients">
-							 <li>Вегетарианский сыр</li>
-							 <li>Зелень</li>
-							 
-						  </ul>
-						  <h4 class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">Цена<span itemprop="price">200</span>  <meta itemprop="priceCurrency" content="RUB"/>p.
+									<span itemprop="streetAddress">Ставропольская, 149</span> <span itemprop="postalCode">350000</span> <span itemprop="addressLocality">Краснодар</span> </span> Телефон: <span itemprop="telephone">+7 918 124 13 00</span> Факс: <span itemprop="faxNumber">8(861)219-95-17</span> Электронная почта: <span itemprop="email">VD13101978@yandex.ru</span> </span>
+					</div> <img src="вегетарианские3.jpg" alt="сырный лаваш" />
+					<div class="info">
+						<h3 class="name" itemprop="name">Сырный</h3>
+						<div hidden itemprop="description">Вкусный лаваш</div>
+						<ul class="ingredients">
+							<li>Вегетарианский сыр</li>
+							<li>Зелень</li>
+						</ul>
+						<h4 class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">Цена<span itemprop="price">200</span>  <meta itemprop="priceCurrency" content="RUB"/>p.
                             <meta hidden itemprop="availability" content="https://schema.org/InStock" />
                             <meta hidden itemprop="priceValidUntil" content="2021-11-05" />
                             <link hidden itemprop="url" href="/" />
                           </h4>
-                              <div itemprop="brand" hidden itemtype="http://schema.org/Brand" itemscope>
-	  <meta itemprop="name" content="Пивипчичи" />
-	  
-    </div>
-    <link itemprop="image" href="./fifth/вегетарианские3.jpg" hidden/>
-						<div itemprop="aggregateRating" hidden itemscope itemtype="http://schema.org/AggregateRating" >
-                        <meta itemprop="bestRating" content="5"> <meta itemprop="ratingValue" content="5"> <meta itemprop="ratingCount" content="1"> </div>
-                        </div>
-                        
-						<div class="add">Добавить</div>
-						
-                     <meta itemprop="sku" content="123456789" />
-					 </div>
-		</div>
-		<h2 class="mx-2" id="meat">Мясные блюда</h2>
-		<div class="meat-tovar d-flex flex-row flex-wrap" itemscope itemtype="http://schema.org/Product">
+						<div itemprop="brand" hidden itemtype="http://schema.org/Brand" itemscope>
+							<meta itemprop="name" content="Пивипчичи" /> </div>
+						<link itemprop="image" href="./fifth/вегетарианские3.jpg" hidden/>
+						<div itemprop="aggregateRating" hidden itemscope itemtype="http://schema.org/AggregateRating">
+							<meta itemprop="bestRating" content="5">
+							<meta itemprop="ratingValue" content="5">
+							<meta itemprop="ratingCount" content="1"> </div>
+					</div>
+					<div class="add">Добавить</div>
+					<meta itemprop="sku" content="123456789" /> </div>
+			</div>
+			<h2 class="mx-2" id="meat">Мясные блюда</h2>
+			<div class="meat-tovar d-flex flex-row flex-wrap" itemscope itemtype="http://schema.org/Product">
 				<div class="tovar mx-2 my-2 " data-name="киш">
-						<div itemprop="review" itemtype="http://schema.org/Review" hidden itemscope>
-							<a itemprop="url" href="/" hidden>Пивипчичи</a>
-							<div itemprop="author" itemtype="http://schema.org/Person" itemscope>
-							  <meta itemprop="name" content="Fred Benson" />
-							</div>
-							<meta itemprop="datePublished"  content="2019-10-18"> 18.10.2019
-							<div itemprop="description">
-								Оч вкусно
-							</div>
-							<div itemprop="reviewRating" itemtype="http://schema.org/Rating" itemscope>
-							  <meta itemprop="ratingValue" content="4" />
-							  <meta itemprop="bestRating" content="5" />
-							  
-							</div>
-							<span itemprop="itemReviewed" itemtype="http://schema.org/Organization" itemscope hidden>
+					<div itemprop="review" itemtype="http://schema.org/Review" hidden itemscope> <a itemprop="url" href="/" hidden>Пивипчичи</a>
+						<div itemprop="author" itemtype="http://schema.org/Person" itemscope>
+							<meta itemprop="name" content="Fred Benson" /> </div>
+						<meta itemprop="datePublished" content="2019-10-18"> 18.10.2019
+						<div itemprop="description"> Оч вкусно </div>
+						<div itemprop="reviewRating" itemtype="http://schema.org/Rating" itemscope>
+							<meta itemprop="ratingValue" content="4" />
+							<meta itemprop="bestRating" content="5" /> </div> <span itemprop="itemReviewed" itemtype="http://schema.org/Organization" itemscope hidden>
 							
 								<span itemprop="name" hidden>
 									Пивипчичи
 			
-								</span>
-								
-								<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+								</span> <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 									Адрес:
-									<span itemprop="streetAddress">Ставропольская, 149</span>
-									<span itemprop="postalCode">350000</span>
-									<span itemprop="addressLocality">Краснодар</span>
-								</span>
-								Телефон: <span itemprop="telephone">+7 918 124 13 00</span>
-								Факс: <span itemprop="faxNumber">8(861)219-95-17</span>
-								Электронная почта: <span itemprop="email">VD13101978@yandex.ru</span>
-							</span>
-		
-						  </div>
-				  <meta itemprop="mpn" content="925872" />
-                  <img src="мясное.jpg" alt="киш пирог"/>
-				   <div class="info">
-					 <h3 class="name" itemprop="name">Киш</h3> 
-					 <div hidden itemprop="description">Вкусный лаваш</div>
-					 <ul class="ingredients">
-						<li>Сыр</li>
-						<li>Ветчина</li>
-						<li>Зелень</li>
-						<li>Хрустящее тесто</li>
-						<li>Перец</li>	
-					 </ul>
-					 <h4 class="price" itemprop="offers"  itemscope itemtype="http://schema.org/Offer">Цена <span itemprop="price">250</span> <meta itemprop="priceCurrency" content="RUB"/>p.
+									<span itemprop="streetAddress">Ставропольская, 149</span> <span itemprop="postalCode">350000</span> <span itemprop="addressLocality">Краснодар</span> </span> Телефон: <span itemprop="telephone">+7 918 124 13 00</span> Факс: <span itemprop="faxNumber">8(861)219-95-17</span> Электронная почта: <span itemprop="email">VD13101978@yandex.ru</span> </span>
+					</div>
+					<meta itemprop="mpn" content="925872" /> <img src="мясное.jpg" alt="киш пирог" />
+					<div class="info">
+						<h3 class="name" itemprop="name">Киш</h3>
+						<div hidden itemprop="description">Вкусный лаваш</div>
+						<ul class="ingredients">
+							<li>Сыр</li>
+							<li>Ветчина</li>
+							<li>Зелень</li>
+							<li>Хрустящее тесто</li>
+							<li>Перец</li>
+						</ul>
+						<h4 class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">Цена <span itemprop="price">250</span> <meta itemprop="priceCurrency" content="RUB"/>p.
                       <meta itemprop="availability" hidden content="https://schema.org/InStock" />
                       <meta hidden itemprop="priceValidUntil" content="2021-11-05" />
                       <link hidden itemprop="url" href="/" />
                     </h4>
-                     <link itemprop="image" href="./fifth/мясное.jpg" hidden/>
-				         <div itemprop="brand" hidden itemtype="http://schema.org/Brand" itemscope>
-      <meta itemprop="name" content="Пивипчичи" />
-    </div>
-                     <div itemprop="aggregateRating" hidden itemscope itemtype="http://schema.org/AggregateRating" >
-                        <meta itemprop="bestRating" content="5"> <meta itemprop="ratingValue" content="5"> <meta itemprop="ratingCount" content="1"> </div>
-						</div>
-						 
-      <meta itemprop="sku" content="123456789" />
-						<div class="add">Добавить</div>
-                   </div>
-				   
-				
+						<link itemprop="image" href="./fifth/мясное.jpg" hidden/>
+						<div itemprop="brand" hidden itemtype="http://schema.org/Brand" itemscope>
+							<meta itemprop="name" content="Пивипчичи" /> </div>
+						<div itemprop="aggregateRating" hidden itemscope itemtype="http://schema.org/AggregateRating">
+							<meta itemprop="bestRating" content="5">
+							<meta itemprop="ratingValue" content="5">
+							<meta itemprop="ratingCount" content="1"> </div>
+					</div>
+					<meta itemprop="sku" content="123456789" />
+					<div class="add">Добавить</div>
+				</div>
 				<div class="tovar mx-2 my-2" data-name="с ветчиной" itemscope itemtype="http://schema.org/Product">
-						<meta itemprop="mpn" content="925872" />
-						<div itemprop="review" itemtype="http://schema.org/Review" hidden itemscope>
-							<a itemprop="url" href="/" hidden>Пивипчичи</a>
-							<div itemprop="author" itemtype="http://schema.org/Person" itemscope>
-							  <meta itemprop="name" content="Fred Benson" />
-							</div>
-							<meta itemprop="datePublished"  content="2019-10-18"> 18.10.2019
-							<div itemprop="description">
-								Оч вкусно
-							</div>
-							<div itemprop="reviewRating" itemtype="http://schema.org/Rating" itemscope>
-							  <meta itemprop="ratingValue" content="4" />
-							  <meta itemprop="bestRating" content="5" />
-							  
-							</div>
-							<span itemprop="itemReviewed" itemtype="http://schema.org/Organization" itemscope hidden>
+					<meta itemprop="mpn" content="925872" />
+					<div itemprop="review" itemtype="http://schema.org/Review" hidden itemscope> <a itemprop="url" href="/" hidden>Пивипчичи</a>
+						<div itemprop="author" itemtype="http://schema.org/Person" itemscope>
+							<meta itemprop="name" content="Fred Benson" /> </div>
+						<meta itemprop="datePublished" content="2019-10-18"> 18.10.2019
+						<div itemprop="description"> Оч вкусно </div>
+						<div itemprop="reviewRating" itemtype="http://schema.org/Rating" itemscope>
+							<meta itemprop="ratingValue" content="4" />
+							<meta itemprop="bestRating" content="5" /> </div> <span itemprop="itemReviewed" itemtype="http://schema.org/Organization" itemscope hidden>
 							
 								<span itemprop="name" hidden>
 									Пивипчичи
 			
-								</span>
-								
-								<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+								</span> <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 									Адрес:
-									<span itemprop="streetAddress">Ставропольская, 149</span>
-									<span itemprop="postalCode">350000</span>
-									<span itemprop="addressLocality">Краснодар</span>
-								</span>
-								Телефон: <span itemprop="telephone">+7 918 124 13 00</span>
-								Факс: <span itemprop="faxNumber">8(861)219-95-17</span>
-								Электронная почта: <span itemprop="email">VD13101978@yandex.ru</span>
-							</span>
-		
-						  </div>
-                        <img src="мясное2.jpg" alt="с ветчиной лаваш"/>
-						<div class="info">
-						  <h3 class="name" itemprop="name">С ветчиной</h3> 
-						  <div hidden itemprop="description">Вкусный лаваш</div>
-						  <ul class="ingredients">
-							 <li>Ветчина</li>
-							 <li>Свежие помидоры</li>
-							 <li>Сыр</li>
-							 <li>Яйца</li>
-							 <li>Хрустящие огурцы</li>
-						  </ul>
-						  <h4 class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">Цена <span itemprop="price">150</span> <meta itemprop="priceCurrency" content="RUB"/>p.
+									<span itemprop="streetAddress">Ставропольская, 149</span> <span itemprop="postalCode">350000</span> <span itemprop="addressLocality">Краснодар</span> </span> Телефон: <span itemprop="telephone">+7 918 124 13 00</span> Факс: <span itemprop="faxNumber">8(861)219-95-17</span> Электронная почта: <span itemprop="email">VD13101978@yandex.ru</span> </span>
+					</div> <img src="мясное2.jpg" alt="с ветчиной лаваш" />
+					<div class="info">
+						<h3 class="name" itemprop="name">С ветчиной</h3>
+						<div hidden itemprop="description">Вкусный лаваш</div>
+						<ul class="ingredients">
+							<li>Ветчина</li>
+							<li>Свежие помидоры</li>
+							<li>Сыр</li>
+							<li>Яйца</li>
+							<li>Хрустящие огурцы</li>
+						</ul>
+						<h4 class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">Цена <span itemprop="price">150</span> <meta itemprop="priceCurrency" content="RUB"/>p.
                            <meta hidden itemprop="availability" content="https://schema.org/InStock" />
                            <meta hidden itemprop="priceValidUntil" content="2021-11-05" />
                            <link hidden itemprop="url" href="/" />
                          </h4>
-                             <div itemprop="brand" hidden itemtype="http://schema.org/Brand" itemscope>
-	  <meta itemprop="name" content="Пивипчичи" />
-	  
-    </div>
-    <link itemprop="image" href="./fifth/мясное2.jpg" hidden/>
-						  <div itemprop="aggregateRating" hidden itemscope itemtype="http://schema.org/AggregateRating" >
-							<meta itemprop="bestRating" content="5"> <meta itemprop="ratingValue" content="5"> <meta itemprop="ratingCount" content="1"> </div>
+						<div itemprop="brand" hidden itemtype="http://schema.org/Brand" itemscope>
+							<meta itemprop="name" content="Пивипчичи" /> </div>
+						<link itemprop="image" href="./fifth/мясное2.jpg" hidden/>
+						<div itemprop="aggregateRating" hidden itemscope itemtype="http://schema.org/AggregateRating">
+							<meta itemprop="bestRating" content="5">
+							<meta itemprop="ratingValue" content="5">
+							<meta itemprop="ratingCount" content="1"> </div>
+					</div>
+					<meta itemprop="sku" content="123456789" />
+					<div class="add">Добавить</div>
 				</div>
-						
-      <meta itemprop="sku" content="123456789" />
-						<div class="add">Добавить</div>
-					 </div>
-					
 			</div>
 			<h2 class="mx-2" id="desert">Десерты</h2>
-		<div class="sweet-tovar d-flex flex-row flex-wrap" itemscope itemtype="http://schema.org/Product">
+			<div class="sweet-tovar d-flex flex-row flex-wrap" itemscope itemtype="http://schema.org/Product">
 				<div class="tovar mx-2 my-2 " data-name="сердечки">
-						<div itemprop="review" hidden itemtype="http://schema.org/Review" itemscope>
-							<a itemprop="url" href="/" hidden>Пивипчичи</a>
-							<div itemprop="author" itemtype="http://schema.org/Person" itemscope>
-							  <meta itemprop="name" content="Fred Benson" />
-							</div>
-							<meta itemprop="datePublished"  content="2019-10-18"> 18.10.2019
-							<div itemprop="description">
-								Оч вкусно
-							</div>
-							<div itemprop="reviewRating" itemtype="http://schema.org/Rating" itemscope>
-							  <meta itemprop="ratingValue" content="4" />
-							  <meta itemprop="bestRating" content="5" />
-							  
-							</div>
-							<span itemprop="itemReviewed" itemtype="http://schema.org/Organization" itemscope hidden>
+					<div itemprop="review" hidden itemtype="http://schema.org/Review" itemscope> <a itemprop="url" href="/" hidden>Пивипчичи</a>
+						<div itemprop="author" itemtype="http://schema.org/Person" itemscope>
+							<meta itemprop="name" content="Fred Benson" /> </div>
+						<meta itemprop="datePublished" content="2019-10-18"> 18.10.2019
+						<div itemprop="description"> Оч вкусно </div>
+						<div itemprop="reviewRating" itemtype="http://schema.org/Rating" itemscope>
+							<meta itemprop="ratingValue" content="4" />
+							<meta itemprop="bestRating" content="5" /> </div> <span itemprop="itemReviewed" itemtype="http://schema.org/Organization" itemscope hidden>
 							
 								<span itemprop="name" hidden>
 									Пивипчичи
 			
-								</span>
-								
-								<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+								</span> <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 									Адрес:
-									<span itemprop="streetAddress">Ставропольская, 149</span>
-									<span itemprop="postalCode">350000</span>
-									<span itemprop="addressLocality">Краснодар</span>
-								</span>
-								Телефон: <span itemprop="telephone">+7 918 124 13 00</span>
-								Факс: <span itemprop="faxNumber">8(861)219-95-17</span>
-								Электронная почта: <span itemprop="email">VD13101978@yandex.ru</span>
-							</span>
-		
-						  </div>
-				  <meta itemprop="mpn" content="925872" />
-                  <img src="сладкое.jpg" alt="сердечки десерт"/>
-				   <div class="info">
-					 <h3 class="name" itemprop="name">Сердечки</h3> 
-					 <div hidden itemprop="description">Вкусный лаваш</div>
-					 <ul class="ingredients">
-						<li>Сладкие яблочки</li>
-						<li>Корица</li>
-						<li>Шоколад</li>
-						<li>Хрустящее тесто</li>
-							
-					 </ul>
-					 <h4 class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">Цена <span itemprop="price">250</span> <meta itemprop="priceCurrency" content="RUB"/>p.
+									<span itemprop="streetAddress">Ставропольская, 149</span> <span itemprop="postalCode">350000</span> <span itemprop="addressLocality">Краснодар</span> </span> Телефон: <span itemprop="telephone">+7 918 124 13 00</span> Факс: <span itemprop="faxNumber">8(861)219-95-17</span> Электронная почта: <span itemprop="email">VD13101978@yandex.ru</span> </span>
+					</div>
+					<meta itemprop="mpn" content="925872" /> <img src="сладкое.jpg" alt="сердечки десерт" />
+					<div class="info">
+						<h3 class="name" itemprop="name">Сердечки</h3>
+						<div hidden itemprop="description">Вкусный лаваш</div>
+						<ul class="ingredients">
+							<li>Сладкие яблочки</li>
+							<li>Корица</li>
+							<li>Шоколад</li>
+							<li>Хрустящее тесто</li>
+						</ul>
+						<h4 class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">Цена <span itemprop="price">250</span> <meta itemprop="priceCurrency" content="RUB"/>p.
                        <meta itemprop="availability" hidden content="https://schema.org/InStock" />
                        <meta hidden itemprop="priceValidUntil" content="2021-11-05" />
                        <link hidden itemprop="url" href="/" />
                      </h4>
-                      <link itemprop="image" href="./fifth/сладкое.jpg" hidden/>
-                         <div itemprop="brand" hidden itemtype="http://schema.org/Brand" itemscope>
-	  <meta itemprop="name" content="Пивипчичи" />
-	  
-	 
-    </div>
-				    <div hidden itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" >
-<meta itemprop="bestRating" content="5"> <meta itemprop="ratingValue" content="5"> <meta itemprop="ratingCount" content="1"> </div>
-				
-                   </div>
-                   
-                  
-					
-      <meta itemprop="sku" content="123456789" />
-				   <div class="add">Добавить</div>
+						<link itemprop="image" href="./fifth/сладкое.jpg" hidden/>
+						<div itemprop="brand" hidden itemtype="http://schema.org/Brand" itemscope>
+							<meta itemprop="name" content="Пивипчичи" /> </div>
+						<div hidden itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+							<meta itemprop="bestRating" content="5">
+							<meta itemprop="ratingValue" content="5">
+							<meta itemprop="ratingCount" content="1"> </div>
+					</div>
+					<meta itemprop="sku" content="123456789" />
+					<div class="add">Добавить</div>
 				</div>
-				
 			</div>
 			<table class=" order-2 order-md-1">
-					<caption class="cps-top">Наши коронные блюда</caption>
-					<tr class="p-1">
-						<th class="center">Название лаваша</th>
-						<th >Время приготоления</th>
-						<th >Скидка до</th>
-					</tr>
-					<tr >
-						<td>На завтрак</td>
-						<td colspan="2">5-10 мин</td>
-						
-					</tr>
-					<tr >
-						<td>Сердечки</td>
-						<td>30 мин</td>
-						<td>1 января 2020 года</td>
-					</tr>
-					<tr>
-						<td>С грибами</td>
-						<td >15 мин.</td>
-						<td>20 ноября 2019 года</td>
-					</tr>
-					
-				</table>
-		<div class="order-1 order-md-2 p-2">
-		<p>Закажите доставкой или оставьте комментарий</p>
-	    <form  id="myForm" method="POST" action="/">
-			<label>
-				 Имя: <br>
-				 <input type="text" name="field-name" />
-	  
-			</label>
-			<br>
-						<label>
-			  Email: <br>
-			  <input type="email" name="field-email" />
-	  
-			</label>
-	  
-			
-			<br>
-						<label>
-			  Ваш телефон: <br>
-			  <input type="text" name="field-phone" />
-	  
-			</label>
-			<br>
-		   <label>
-		  Дата рождения: (мы сделаем вам скидку в день рождения :))<br>
-		  <input type="date" name="field-birth" />
-	  
-		  </label>
-		 <br>
-		 <div id="basket">
-		 </div>
-		
-		
-		<label>
-		  Ваши пожелания:
-		  <br>
-		  <textarea name="field-info">
-	  
-		  </textarea>
-		</label>
-	   <br>
-		<label>
-		  
-		  <input type="checkbox" checked="checked" name="check-true">
-		   Уведомлять о новинках
-		</label>
-	  
-	   <br>
-		  <input type="submit" value="Отправить">
-		</form>
-		</div>
-		<div class="reviews mx-2" >
-			Ваши отзывы:
-			
-			<div itemprop="review" class="review mx-5 my-2 p-2" itemscope itemtype="http://schema.org/Review">
-				<a itemprop="url" href="/" hidden>Пивипчичи</a>
-				<span itemprop="itemReviewed" itemtype="http://schema.org/Organization" itemscope hidden>
-					
-					<span itemprop="name" hidden>
-						Пивипчичи
-					</span>
-					
-					<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-						Адрес:
-						<span itemprop="streetAddress">Ставропольская, 149</span>
-						<span itemprop="postalCode">350000</span>
-						<span itemprop="addressLocality">Краснодар</span>
-					</span>
-					Телефон: <span itemprop="telephone">+7 918 124 13 00</span>
-					Факс: <span itemprop="faxNumber">8(861)219-95-17</span>
-					Электронная почта: <span itemprop="email">VD13101978@yandex.ru</span>
-				</span>
-				<span itemprop="name">О пивипах, горячих лавашах</span>
-              <span itemprop="itemReviewed"  hidden>Пивипчичи</span>
-			  <span itemprop="author" class="author">Ника Д.</span>
-			  <meta itemprop="datePublished"  content="2019-10-18"> 18.10.2019
-			  <div itemprop="reviewRating"  itemscope itemtype="http://schema.org/Rating">
-				<span itemprop="ratingValue">5</span>/5</div>
-				<span itemprop="reviewBody">Если вы хотите попробовать что-то вкусное и не терять время, то пивипы - замечательный выбор</span>
-				
-				</div>
-			
-		
-			
-			<div itemprop="review" class="review mx-5 my-2 p-2" itemscope itemtype="http://schema.org/Review">
-				<span itemprop="name">Десерты</span>
-				<a itemprop="url" href="/" hidden>Пивипчичи</a>
-				<span itemprop="itemReviewed" itemtype="http://schema.org/Organization" itemscope hidden>
-					
-					<span itemprop="name" hidden>
-						Пивипчичи
-					</span>
-					
-					<span itemprop="address" itemscope hidden itemtype="http://schema.org/PostalAddress">
-						Адрес:
-						<span itemprop="streetAddress">Ставропольская, 149</span>
-						<span itemprop="postalCode">350000</span>
-						<span itemprop="addressLocality">Краснодар</span>
-					</span>
-					Телефон: <span itemprop="telephone">+7 918 124 13 00</span>
-					Факс: <span itemprop="faxNumber">8(861)219-95-17</span>
-					Электронная почта: <span itemprop="email">VD13101978@yandex.ru</span>
-				</span>
-				<span itemprop="author" class="author">Ника Д.</span>
-				<meta itemprop="datePublished"  content="2019-10-18"> 18.10.2019
-				<div itemprop="reviewRating"  itemscope itemtype="http://schema.org/Rating">
-				  <span itemprop="ratingValue">5</span>/5</div>
-				  <span itemprop="reviewBody">Десерты привозят в считанные секунды. Низкалорийны и очень вкусные!</span>
-				  
-				  
-			  
-				</div>
-		
-	</div>
-		
-		<div class="calc">
-		  Калькулятор
-		  <form method="POST" action="/" id="form_calc">
-            <label>
-					Количество: <br>
-					<input type="text" placeholder="0" pattern="^[1-9][0-9]{0,}$" name="field-kolvo" id="kolvo"/>
-		 
-			   </label>
-			   <br>
-			
-				  Тип товара: <br>
-				  <label><input type="radio" class="type_radio" name="type" value="deserts" > Десерт </label><br>
-				 <label> <input type="radio" class="type_radio" name="type" value="vegan_meat"> Вегетарианские/Мясные </label><br>
-				  <label><input type="radio" class="type_radio" name="type" value="your"> Собрать свой </label><br>
-			
-			
-			</form>
-			<div id="itog">
-				</div>
-		</div>
-         </div>
-	 </main>
-	 <footer>
-		 <p>(c)Вероника Демченко 2019</p>
-		 <div itemscope itemtype="http://schema.org/Organization">
-		   <span itemprop="name">Пивипчичи</span>
-		   Контакты:
-		   <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-				Адрес:
-				<span itemprop="streetAddress">Ставропольская, 149</span>
-				<span itemprop="postalCode">350000</span>
-				<span itemprop="addressLocality">Краснодар</span>
+				<caption class="cps-top">Наши коронные блюда</caption>
+				<tr class="p-1">
+					<th class="center">Название лаваша</th>
+					<th>Время приготоления</th>
+					<th>Скидка до</th>
+				</tr>
+				<tr>
+					<td>На завтрак</td>
+					<td colspan="2">5-10 мин</td>
+				</tr>
+				<tr>
+					<td>Сердечки</td>
+					<td>30 мин</td>
+					<td>1 января 2020 года</td>
+				</tr>
+				<tr>
+					<td>С грибами</td>
+					<td>15 мин.</td>
+					<td>20 ноября 2019 года</td>
+				</tr>
+			</table>
+			<div class="order-1 order-md-2 p-2">
+				<p>Закажите доставкой или оставьте комментарий</p>
+				<form id="myForm" method="POST" action="/">
+					<label> Имя:
+						<br>
+						<input type="text" name="field-name" /> </label>
+					<br>
+					<label> Email:
+						<br>
+						<input type="email" name="field-email" /> </label>
+					<br>
+					<label> Ваш телефон:
+						<br>
+						<input type="text" name="field-phone" /> </label>
+					<br>
+					<label> Дата рождения: (мы сделаем вам скидку в день рождения :))
+						<br>
+						<input type="date" name="field-birth" /> </label>
+					<br>
+					<div id="basket"> </div>
+					<label> Ваши пожелания:
+						<br>
+						<textarea name="field-info"> </textarea>
+					</label>
+					<br>
+					<label>
+						<input type="checkbox" checked="checked" name="check-true"> Уведомлять о новинках </label>
+					<br>
+					<input type="submit" value="Отправить"> </form>
 			</div>
-			Телефон: <span itemprop="telephone">+7 918 124 13 00</span>
-		    Факс: <span itemprop="faxNumber">8(861)219-95-17</span>
-		    Электронная почта: <span itemprop="email">VD13101978@yandex.ru</span>
+			<div class="reviews mx-2"> Ваши отзывы:
+				<div itemprop="review" class="review mx-5 my-2 p-2" itemscope itemtype="http://schema.org/Review"> <a itemprop="url" href="/" hidden>Пивипчичи</a> <span itemprop="itemReviewed" itemtype="http://schema.org/Organization" itemscope hidden>
+					
+					<span itemprop="name" hidden>
+						Пивипчичи
+					</span> <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+						Адрес:
+						<span itemprop="streetAddress">Ставропольская, 149</span> <span itemprop="postalCode">350000</span> <span itemprop="addressLocality">Краснодар</span> </span> Телефон: <span itemprop="telephone">+7 918 124 13 00</span> Факс: <span itemprop="faxNumber">8(861)219-95-17</span> Электронная почта: <span itemprop="email">VD13101978@yandex.ru</span> </span> <span itemprop="name">О пивипах, горячих лавашах</span> <span itemprop="itemReviewed" hidden>Пивипчичи</span> <span itemprop="author" class="author">Ника Д.</span>
+					<meta itemprop="datePublished" content="2019-10-18"> 18.10.2019
+					<div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating"> <span itemprop="ratingValue">5</span>/5</div> <span itemprop="reviewBody">Если вы хотите попробовать что-то вкусное и не терять время, то пивипы - замечательный выбор</span> </div>
+				<div itemprop="review" class="review mx-5 my-2 p-2" itemscope itemtype="http://schema.org/Review"> <span itemprop="name">Десерты</span> <a itemprop="url" href="/" hidden>Пивипчичи</a> <span itemprop="itemReviewed" itemtype="http://schema.org/Organization" itemscope hidden>
+					
+					<span itemprop="name" hidden>
+						Пивипчичи
+					</span> <span itemprop="address" itemscope hidden itemtype="http://schema.org/PostalAddress">
+						Адрес:
+						<span itemprop="streetAddress">Ставропольская, 149</span> <span itemprop="postalCode">350000</span> <span itemprop="addressLocality">Краснодар</span> </span> Телефон: <span itemprop="telephone">+7 918 124 13 00</span> Факс: <span itemprop="faxNumber">8(861)219-95-17</span> Электронная почта: <span itemprop="email">VD13101978@yandex.ru</span> </span> <span itemprop="author" class="author">Ника Д.</span>
+					<meta itemprop="datePublished" content="2019-10-18"> 18.10.2019
+					<div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating"> <span itemprop="ratingValue">5</span>/5</div> <span itemprop="reviewBody">Десерты привозят в считанные секунды. Низкалорийны и очень вкусные!</span> </div>
+			</div>
+			<div class="calc"> Калькулятор
+				<form method="POST" action="/" id="form_calc">
+					<label> Количество:
+						<br>
+						<input type="text" placeholder="0" pattern="^[1-9][0-9]{0,}$" name="field-kolvo" id="kolvo" /> </label>
+					<br> Тип товара:
+					<br>
+					<label>
+						<input type="radio" class="type_radio" name="type" value="deserts"> Десерт </label>
+					<br>
+					<label>
+						<input type="radio" class="type_radio" name="type" value="vegan_meat"> Вегетарианские/Мясные </label>
+					<br>
+					<label>
+						<input type="radio" class="type_radio" name="type" value="your"> Собрать свой </label>
+					<br> </form>
+				<div id="itog"> </div>
+			</div>
 		</div>
-	 </footer>
-  </body>
+	</main>
+	<footer>
+		<p>(c)Вероника Демченко 2019</p>
+		<div itemscope itemtype="http://schema.org/Organization"> <span itemprop="name">Пивипчичи</span> Контакты:
+			<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"> Адрес: <span itemprop="streetAddress">Ставропольская, 149</span> <span itemprop="postalCode">350000</span> <span itemprop="addressLocality">Краснодар</span> </div> Телефон: <span itemprop="telephone">+7 918 124 13 00</span> Факс: <span itemprop="faxNumber">8(861)219-95-17</span> Электронная почта: <span itemprop="email">VD13101978@yandex.ru</span> </div>
+	</footer>
+</body>
+
 </html>
