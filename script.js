@@ -74,7 +74,7 @@ window.addEventListener("DOMContentLoaded", function(e) {
 
              div.className = tovar;
              div.innerHTML = tovar;
-             div.innerHTML += "<input type='number' />"
+             div.innerHTML += "<label><input type='number' /></label>"
              let basket = document.getElementById("basket");
              basket.appendChild(div);
          })
@@ -114,7 +114,7 @@ window.addEventListener("DOMContentLoaded", function(e) {
                 div.className="options";
                 let inner = "";
                 our_obj["options"]["tovari"].forEach((item)=> {
-                   inner += item.name + "<input type='radio' class='option_radio' name='option' value='" + item.cost + "'/><br>"
+                   inner += "<label>"+item.name + "<input type='radio' class='option_radio' name='option' value='" + item.cost + "'/></label><br>"
                 })
                 div.innerHTML = inner;
                 let form = document.getElementById("form_calc");
@@ -158,7 +158,7 @@ window.addEventListener("DOMContentLoaded", function(e) {
                   div.className="props";
                   let inner = "";
                   our_obj["options"]["properties"].forEach((prop) => {
-                      inner +=  "<input type='checkbox' class='prop_check' name='prop_check' value='" + prop["name"] + "' data-cost='" + prop["cost"] + "'/>" + prop["name"];
+                      inner +=  "<label><input type='checkbox' class='prop_check' name='prop_check' value='" + prop["name"] + "' data-cost='" + prop["cost"] + "'/>" + prop["name"] + "</label>";
                       inner += "<br>";
                   })
                   div.innerHTML = inner;
