@@ -80,6 +80,13 @@ $(document).ready(function() {
                         slidesToShow:2,
                         slidesToScroll:2
                     }
+                },
+                {
+                    breakpoint:768,
+                    setting: {
+                        slidesToShow:2,
+                        slidesToScroll:2
+                    }
                 }
             ]
         })
