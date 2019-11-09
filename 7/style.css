@@ -144,18 +144,16 @@ table {
 	text-align:center;
 }
 .responsive {
-    max-width:300px;
+    max-width:100%;
     
-    margin:0 auto;
+   
 }
 .for_slider {
     background:rgba(0,0,0,50%);
-    padding:10px;
+    padding:50px;
 }
 @media screen and (min-device-width: 768px) {
-   .responsive {
-       max-width:800px;
-   }
+  
    body {
 	   font-size:1em;
    }
