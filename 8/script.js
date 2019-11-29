@@ -13,7 +13,7 @@ if(current_region) {
    $('select').val(current_region);
 }
 if(current_message) {
-   alert(current_message);
+   
    $("[name='textarea']").val(current_message);
 }
 $("[name='fio']").bind('input',(e)=> {
@@ -51,7 +51,7 @@ $(".btn-call").click(()=>{
     history.pushState(null, null, "./contact");
 })
 window.onpopstate = (e)=> {
-  if(current == "index") {
+  if(current == "contact") {
      $(".popup-container").hide();
   }
 };
