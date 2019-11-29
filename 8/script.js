@@ -18,7 +18,7 @@ $(".btn-call").click(()=>{
     history.pushState(null, null, "./contact");
 })
 window.onpopstate((e)=> {
-  if(current == "index") {
+  if(current == "contact") {
      $(".popup-container").hide();
   }
 });
