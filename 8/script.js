@@ -25,7 +25,7 @@ $("[name='telephone']").bind('input',(e)=> {
   window.localStorage.setItem('telephone',current_telephone);
 })
 $('select').on('change',(e)=>{
-  current_region = this.value;
+  current_region = $("option:selected").value;
   window.localStorage.setItem('region',current_region);
 })
 $('textarea').bind('input', (e)=> {
