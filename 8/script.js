@@ -46,7 +46,7 @@ $(".exit").click(function() {
 })
 $(".btn-call").click(()=>{
     $(".popup-container").show();
-    curren = "contact";
+    current = "contact";
     document.body.style.overflow = "hidden";
     history.pushState(null, null, "./contact");
 })
@@ -56,7 +56,7 @@ window.onpopstate = (e)=> {
   }
 };
 $(".btn-contact").click((e)=> {
-  alert("Тут");
+  
   let fio = document.forms["form-contact"]["fio"].value;
   let telephone = document.forms["form-contact"]["telephone"].value;
   let region = $("option:selected").val();
