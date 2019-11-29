@@ -10,7 +10,7 @@ if(current_telephone) {
   $('[name="telephone"]').val(current_telephone);
 }
 if(current_region) {
-   $(`[value='${current_region}'`)[0].selected = true;
+   $('select').val(current_region);
 }
 if(current_message) {
    $("[name='textarea']").val(current_message);
