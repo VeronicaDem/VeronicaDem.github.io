@@ -61,7 +61,7 @@ $(".btn-contact").click((e)=> {
   let telephone = document.forms["form-contact"]["telephone"].value;
   let region = $("option:selected").val();
   let message = document.forms["form-contact"]["textarea"].value;
- alert(fio + " " + telephone + " " + region + " " + message);
+ 
   let request = $.ajax({
   url: "https://formcarry.com/s/493WjuAKEOf",
   method: "POST",
@@ -71,6 +71,14 @@ $(".btn-contact").click((e)=> {
  
 request.done(function( msg ) {
   alert("ура");
+  window.localStorage.removeItem("fio");
+  window.localStorage.removeItem("telephone");
+  window.localStorage.removeItem("region");
+  window.localStorage.removeItem("message");
+  $("[name='fio']").val("");
+  $('[name="telephone"]').val("");
+ $('select').val("Регион");
+ $("[name='textarea']").val("")
 });
  
 request.fail(function( jqXHR, textStatus ) {
