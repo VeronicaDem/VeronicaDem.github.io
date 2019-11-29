@@ -13,7 +13,7 @@ if(current_region) {
    $('select').val(current_region);
 }
 if(current_message) {
-   console.log(current_message);
+   alert(current_message);
    $("[name='textarea']").val(current_message);
 }
 $("[name='fio']").bind('input',(e)=> {
