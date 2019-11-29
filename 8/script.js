@@ -23,10 +23,12 @@ window.onpopstate = (e)=> {
   }
 };
 $(".btn-contact").click = (e)=> {
+  console.log("Тут");
   let fio = document.forms["form-contact"]["fio"].value;
   let telephone = document.forms["form-contact"]["telephone"].value;
   let region = $("option:selected").val();
   let message = document.forms["form-contact"]["textarea"].value;
+ console.log(fio + " " + telephone + " " + region + " " + message);
   let request = $.ajax({
   url: "https://formcarry.com/s/493WjuAKEOf",
   method: "POST",
