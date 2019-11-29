@@ -17,8 +17,8 @@ $(".btn-call").click(()=>{
     document.body.style.overflow = "hidden";
     history.pushState(null, null, "./contact");
 })
-window.onpopstate((e)=> {
-  if(current == "contact") {
+window.onpopstate = (e)=> {
+  if(current == "index") {
      $(".popup-container").hide();
   }
-});
+};
