@@ -45,8 +45,10 @@ $(".exit").click(function() {
     history.back();
 })
 $(".btn-call").click((e)=>{
+  alert(e.target);
+  alert($(e.target).hasClass("mobile"));
    if($(e.target).hasClass("mobile")) {
-      alert("ура");
+      
       $(".popup").css({"left":0});
  }
     $(".popup-container").show();
