@@ -45,6 +45,9 @@ $(".exit").click(function() {
     history.back();
 })
 $(".btn-call").click(()=>{
+   if($(this).hasClass("mobile")) {
+      $(".popup").css({"left":0});
+ }
     $(".popup-container").show();
     current = "contact";
     document.body.style.overflow = "hidden";
