@@ -4,6 +4,9 @@
     height:3px;
     
 }
+.popup.mobile {
+ left:0;
+}
 .popup {
     max-width:470px;
     min-height:203px;
