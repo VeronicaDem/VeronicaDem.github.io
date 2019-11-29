@@ -29,7 +29,7 @@ $('select').on('change',(e)=>{
   window.localStorage.setItem('region',current_region);
 })
 $('textarea').bind('input', (e)=> {
-  current_message = this.value;
+  current_message = e.target.value;
   window.localStorage.setItem('message',current_message);
 })
 $(".hamburger").click(function(ev) {
