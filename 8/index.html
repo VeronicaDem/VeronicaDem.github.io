@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta charset="utf-8">
+         <title>Century</title>
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+ 
+         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&amp;subset=cyrillic" rel="stylesheet">
+         <link rel="stylesheet" href="./style.css" >
+         <script src="./script.js" defer></script>
+        </head>
+     <body >
+        <header>
+          <div class="desk-header-contact desk flex-row justify-content-between">
+                <div class="company d-flex flex-row">
+                        <div class="logo">
+          
+                        </div>
+                        <p class="logo-title">Новый век технологий</p>
+                      
+                        
+                    </div>
+                <ul class="desk-header-contact-list">
+                    <li><div class="tick"></div>Капельное орошение</li>
+                    <li><div class="tick"></div>Упаковка для кормовых культур</li>
+                    <li><div class="tick"></div>Упаковка для овощных культур</li>
+                </ul>
+               <div class="info d-flex flex-column">
+                    <div class="tel-block ">
+                         <div class="tel">8 800 555-86-88</div>
+                         <p>Звонок по России - бесплатный</p>
+                    </div>
+                    <div class="site-block">
+                         <div class="site">info@neo-agriservis.ru</div>
+                         <p>Пн.-Пт.:8:30 - 17:00</p>
+                      </div>
+               </div>
+               <div class="btn btn-call d-flex flex-column justify-content-center">
+                   <div>Заказать звонок</div>
+               </div>
+          </div>
+         
+        </div>
+          <div class="desk-header-menu desk  flex-row">
+            <div class="btn-menu d-flex flex-row ">   
+                <div class="hamburger-menu d-flex flex-column ">
+                                    <span class="hamburger-line"></span>
+                                    <span class="hamburger-line"></span>
+                                    <span class="hamburger-line"></span>
+                 </div>
+                 <a href="#">Продукция</a>
+            </div>     
+              <ul class="d-flex flex-row justify-content-between">
+                  
+                  <li><a href="#">Услуги</a></li>
+                  <li><a href="#">Реализованные проекты</a></li>
+                  <li><a href="#">Статьи</a></li>
+                  <li><a href="#">Клиенты</a></li>
+                  <li><a href="#">О компании</a></li>
+                  <li><a href="#">Контакты</a></li>
+              </ul>
+            <div class="for_btn">
+               <div class="btn-search">
+
+               </div>
+            </div>
+          </div>
+          <div class="desk-menu desk position-absolute">
+              <ul>
+                <li><a href="#">Капельное орошение</a></li>
+                <li><a href="#">Упаковка для овощных культур</a></li>
+                <li><a href="#">Упаковка для кормовых культур</a></li>
+              </ul>
+          </div>
+          <div class="mobile-header mobile flex-row justify-content-around align-items-center">
+            <div class="hamburger d-flex flex-column ">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+              </div>
+              <div class="company d-flex flex-row">
+              <div class="logo">
+
+              </div>
+              <p>Новый век технологий</p>
+              </div>
+              <div class="search">
+
+              </div>
+          </div>
+          <div class="mobile-header-list mobile">
+              <ul class="p-0 m-0">
+                <li><a href="#" >Капельное орошение</a></li>
+                <li><a href="#" >Упаковка для овощных культур</a></li>
+                <li><a href="#" >Упаковка для кормовых культур</a></li>
+                <li><a href="#" >Услуги</a></li>
+                <li><a href="#" >Реализованные проекты</a></li>
+                <li><a href="#" >Статьи</a></li>
+                <li><a href="#" >Клиенты</a></li>
+                <li><a href="#" >О компании</a></li>
+                <li><a href="#" >Контакты</a></li>
+              </ul>
+          </div>
+          <div class="trailer position-relative">
+                <video id="video"  height="auto" muted autoplay="autoplay" loop="loop" preload="auto">
+                        <source src="./img/trailer.mp4"></source>
+                        
+                        </video>
+                <div class="info-trailer">
+                   <h1>Новый век агротехнологий</h1>
+                   <p>
+                       Мы создаем и внедряем инновационные технологии интеллектуального орошения,
+                       повышающие эффективность сельского хозяйства и качество агрокультур
+                   </p>
+                </div>
+          </div>
+        </header>
+        <main >
+           <div class="main-container">
+            <div class="cards-sites d-flex flex-wrap">
+               <div class="card-site position-relative">
+                   <div class="img-right" id="drops">
+
+                   </div>
+                  <div class="img-left" id="drops-left">
+
+                  </div>
+                  <p class="first-p">
+                      <a href="#">Капельное орошение</a>
+                  </p> 
+               </div>
+               <div class="card-site position-relative">
+                    <div class="img-right" id="setka" >
+
+                        </div>
+                       <div class="img-left" id="setka-left">
+     
+                       </div>
+                       <p class="second-p">
+                           <a href="#">Сетка сеновязальная</a>
+                       </p> 
+               </div>
+               <div class="card-site position-relative">
+                    <div class="img-right" id="vegetables">
+
+                        </div>
+                       <div class="img-left" id="vegetables-left">
+     
+                       </div>
+                       <p class="third-p">
+                           <a href="#">Упаковка для овощных культур</a>
+                       </p> 
+               </div>
+            </div>
+        
+            <div class="projects d-flex flex-column">
+                 <h2 class="projects-title">Реализованные проекты систем капельного орошения</h2>
+                 
+                 <div class="projects-container d-flex order-1 order-md-2">
+                     <div class="project position-relative" id="salat">
+                         <div class="info position-absolute">
+                           <p>Капельный полив салата в ЦФО</p>
+                           <div class="d-flex flex-row justify-content-between">
+                           <div class="seen">
+                               <div class="seen-image">
+
+                               </div>
+                               <span>14</span>
+                           </div>
+                           <div class="date">
+                                 06.09.2019
+                           </div>
+                           <div class="liked">
+                               <div class="liked-image">
+
+                               </div>
+                               <span>0</span>
+                           </div>
+                           <div class="disliked">
+                               <div class="disliked-image">
+
+                               </div>
+                               <span>0</span>
+                           </div>
+                        </div>
+                    </div>
+                     </div>
+                     <div class="project position-relative" id="raspberry">
+                            <div class="info position-absolute">
+                        <p>Капельный полив малины в ЦФО</p>
+                        <div class="d-flex flex-row justify-content-between">
+                        <div class="seen">
+                            <div class="seen-image">
+
+                            </div>
+                            <span>50</span>
+                        </div>
+                        <div class="date">
+                              31.05.2019
+                        </div>
+                        <div class="liked">
+                            <div class="liked-image">
+
+                            </div>
+                            <span>0</span>
+                        </div>
+                        <div class="disliked">
+                            <div class="disliked-image">
+
+                            </div>
+                            <span>0</span>
+                        </div>
+                        </div>
+                        </div>
+                  </div>
+                  <div class="project position-relative" id="carrot">
+                        <div class="info position-absolute">
+                    <p>Капельный полив моркови в Казахстане</p>
+                    <div class="d-flex flex-row justify-content-between">
+                    <div class="seen">
+                        <div class="seen-image">
+
+                        </div>
+                        <span>44</span>
+                    </div>
+                    <div class="date">
+                          30.04.2019
+                    </div>
+                    <div class="liked">
+                        <div class="liked-image">
+
+                        </div>
+                        <span>0</span>
+                    </div>
+                    <div class="disliked">
+                        <div class="disliked-image">
+
+                        </div>
+                        <span>0</span>
+                    </div>
+                    </div>
+                    </div>
+              </div>
+              <div class="project position-relative" id="cabbage">
+                    <div class="info position-absolute">
+                            
+                <p>Капельный полив капусты в ПФО</p>
+                <div class="d-flex flex-row justify-content-between">
+                <div class="seen">
+                    <div class="seen-image">
+
+                    </div>
+                    <span>34</span>
+                </div>
+                <div class="date">
+                      26.04.2019
+                </div>
+                <div class="liked">
+                    <div class="liked-image">
+
+                    </div>
+                    <span>0</span>
+                </div>
+                <div class="disliked">
+                    <div class="disliked-image">
+
+                    </div>
+                    <span>0</span>
+                </div>
+                </div>
+                </div>
+          </div>
+                 </div>
+                 <div class="btn-more d-flex align-self-md-end align-self-sm-start flex-row order-2 order-md-1">
+                    <div class="more-img">
+
+                    </div>
+                    <p>Все проекты</p>
+                 </div>
+            </div>
+               </div>
+        </main>
+        <div class="popup-container">
+                <div class="popup">
+                    <div class="exit">X</div>
+                    <div class="clearfix"></div>
+                    <form name="form-contact">
+                    <input type="text" name="fio" placeholder="ФИО" /><br>
+                    <input type="text" name="telephone" placeholder="телефон" pattern="/^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/"/><br>
+                    <select name="select">
+                        <option selected="selected">Регион</option>
+                        <option>Краснодарский край</option>
+                        <option>Московская область</option>
+                    </select><br>
+                    <textarea name="textarea" placeholder = "Сообщение"></textarea>
+                    <div class="btn btn-contact">
+                        отправить
+                    </div>
+                  </form>
+                </div>
+    </body>
+</html>
