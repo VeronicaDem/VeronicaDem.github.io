@@ -22,3 +22,23 @@ window.onpopstate = (e)=> {
      $(".popup-container").hide();
   }
 };
+$(".btn-contact").click = (e)=> {
+  let fio = document.forms["form-contact"]["fio"].value;
+  let telephone = document.forms["form-contact"]["telephone"].value;
+  let region = $("option:selected").val();
+  let message = document.forms["form-contact"]["textarea"].value;
+  let request = $.ajax({
+  url: "https://formcarry.com/s/493WjuAKEOf",
+  method: "POST",
+  data: { fio, telephone, region, message },
+  dataType: "json"
+});
+ 
+request.done(function( msg ) {
+  alert("ура");
+});
+ 
+request.fail(function( jqXHR, textStatus ) {
+  alert( "Request failed: " + textStatus );
+});
+}
