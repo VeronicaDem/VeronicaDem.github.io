@@ -44,7 +44,7 @@ $(".exit").click(function() {
     current = "index";
     history.back();
 })
-$(".btn-call-mobile".click((e)=>{
+$(".btn-call-mobile").click((e)=>{
   
   
       
