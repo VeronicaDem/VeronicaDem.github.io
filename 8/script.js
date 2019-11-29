@@ -22,7 +22,7 @@ window.onpopstate = (e)=> {
      $(".popup-container").hide();
   }
 };
-$(".btn-contact").click = (e)=> {
+$(".btn-contact").click((e)=> {
   console.log("Тут");
   let fio = document.forms["form-contact"]["fio"].value;
   let telephone = document.forms["form-contact"]["telephone"].value;
@@ -43,4 +43,4 @@ request.done(function( msg ) {
 request.fail(function( jqXHR, textStatus ) {
   alert( "Request failed: " + textStatus );
 });
-}
+})
