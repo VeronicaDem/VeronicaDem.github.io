@@ -44,13 +44,20 @@ $(".exit").click(function() {
     current = "index";
     history.back();
 })
-$(".btn-call").click((e)=>{
-  alert(e.target);
-  alert($(e.target).hasClass("mobile"));
-   if($(e.target).hasClass("mobile")) {
+$(".btn-call-mobile".click((e)=>{
+  
+  
       
-      $(".popup").css({"left":0});
- }
+    $(".popup").css({"left":0});
+ 
+    $(".popup-container").show();
+    current = "contact";
+    document.body.style.overflow = "hidden";
+    history.pushState(null, null, "./contact");
+})
+$(".btn-call").click((e)=>{
+      $(".popup").css({"left":"30%"});
+ 
     $(".popup-container").show();
     current = "contact";
     document.body.style.overflow = "hidden";
