@@ -35,7 +35,9 @@ $('textarea').bind('input', (e)=> {
   window.localStorage.setItem('message',current_message);
 })
 $(".hamburger").click(function(ev) {
-    $(".mobile-header-list").toggle();
+    $(".mobile-header-list").animate({
+        "opacity":1
+    });
 })
 $(".btn-menu").click(function() {
     $(".desk-menu").toggleClass("desk-menu-opened");
