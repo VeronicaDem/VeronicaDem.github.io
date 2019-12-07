@@ -40,7 +40,18 @@ $(".btn-menu").click(function() {
     $(".desk-menu").toggle();
 })
 $(".exit").click(function() {
-    $(".popup-container").hide();
+     
+     animate({
+        duration: 1000,
+        timing: function(timeFraction) {
+          return timeFraction;
+        },
+        draw: function(progress) {
+          $(".popup").css({"height":(100 - progress) * 100 + "%"});
+        }
+      });
+      opened = false;
+     
     document.body.style.overflow = "auto";
     current = "index";
     history.back();
@@ -64,21 +75,12 @@ $(".btn-call").click((e)=>{
           return timeFraction;
         },
         draw: function(progress) {
-          $(".popup").css({"height":progress * 100 + "%"});
+          $(".popup").css({"height":Math.min($(".popup").css("width") + 10,203) + "px"});
         }
       });
+     opened = true;
      }
-    else {
-     animate({
-        duration: 1000,
-        timing: function(timeFraction) {
-          return timeFraction;
-        },
-        draw: function(progress) {
-          $(".popup").css({"height":(100 - progress) * 100 + "%"});
-        }
-      });
-     }
+   
    
     
     $(".popup-container").show();
