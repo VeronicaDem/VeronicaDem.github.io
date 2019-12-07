@@ -63,7 +63,7 @@ $(".btn-call").click((e)=>{
           return timeFraction;
         },
         draw: function(progress) {
-          elem.style.width = progress * 100 + '%';
+          $(".popup").css({"width":progress * 100 + '%'});
         }
       });
     $(".popup-container").show();
