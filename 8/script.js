@@ -79,7 +79,8 @@ $(".btn-call").click((e)=>{
         }
       });
      }
-    }
+   
+    
     $(".popup-container").show();
     current = "contact";
     document.body.style.overflow = "hidden";
