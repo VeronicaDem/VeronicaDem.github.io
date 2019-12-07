@@ -403,6 +403,10 @@ main {
 
 
 @media screen and (min-device-width: 768px) {
+    .desk {
+      display:block;
+	}
+   
     .desk-menu {
          z-index:1000;
          transition:opacity 1s ease;
