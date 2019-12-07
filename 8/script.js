@@ -37,8 +37,7 @@ $('textarea').bind('input', (e)=> {
 })
 $(".hamburger").click(function(ev) {
   
-    $(".mobile-header-list").slideToggle("slow",function(){
-    });
+    $(".mobile-header-list").slideToggle("slow",function(){});
     
 })
 $(".btn-menu").click(function() {
