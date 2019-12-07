@@ -38,14 +38,16 @@ $('textarea').bind('input', (e)=> {
 $(".hamburger").click(function(ev) {
    if(!opened) {
     $(".mobile-header-list").animate({
-        "opacity":1
+        "opacity":1,
+        "display":"block"
     });
      opened = true;
    }
    else {
     opened = false;
     $(".mobile-header-list").animate({
-        "opacity":0
+        "opacity":0,
+        "display":"none"
     });
    }
 })
