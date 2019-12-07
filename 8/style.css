@@ -233,7 +233,7 @@ main {
 .desk-menu {
     text-transform: uppercase;
     font-size:10px;
-    display:none;
+    opacity:0;
 }
 
 .desk-header-menu {
@@ -405,8 +405,11 @@ main {
 @media screen and (min-device-width: 768px) {
     .desk-menu {
          z-index:1000;
+         transition:opacity 1s ease;
 	}
-   
+   .desk-menu-opened {
+      opacity:1
+	}
     .main-container {
         max-width:1260px;
         margin:0 auto;
