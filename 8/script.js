@@ -48,7 +48,7 @@ $(".exit").click(function() {
           return timeFraction;
         },
         draw: function(progress) {
-          $(".popup").css({"height":(100 - progress) * 100 * HEIGHT + "px});
+          $(".popup").css({"height":(100 - progress) * 100 * HEIGHT + "px"});
         }
       });
       opened = false;
