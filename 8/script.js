@@ -38,7 +38,7 @@ $(".hamburger").click(function(ev) {
     $(".mobile-header-list").toggle();
 })
 $(".btn-menu").click(function() {
-    $(".desk-menu").toggle();
+    $(".desk-menu").toggleClass("desk-menu-opened");
 })
 $(".exit").click(function() {
      
