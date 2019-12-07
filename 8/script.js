@@ -39,7 +39,7 @@ $(".hamburger").click(function(ev) {
    if(!opened) {
     $(".mobile-header-list").animate({
         "opacity":1,
-        "display":"block"
+        
     });
      opened = true;
    }
@@ -47,7 +47,7 @@ $(".hamburger").click(function(ev) {
     opened = false;
     $(".mobile-header-list").animate({
         "opacity":0,
-        "display":"none"
+        
     });
    }
 })
