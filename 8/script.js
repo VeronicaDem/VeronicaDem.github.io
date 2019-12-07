@@ -48,8 +48,10 @@ $(".exit").click(function() {
           return timeFraction;
         },
         draw: function(progress) {
-          $(".popup").css({"width":(1 - progress )*100  + "%"});
-         
+          $(".popup").css({"width":(1 - progress)*100  + "%"});
+          if(progress == 1) {
+             $(".popup-container").hide();
+          }
         }
       });
       opened = false;
