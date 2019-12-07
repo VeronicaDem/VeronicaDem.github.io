@@ -3,6 +3,7 @@ let current_fio = window.localStorage.getItem('fio');
 let current_telephone = window.localStorage.getItem('telephone');
 let current_region = window.localStorage.getItem('region');
 let current_message = window.localStorage.getItem('message');
+let opened = false;
 if(current_fio) {
    $("[name='fio']").val(current_fio);
 }
@@ -56,7 +57,7 @@ $(".btn-call-mobile").click((e)=>{
     history.pushState(null, null, "./contact");
 })
 $(".btn-call").click((e)=>{
-      $(".popup").css({"left":"30%"});
+     if(!opened){
      animate({
         duration: 1000,
         timing: function(timeFraction) {
@@ -66,6 +67,19 @@ $(".btn-call").click((e)=>{
           $(".popup").css({"height":progress * 100 + "%"});
         }
       });
+     }
+    else {
+     animate({
+        duration: 1000,
+        timing: function(timeFraction) {
+          return timeFraction;
+        },
+        draw: function(progress) {
+          $(".popup").css({"height":(100 - progress) * 100 + "%"});
+        }
+      });
+     }
+    }
     $(".popup-container").show();
     current = "contact";
     document.body.style.overflow = "hidden";
