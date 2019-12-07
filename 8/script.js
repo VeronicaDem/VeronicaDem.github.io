@@ -48,8 +48,8 @@ $(".exit").click(function() {
           return timeFraction;
         },
         draw: function(progress) {
-          $(".popup").css({"height":(1 - progress ) * HEIGHT + "px"});
-          console.log((1 - progress ) * HEIGHT + "px");
+          $(".popup").css({"width":(1 - progress )*100  + "%"});
+         
         }
       });
       opened = false;
@@ -77,7 +77,7 @@ $(".btn-call").click((e)=>{
           return timeFraction;
         },
         draw: function(progress) {
-          $(".popup").css({"height":progress * HEIGHT + "px"});
+          $(".popup").css({"width":progress * 100 + "%"});
           console.log(progress * HEIGHT + "px");
         }
       });
