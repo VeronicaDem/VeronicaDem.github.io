@@ -4,6 +4,7 @@ let current_telephone = window.localStorage.getItem('telephone');
 let current_region = window.localStorage.getItem('region');
 let current_message = window.localStorage.getItem('message');
 let opened = false;
+let openedMenu = false;
 let HEIGHT = parseInt($(".popup").css("height"));
 if(current_fio) {
    $("[name='fio']").val(current_fio);
@@ -35,9 +36,18 @@ $('textarea').bind('input', (e)=> {
   window.localStorage.setItem('message',current_message);
 })
 $(".hamburger").click(function(ev) {
+   if(!opened) {
     $(".mobile-header-list").animate({
         "opacity":1
     });
+     opened = true;
+   }
+   else {
+    opened = false;
+    $(".mobile-header-list").animate({
+        "opacity":0
+    });
+   }
 })
 $(".btn-menu").click(function() {
     $(".desk-menu").toggleClass("desk-menu-opened");
