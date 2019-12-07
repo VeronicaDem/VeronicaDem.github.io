@@ -49,7 +49,7 @@ $(".exit").click(function() {
         },
         draw: function(progress) {
           $(".popup").css({"height":(1 - progress ) * HEIGHT + "px"});
-          
+          console.log((1 - progress ) * HEIGHT + "px");
         }
       });
       opened = false;
@@ -78,7 +78,7 @@ $(".btn-call").click((e)=>{
         },
         draw: function(progress) {
           $(".popup").css({"height":progress * HEIGHT + "px"});
-          console.log(HEIGHT * progress / 100 + "px");
+          console.log(progress * HEIGHT + "px");
         }
       });
      opened = true;
