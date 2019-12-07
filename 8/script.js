@@ -4,7 +4,7 @@ let current_telephone = window.localStorage.getItem('telephone');
 let current_region = window.localStorage.getItem('region');
 let current_message = window.localStorage.getItem('message');
 let opened = false;
-let HEIGHT = $(".popup").css("height");
+let HEIGHT = parseInt($(".popup").css("height"));
 if(current_fio) {
    $("[name='fio']").val(current_fio);
 }
@@ -48,7 +48,7 @@ $(".exit").click(function() {
           return timeFraction;
         },
         draw: function(progress) {
-          $(".popup").css({"height":(100 - progress) + "%"});
+          $(".popup").css({"height":(1 - progress ) * HEIGHT + "px"});
           
         }
       });
@@ -77,7 +77,7 @@ $(".btn-call").click((e)=>{
           return timeFraction;
         },
         draw: function(progress) {
-          $(".popup").css({"height":progress * 100 + "%"});
+          $(".popup").css({"height":progress * HEIGHT + "px"});
           console.log(HEIGHT * progress / 100 + "px");
         }
       });
