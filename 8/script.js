@@ -63,7 +63,17 @@ $(".exit").click(function() {
 })
 $(".btn-call-mobile").click((e)=>{
   
-  
+     animate({
+        duration: 1000,
+        timing: function(timeFraction) {
+          return timeFraction;
+        },
+        draw: function(progress) {
+          $(".popup").css({"width":progress * 100 + "%"});
+          console.log(progress * HEIGHT + "px");
+        }
+      });
+     opened = true;
       
     $(".popup").css({"left":0});
  
