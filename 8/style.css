@@ -85,7 +85,7 @@
     background:white;
     color:black;
     padding:30px;
-    display:none;
+    opacity:0;
 }
 .tel, .site {
     color:#24aa17;
@@ -403,6 +403,9 @@ main {
 
 
 @media screen and (min-device-width: 768px) {
+   .mobile {
+      display:none;
+	}
     .desk {
       display:block;
 	}
