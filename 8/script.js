@@ -51,12 +51,13 @@ $(".exit").click(function() {
           $(".popup").css({"width":(1 - progress)*100  + "%"});
           if(progress == 1) {
              $(".popup-container").hide();
+             document.body.style.overflow = "auto";
           }
         }
       });
       opened = false;
      
-    document.body.style.overflow = "auto";
+    
     current = "index";
     history.back();
 })
