@@ -36,21 +36,10 @@ $('textarea').bind('input', (e)=> {
   window.localStorage.setItem('message',current_message);
 })
 $(".hamburger").click(function(ev) {
-   $(".mobile-header-list").css("display","block");
-   if(!opened) {
-    $(".mobile-header-list").animate({
-        "opacity":1,
-        "height":100%
+  
+    $(".mobile-header-list").slideToggle("slow",function(){
     });
-     opened = true;
-   }
-   else {
-    opened = false;
-    $(".mobile-header-list").animate({
-        "opacity":0,
-        "height":0
-    });
-   }
+    
 })
 $(".btn-menu").click(function() {
     $(".desk-menu").toggleClass("desk-menu-opened");
