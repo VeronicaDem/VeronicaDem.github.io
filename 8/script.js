@@ -53,7 +53,7 @@ $(".exit").click(function() {
           return timeFraction;
         },
         draw: function(progress) {
-          $(".popup").css({"height":Math.min((1 - progress)*100,TOP)+'%'});
+          $(".popup").css({"top":Math.min((1 - progress)*100,TOP)+'%'});
           if(progress == 1) {
              $(".popup-container").hide();
              document.body.style.overflow = "auto";
