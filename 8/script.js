@@ -53,7 +53,7 @@ $(".exit").click(function() {
           return timeFraction;
         },
         draw: function(progress) {
-          $(".popup").css({"height":(1 - progress)*100  + "%"});
+          $(".popup").css({"height":(1 - progress)*HEIGHT+'px'});
           if(progress == 1) {
              $(".popup-container").hide();
              document.body.style.overflow = "auto";
@@ -74,7 +74,7 @@ $(".btn-call-mobile").click((e)=>{
           return timeFraction;
         },
         draw: function(progress) {
-          $(".popup").css({"height":progress * 100 + "%"});
+          $(".popup").css({"height":progress * HEIGHT + "px" });
           console.log(progress * HEIGHT + "px");
         }
       });
@@ -95,7 +95,7 @@ $(".btn-call").click((e)=>{
           return timeFraction;
         },
         draw: function(progress) {
-          $(".popup").css({"height":progress * 100 + "%"});
+          $(".popup").css({"height":progress * HEIGHT+ "px"});
           console.log(progress * HEIGHT + "px");
         }
       });
