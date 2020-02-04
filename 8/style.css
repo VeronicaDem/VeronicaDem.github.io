@@ -15,9 +15,6 @@
     top:35%;
     left:30%;
 }
-body{
- max-width:100%;
-} 
 .popup {
     padding-left:21px;
     padding-right:21px;
@@ -270,7 +267,7 @@ main {
     top:0;
     left:0;
     text-align:center;
-    width:411px;
+    max-width:411px;
 }
 #drops {
     background:url("./img/drops.jpg");
@@ -446,7 +443,7 @@ main {
         display:flex;
     }
     .info-trailer {
-        width:714px;
+        max-width:100%;
         left:25%;
         top:25%;
     }
@@ -476,4 +473,5 @@ main {
         width:372px;
         height: 240px;
     }
+ 
 }
