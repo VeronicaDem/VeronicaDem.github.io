@@ -7,7 +7,7 @@ let opened = false;
 let openedMenu = false;
 
 
-let HEIGHT = parseInt($(".popup").css("height"));
+let TOP = 35;
 if(current_fio) {
    $("[name='fio']").val(current_fio);
 }
@@ -53,7 +53,7 @@ $(".exit").click(function() {
           return timeFraction;
         },
         draw: function(progress) {
-          $(".popup").css({"height":(1 - progress)*HEIGHT+'px'});
+          $(".popup").css({"height":Math.min((1 - progress)*100,TOP)+'%'});
           if(progress == 1) {
              $(".popup-container").hide();
              document.body.style.overflow = "auto";
@@ -74,8 +74,8 @@ $(".btn-call-mobile").click((e)=>{
           return timeFraction;
         },
         draw: function(progress) {
-          $(".popup").css({"height":progress * HEIGHT + "px" });
-          console.log(progress * HEIGHT + "px");
+          $(".popup").css({"top":Math.min(progress * 100,TOP)+ "%" });
+          
         }
       });
      opened = true;
@@ -95,7 +95,7 @@ $(".btn-call").click((e)=>{
           return timeFraction;
         },
         draw: function(progress) {
-          $(".popup").css({"height":progress * HEIGHT+ "px"});
+          $(".popup").css({"top":Math.min(progress * 100,TOP)+ "%"});
           console.log(progress * HEIGHT + "px");
         }
       });
