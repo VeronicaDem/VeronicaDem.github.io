@@ -5,6 +5,8 @@ let current_region = window.localStorage.getItem('region');
 let current_message = window.localStorage.getItem('message');
 let opened = false;
 let openedMenu = false;
+alert("изменено") ;
+
 let HEIGHT = parseInt($(".popup").css("height"));
 if(current_fio) {
    $("[name='fio']").val(current_fio);
