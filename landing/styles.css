@@ -68,15 +68,15 @@ span.info-title::before {
 }
 .pivip {
     background:url("./images/pivipchichi.png");
-    width: 398px;
-    height:251px;
-    max-width:100%;
+    width: 199px;
+    height:125.5px;
+    
 }
 .century {
     background:url("./images/century.png");
-    width:410px;
-    height:212px;
-    max-width:100%;
+    width:205px;
+    height:106px;
+    
 }
 
 footer, footer a {
