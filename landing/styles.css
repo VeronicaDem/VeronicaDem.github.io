@@ -11,6 +11,7 @@
 }
 body {
     font-family: 'Roboto', sans-serif;
+    
 }
 header {
     
@@ -39,13 +40,13 @@ main {
 }
 span.info-title {
     display:inline-block;
-    font-size:3em;
+    font-size:2em;
 }
 span.info-tags {
-    font-size:2em;
+    font-size:1em;
 }
 span.info-name {
-    font-size:2em;
+    font-size:1em;
 
 }
 span.info-title::after {
@@ -114,6 +115,17 @@ footer {
     background: rgba(0,0,0,84%);
 }
 @media screen and (min-device-width: 768px) {
+    span.info-title {
+    display:inline-block;
+    font-size:3em;
+}
+span.info-tags {
+    font-size:2em;
+}
+span.info-name {
+    font-size:2em;
+
+}
     .certificates {
         flex-direction:row;
         justify-content: space-between;
