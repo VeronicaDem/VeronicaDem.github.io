@@ -70,13 +70,15 @@ span.info-title::before {
     background:url("./images/pivipchichi.png");
     width: 398px;
     height:251px;
+    max-width:100%;
 }
 .century {
     background:url("./images/century.png");
     width:410px;
     height:212px;
-    
+    max-width:100%;
 }
+
 footer, footer a {
     color:white;
 }
