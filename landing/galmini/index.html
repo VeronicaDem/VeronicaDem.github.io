@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+
+<style>#bestgallerys li {width: 200px;height: 200px;float: left;margin-right: 20px;overflow: hidden;}</style>
+<!--
+Установка - скопировать и устанвить код и все файлы ниже:
+ -->
+<link rel="stylesheet" href="js/photobox.css">
+<!--[if lt IE 9]><link rel="stylesheet" href="js/photobox.ie.css"><![endif]-->
+<!--[if lt IE 9]><script src="js/html5.js"></script><![endif]-->
+<script src='js/jquery-1.9.1.min.js'></script>
+<script src='js/jquery.photobox.js'></script>
+<ul id='bestgallerys'>
+<li><a href="images/1.jpg"><img src="images/1.jpg" title="Oculus Corruptus"></a></li>
+<li><a href="images/2.jpg"><img src="images/2.jpg" title="Oculus Corruptus"></a></li>
+<li><a href="images/3.jpg"><img src="images/3.jpg" title="Oculus Corruptus"></a></li>
+<li><a href="images/4.jpg"><img src="images/4.jpg" title="Oculus Corruptus"></a></li>
+<li><a href="images/5.jpg"><img src="images/5.jpg" title="Oculus Corruptus"></a></li>
+<li><a href="images/6.jpg"><img src="images/6.jpg" title="Oculus Corruptus"></a></li>
+<li><a href="images/7.jpg"><img src="images/7.jpg" title="Oculus Corruptus"></a></li>
+<li><a href="images/8.jpg"><img src="images/8.jpg" title="Oculus Corruptus"></a></li>
+<li><a href="images/9.jpg"><img src="images/9.jpg" title="Oculus Corruptus"></a></li>
+<li><a href="images/10.jpg"><img src="images/10.jpg" title="Oculus Corruptus"></a></li>
+<li><a href="images/11.jpg"><img src="images/11.jpg" title="Oculus Corruptus"></a></li>
+<li><a href="images/12.jpg"><img src="images/12.jpg" title="Oculus Corruptus"></a></li>
+<li><a href="http://www.youtube.com/embed/W3OQgh_h4U4" rel="video"><img src="http://img.youtube.com/vi/W3OQgh_h4U4/0.jpg" title="PEOPLE ARE AWESOME 2013 FULL HD "></a></li>
+</ul>
+<script>
+$('#bestgallerys').photobox('a',{
+time:0,       //Убрать кнопку autoplay, если нужна - то поставить от 1000
+thumbs:true,  //Показать миниатюры. Цикл с последнего изображения на первое
+zoomable:true //Включить, отключить увеличение колесиком мыши
+});
+</script>
+
+
