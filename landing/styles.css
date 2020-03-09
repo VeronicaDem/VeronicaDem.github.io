@@ -40,13 +40,13 @@ main {
 }
 span.info-title {
     display:inline-block;
-    font-size:2em;
+    font-size:3em;
 }
 span.info-tags {
-    font-size:1em;
+    font-size:2em;
 }
 span.info-name {
-    font-size:1em;
+    font-size:2em;
 
 }
 span.info-title::after {
