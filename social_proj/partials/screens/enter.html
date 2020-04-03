@@ -470,28 +470,33 @@
                     $('.otp-digit').text('');
                             $('.otp-digit').removeClass('filled')
                          
-                           let note;
+                          
 
                            
                         
-                          note  =  app.notification.create({
-                                title:'Успешно',
+                            app.toast.show({
+                                icon: '<i class="icon fas fa-lg fa-check"></i>',
                                 text: 'Вы успешно зарегистрированы',
-                                closeTimeout:3000
+                                closeTimeout:3000,
+                                position: 'bottom',
+                                cssClass: 'toast-round bg-color-green'
+
                             })
-                         
-                            note.open();
+                            
                     }, (error)=> {
                         console.log(error);
                         $('.otp-digit').text('');
                             $('.otp-digit').removeClass('filled')
-                            let note = app.notification.create({
-                                title:'Ошибка',
+                            
+                            app.toast.show({
+                              icon: '<i class="icon fas fa-lg fa-times"></i>',
+                              position: 'bottom',
+                                cssClass: 'toast-round bg-color-red',
                                 text: 'Неправильный код',
                                 closeTimeout:3000
 
                             })
-                            note.open();
+                            
                     })
                    }
                 }
@@ -551,12 +556,16 @@
            onClickSignUp() {
             if($$('[name="loginGo"] :invalid').length != 0) 
             { 
-                let note = app.notification.create({
-                    title: 'Ошибка',
-                    text: 'Проверьте правильность введенных данных',
-                    closeTimeout: 3000
-               })
-               note.open();
+                
+               app.toast.show({
+                              icon: '<i class="icon fas fa-lg fa-times"></i>',
+                              position: 'bottom',
+                                cssClass: 'toast-round bg-color-red',
+                                text: 'Проверьте правильность введенных данных',
+                                closeTimeout:3000
+
+                            })
+              
                 return;
             }
             Framework7.request.post('https://api.godialog.ru/api/v1/333/users/signup/true', {
@@ -572,13 +581,15 @@
                     dynamicPopup.open();
                     }
                     else {
-                        let note = app.notification.create({
-                                title:'Ошибка',
+                    app.toast.show({
+                              icon: '<i class="icon fas fa-lg fa-times"></i>',
+                              position: 'bottom',
+                                cssClass: 'toast-round bg-color-red',
                                 text: [data.email , data.area , data.fname , data.pass].filter((item)=> item ? true: false).join(","),
                                 closeTimeout:3000
 
                             })
-                            note.open();
+                            
                     }
                
            },(error)=>{
@@ -591,33 +602,37 @@
            onClickSignIn() {
             if($$('[name="signInGo"] :invalid').length != 0) 
             { 
-                let note = app.notification.create({
-                    title: 'Ошибка',
-                    text: 'Проверьте правильность введенных данных',
-                    closeTimeout: 3000
-               })
-               note.open();
+               app.toast.show({
+                                icon: '<i class="icon fas fa-lg fa-times"></i>',
+                                text: 'Проверьте правильность введенных данных',
+                                closeTimeout:3000,
+                                position: 'bottom',
+                                cssClass: 'toast-round bg-color-red'
+                            })
                 return;
             }  
             Framework7.request.post('https://api.godialog.ru/api/v1/333/users/signin/true', {
                     "form-login": $$('[name="signInGo"] [name="form-login"]').val(),
                     "form-pass": $$('[name="signInGo"] [name="form-pass"]').val()
                 }, (data)=> {
-                    let note = app.notification.create({
-                                title:'Успешно',
+                    app.toast.show({
+                                icon: '<i class="icon fas fa-lg fa-check"></i>',
                                 text: 'Вы вошли в систему',
-                                closeTimeout:3000
+                                closeTimeout:3000,
+                                position: 'bottom',
+                                cssClass: 'toast-round bg-color-green'
 
                             })
-                            note.open();
+                            
                 } , (error)=> {
-                    let note = app.notification.create({
-                                title:'Ошибка',
+                    app.toast.show({
+                                icon: '<i class="icon fas fa-lg fa-times"></i>',
                                 text: JSON.parse(error.response).error.message,
-                                closeTimeout:3000
-
+                                closeTimeout:3000,
+                                position: 'bottom',
+                                cssClass: 'toast-round bg-color-red'
                             })
-                            note.open();
+                            
                 })
            }
        }
