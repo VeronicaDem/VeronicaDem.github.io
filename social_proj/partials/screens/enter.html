@@ -214,7 +214,11 @@
                         
                         <li>
                             <div class="item-content item-input item-input-with-info">
-                                
+                                <div class="item-media">
+                                    <i class="icon f7-icons ios-only">
+                                        email
+                                    </i>
+                                </div>
                                 <div class="item-inner">
                                     <div class="item-title item-floating-label">Email</div>
                                     <div class="item-input-wrap">
@@ -235,7 +239,11 @@
                         
                         <li>
                             <div class="item-content item-input item-input-with-info">
-                                
+                                <div class="item-media">
+                                    <i class="icon f7-icons ios-only">
+                                        lock
+                                    </i>
+                                </div>
                                 <div class="item-inner">
                                     <div class="item-title item-floating-label">Пароль</div>
                                     <div class="item-input-wrap">
@@ -515,6 +523,12 @@
                                 cssClass: 'toast-round bg-color-green'
 
                             })
+                         
+
+                            self.app.views.main.router.navigate('/user-page');
+
+                            dynamicPopup.close();
+                            dynamicPopup.destroy();
                             
                     }, (error)=> {
                         console.log(error);
