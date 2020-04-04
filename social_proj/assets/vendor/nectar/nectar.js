@@ -70,17 +70,17 @@ Framework7.utils.i18n = {
 Framework7.utils.theme = {
 
     getColor: function() {
-        var color = localStorage.getItem('Nectar_Theme_Color') ? localStorage.getItem('Nectar_Theme_Color') : window.config.theme.color;
+        var color = window.config.theme.color;
         return color;
     },
 
     getLayout: function() {
-        var layout = localStorage.getItem('Nectar_Theme_Layout') ? localStorage.getItem('Nectar_Theme_Layout') : window.config.theme.layout;
+        var layout = window.config.theme.layout;
         return layout;
     },
 
     setColor: function(color) {
-        var color = color ? color : window.config.theme.color;
+        var color = window.config.theme.color;
 
         localStorage.setItem('Nectar_Theme_Color', color);
 
@@ -91,7 +91,7 @@ Framework7.utils.theme = {
     },
 
     setLayout: function(layout) {
-        var layout = layout ? layout : window.config.theme.layout;
+        var layout = window.config.theme.layout;
 
         localStorage.setItem('Nectar_Theme_Layout', layout);
 

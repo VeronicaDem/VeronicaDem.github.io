@@ -1,0 +1,475 @@
+<template>
+    <div class="page page-categorylayout" data-name="signup"  >
+        <div class="popup otp-verification">
+            <div class="page no-navbar no-toolbar no-swipeback ">
+             <div class="page-content numpad-page-content">
+                <div class="block">
+          <div class="row justify-content-center">
+          <p>Please enter the OTP we have sent on your mobile number.</p>
+             </div>
+            </div>
+    <div class="block">
+    <div class="row justify-content-center">
+    <span class="otp-digit"></span>
+    <span class="otp-digit"></span>
+    <span class="otp-digit"></span>
+    <span class="otp-digit"></span>
+    <span class="otp-digit"></span>
+    <span class="otp-digit"></span>
+    </div>
+    </div>
+    <form name="otp-verification" action="#" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="otp" />
+    
+    </form>
+    
+    <div class="numpad"></div>
+    
+    </div>
+    
+    </div>
+    </div>
+        <div class="page-content">
+            <div class="back-nav-header">
+                <div class="first-blok">
+    
+                </div>
+                <div class="mid-block">
+    
+                </div>
+                <div class="last-block skip">
+                    <a href="/user-page" class="link back">
+                        Skip <i class="f7-icons">arrow_right</i>
+                    </a>
+                </div>
+            </div>
+            <div class="block select-interests log-b">
+                <h2 class="heading-c1">Регистрация</h2>
+          <form name="loginGo" class="list no-hairlines no-hairlines-between Regform-style1 layer1" id="loginGo" action="#" method="POST" enctype="multipart/form-data">
+             
+                 
+                <ul>
+                    
+                         <li>
+                             <a href="#" class="item-link smart-select " data-searchbar="true">
+                                 <select name="form-area"  >
+                                    
+                                     
+                                    
+                                 </select>
+                                 <div class="item-content">
+                                     <div class="item-inner">
+                                         <div class="item-title">
+                                             Площадка
+                                         </div>
+                                         <div class="item-after">
+                                            
+                                         </div>
+                                     </div>
+                                 </div>
+                             </a>
+                         </li>
+                         <li>
+                            <div class="item-content item-input item-input-with-info">
+                                
+                                <div class="item-inner">
+                                    <div class="item-title item-floating-label">You name Fan</div>
+                                    <div class="item-input-wrap">
+                                        <input type="text" 
+                                               name="form-fname" 
+                                               placeholder="You Name Fan" 
+                                               pattern=".{6,}"  required
+                                               
+                                               @input="onValidateFieldSignUp"
+                                               
+                                               >
+                                               <span class="input-clear-button"></span>
+                                               <div class="item-input-info input-error-message">
+                                                Поле должно содержать > 5 символов
+                                            </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        
+                        <li>
+                            <div class="item-content item-input item-input-with-info">
+                                
+                                <div class="item-inner">
+                                    <div class="item-title item-floating-label">Email</div>
+                                    <div class="item-input-wrap">
+                                        <input type="email" 
+                                               name="form-email"  
+                                               @input="onValidateFieldSignUp"
+                                               required
+                                               
+                                               placeholder="Mario@gmail.com" 
+                                               >
+                                        <span class="input-clear-button"></span>
+                                        <div class="item-input-info input-error-message">
+                                            Следуйте формату записи email
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        
+                        <li>
+                            <div class="item-content item-input item-input-with-info">
+                
+                                <div class="item-inner">
+                                    <div class="item-title item-floating-label">Пароль</div>
+                                    <div class="item-input-wrap">
+                                        <input type="password" 
+                                               name="form-pass"  
+                                               @input="onValidateFieldSignUp"
+                                               placeholder="*********" 
+                                               pattern=".{10,126}" 
+                                               required
+                                               
+                                               >
+                                        <span class="input-clear-button"></span>
+                                        <div class="item-input-info input-error-message">
+                                            Поле должно содержать > 9 символов
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <label class="checkbox color-green item-content">
+                              <input type="checkbox"  name="form-accept-terms-policies" @change="onValidateFieldSignUp" required value="Accept_terms"  />
+                              <i class="icon icon-checkbox"></i>
+                              <div class="item-inner">
+                                <div class="item-title">Мое согласие <a href="#" >terms</a> and <a href="#">privacy policy</a></div>
+                                
+                            </div>
+                            </label>
+                            <div class="item-input-info input-error-message">
+                                Прочитайте и согласитесь с правилами           
+                             </div>
+                          </li>
+                 </ul>
+                 
+                
+                
+                <a @click="onClickSignUp"  href="#">
+                    <button class="dark-button scaleffect login-btn">
+                    Зарегистрироваться
+                   </button>
+                </a>
+          </form>
+          <span class="or display-block1">ИЛИ</span>
+          <div class="share-post-block">
+              <a href="/explore/"><button   class="fb-button scaleffect">Facebook</button> </a>
+              <a href="/explore/">	<button   class="twit-button scaleffect">Twitter</button></a>
+          </div>
+          <span class="display-block1">Already have an account?</span>
+                <span class="display-block1">
+								<a href="/" class="create now">Log In</a>
+								</span>
+        </div>
+    </div>
+     
+    </div>
+    <style>
+ /*
+  * **************  NUMPAD *********************
+ */
+    .numpad {
+        margin: 0 auto;
+        margin-top: auto;
+        max-width: 640px;
+        width: 100%;
+    }
+
+    .otp-digit {
+        align-items: center;
+        background-color: #F5F5F5;
+        color: #222222;
+        border-radius: 50%;
+        display: inline-flex;
+        font-size: 24px;
+        font-weight: bold;
+        height: 32px;
+        justify-content: center;
+        margin: 0 4px;
+        padding: 8px;
+        vertical-align: top;
+        width: 32px;
+    }
+
+    .otp-digit.filled {
+        color: #FFFFFF;
+    }
+    .otp-digit.filled {
+        background-color: var(--ios-color-blue);
+    }
+    .otp-digit.filled {
+        background-color: var(--ios-color-red);
+    }
+    .otp-digit.filled {
+        background-color: var(--ios-color-green);
+    }
+    .otp-digit.filled {
+        background-color: var(--ios-color-blue);
+    }
+    .otp-digit.filled {
+        background-color: var(--ios-color-pink);
+    }
+    .otp-digit.filled {
+        background-color: var(--ios-color-yellow);
+    }
+    .otp-digit.filled {
+        background-color: var(--ios-color-orange);
+    }
+    .otp-digit.filled {
+        background-color: var(--ios-color-gray);
+    }
+    .otp-digit.filled {
+        background-color: var(--ios-color-black);
+    }
+    .otp-digit.filled {
+        background-color: var(--md-color-blue);
+    }
+    .otp-digit.filled {
+        background-color: var(--md-color-red);
+    }
+    .otp-digit.filled {
+        background-color: var(--md-color-green);
+    }
+    .otp-digit.filled {
+        background-color: var(--md-color-blue);
+    }
+    .otp-digit.filled {
+        background-color: var(--md-color-pink);
+    }
+    .otp-digit.filled {
+        background-color: var(--md-color-yellow);
+    }
+    .otp-digit.filled {
+        background-color: var(--md-color-orange);
+    }
+    .otp-digit.filled {
+        background-color: var(--md-color-gray);
+    }
+    .otp-digit.filled {
+        background-color: var(--md-color-black);
+    }
+
+
+    
+
+    .keypad-button,.keypad-button.keypad-dummy-button {
+        background-color: transparent;
+    }
+
+    .keypad-button:before {
+        display: none;
+    }
+
+    .keypad-button:after {
+        display: none;
+    }
+
+    .keypad-button-letters {
+        display: none;
+    }
+   
+    .keypad-button:not(.keypad-dummy-button).active-state {
+        background-color: #292929;
+    }
+    .numpad-page-content {
+        display:flex;
+        flex-direction:column;
+    }
+    
+    /* *****   END NUMPAD */
+
+    </style>
+</template>
+<script>
+    var $$ = Dom7;
+    return {
+        data: function() {
+            return {
+               
+               wasFirstSignUp: false
+
+            }
+        },
+        on: {
+            pageInit: function() {
+                $('.input-error-message').hide();
+                let areas = [];
+                let self = this;
+                Framework7.request.get("https://api.godialog.ru/api/v1/333/areas/all/true",{},(data)=>{
+                data = JSON.parse(data);
+                 Object.keys(data).map((key, index)=> {
+                    areas.push(
+                           {
+                               area_id: data[key].id,
+                               name: data[key].name
+                           }
+                       )
+                    })
+            areas.forEach((item, index)=> {
+                    
+                    if(index == 0) {
+                        $$(".item-after").text(item.name);
+                        $$(`[name="form-area"]`).append(`<option selected value="${item.name}">${item.name}</option>`);
+                    }
+                    else $$(`[name="form-area"]`).append(
+                        `<option  value="${item.name}">${item.name}</option>`
+                    );
+                })
+                })
+                    numpadEl = app.keypad.create({
+                    containerEl: '.numpad',
+                    dotButton: false,
+                    inputEl: 'input[name=otp]',
+                    toolbar: false,
+                    valueMaxLength: 6,
+                    on: {
+                        change: function(keypad, value) {
+                            var self = this;
+                            var value = value.toString();
+                            var length = value.length;
+                            $('.otp-digit').text('');
+                            $('.otp-digit').removeClass('filled')
+                            if (length >= 1 && length <= 6) {
+                    for (var i = 1; i <= length; i++) {
+                        $('.otp-digit:nth-child(' + i + ')').text(value.charAt(i - 1));
+                        $('.otp-digit:nth-child(' + i + ')').addClass('filled');
+                    }
+                   /* проверка на правильность */
+                   if(length == 6) {
+                    console.log(link + "&" + value);
+                    Framework7.request.get(`${link}&code=` + value, {}, (data)=> {
+                    console.log(data);
+                    $('.otp-digit').text('');
+                            $('.otp-digit').removeClass('filled')
+                         
+                            app.toast.show({
+                                icon: '<i class="icon fas fa-lg fa-check"></i>',
+                                text: 'Вы успешно зарегистрированы',
+                                closeTimeout:3000,
+                                position: 'bottom',
+                                cssClass: 'toast-round bg-color-green'
+
+                            })
+                         
+
+                            self.app.views.main.router.navigate('/user-page');
+
+                            app.popup.close('.otp-verification');
+                            app.popup.destroy('.otp-verification');
+                            
+                    }, (error)=> {
+                        console.log(error);
+                        $('.otp-digit').text('');
+                            $('.otp-digit').removeClass('filled')
+                            
+                            app.toast.show({
+                              icon: '<i class="icon fas fa-lg fa-times"></i>',
+                              position: 'bottom',
+                                cssClass: 'toast-round bg-color-red',
+                                text: 'Неправильный код',
+                                closeTimeout:3000
+
+                            })
+                            
+                    })
+                   }
+                }
+                
+                         }
+                    }
+                    
+                });
+            }
+                          },
+            methods: {
+            onValidateFieldSignUp: function() {
+                var self = this;
+                if(self.wasFirstSignUp) {
+                    
+                    $('[name="loginGo"] .invalid-field').removeClass('invalid-field');
+                    $('[name="loginGo"] :invalid').addClass('invalid-field');
+                    $('[name="loginGo"] .input-error-message').hide();
+                    $('[name="loginGo"] .invalid-field').parent().children('.input-error-message').show();
+                    $('[name="loginGo"] .invalid-field').parent().parent().children('.input-error-message').show();
+                }
+            },
+            onClickSignUp: function() {
+                var self = this;
+                if($$('[name="loginGo"] :invalid').length != 0) 
+            { 
+                if(!self.wasFirstSignUp) {
+                    $('[name="loginGo"] .invalid-field').removeClass('invalid-field');
+           
+           $('[name="loginGo"] :invalid').addClass('invalid-field');
+          
+           $('[name="loginGo"] .input-error-message').hide();
+           $('[name="loginGo"] .invalid-field').parent().children('.input-error-message').show();
+           $('[name="loginGo"] .invalid-field').parent().parent().children('.input-error-message').show();
+               self.$setState({
+                   wasFirstSignUp:true
+               })
+                }
+               app.toast.show({
+                              icon: '<i class="icon fas fa-lg fa-times"></i>',
+                              position: 'bottom',
+                                cssClass: 'toast-round bg-color-red',
+                                text: 'Проверьте правильность введенных данных',
+                                closeTimeout:3000
+
+                            })
+              
+                return;
+            }
+            Framework7.request.post('https://api.godialog.ru/api/v1/333/users/signup/true', {
+                    "form-fname": $$('[name="loginGo"] [name="form-fname"]').val(),
+                    "form-pass": $$('[name="loginGo"] [name="form-pass"]').val(),
+                    "form-email": $$('[name="loginGo"] [name="form-email"]').val(),
+                    "form-area": $$('[name="loginGo"] [name="form-area"]').val()
+                }, (data)=> {
+                    console.log(data);
+                    data = JSON.parse(data);
+                    link = data.success.link_confirm;
+                    if(link) {
+                    app.popup.open('.otp-verification');
+                    }
+                    else {
+                    app.toast.show({
+                              icon: '<i class="icon fas fa-lg fa-times"></i>',
+                              position: 'bottom',
+                                cssClass: 'toast-round bg-color-red',
+                                text: [data.email , data.area , data.fname , data.pass].filter((item)=> item ? true: false).join(","),
+                                closeTimeout:3000
+
+                            })
+                            
+                    }
+               
+           },(error)=>{
+               console.log(error)
+           })
+           
+            
+    
+                        
+        }
+           
+                    }
+        
+                }
+    
+    
+                
+                
+            
+        
+    
+</script>

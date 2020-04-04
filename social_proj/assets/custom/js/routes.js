@@ -5,10 +5,17 @@
         path:'/forgot-password',
         url:'./partials/screens/forgot-password.html'
     },
-   
+    {
+        path:'/user-page',
+        url:'./partials/screens/user-page.html'
+    },
+    {
+        path:'/signUp',
+        componentUrl: './partials/screens/signUp.html'
+    },
     {
         path:'/',
-        componentUrl: './partials/screens/enter.html',
+        componentUrl: './partials/screens/signIn.html',
         
     },
 

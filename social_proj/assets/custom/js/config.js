@@ -271,6 +271,6 @@ window.config.colors = {
 
 window.config.theme = {
     color: 'blue', // red, green, blue, pink, yellow, orange, gray, black
-    layout: 'dark', // light, dark
+    layout: 'light', // light, dark
     navigation: 'hamburger' // tabbar ,  hamburger
 };
