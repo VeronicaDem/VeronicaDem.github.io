@@ -1,7 +1,10 @@
  'use strict';
 
  window.routes = [
-    
+    {
+        path:'/forgot-password',
+        url:'./partials/screens/forgot-password.html'
+    },
    
     {
         path:'/',

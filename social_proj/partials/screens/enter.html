@@ -6,8 +6,13 @@
 
 <template>
   
-<div class="page" data-name="signin-go">
+   
+    
+    <div class="page">
+   
     <div class="views tabs ios-edges">
+
+    
         <div class="toolbar toolbar-bottom-md tabbar tabbar-labels">
             <div class="toolbar-inner">
                 <a href="#tab-signIn" class="tab-link tab-link-active">
@@ -22,12 +27,140 @@
                     </a>
                     
             </div>
-        </div>
+        
+    </div>
     <div class="page-content">
-        <div class="tabs">
-             <!-- регистрация через GO-->
-        <div class="page  tab " id="tab-signUp">
+    <div class="tabs">
+    
+        <!-- авторизация через GO и соц сети-->
+        <div class="page tab tab-active" id="tab-signIn">
             <div class="page-content">
+                <div class="block-title text-align-center">
+                    Авторизация через GO
+                  </div>
+                  <form name="signInGo" id="signInGo" action="#" method="POST" enctype="multipart/form-data">
+                    <div class="list no-hairlines-between no-margin-bottom">
+                       
+                            <li>
+                                <div class="item-content item-input item-input-with-info">
+                                    <div class="item-media">
+                                        <i class="icon f7-icons ios-only">
+                                            email
+                                        </i>
+                                    </div>
+                                    <div class="item-inner">
+                                        <div class="item-title item-floating-label">userNickName</div>
+                                        <div class="item-input-wrap">
+                                            <input type="text" 
+                                                   name="form-login" 
+                                                   placeholder="userNickName"  
+                                                   required
+                                                   @input="onValidateFieldSignIn"
+                                                   >
+                                            <div class="item-input-info input-error-message">
+                                                Поле должно быть заполнено
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content item-input item-input-with-info">
+                                    <div class="item-media">
+                                        <i class="icon f7-icons ios-only">
+                                            lock
+                                        </i>
+                                    </div>
+                                    <div class="item-inner">
+                                        <div class="item-title item-floating-label">Пароль</div>
+                                        <div class="item-input-wrap">
+                                            <input type="password" 
+                                                   name="form-pass" 
+                                                   placeholder="Пароль"  
+                                                   data-toggle="show-hide-password"
+                                                   @input="onValidateFieldSignIn"
+                                                   required>
+                                            
+                                            <div class="item-input-info input-error-message">
+                                                Пароль должен состоять из > 9 символов
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="item-media">
+                                        <a class="" href="#"
+                                          @click="showHidePassword">
+                                          {{#if isPasswordVisible}}
+                                          <i class="icon f7-icons ios-only">eye_off</i>
+                                          <i class="icon material-icons md-only">visibility_off</i>
+                                          {{else}}
+                                          <i class="icon f7-icons ios-only">eye</i>
+                                          <i class="icon material-icons md-only">visibility</i>
+                                          {{/if}}
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="block mo-margin-top text-align-right">
+                                    <a href="/forgot-password">
+                                        Забыли пароль?
+                                    </a>
+                                </div>
+                            </li>
+                        </div>
+                        <a @click="onClickSignIn" class="button button-raised button-fill send button-large color-gray" href="#">Войти</a>
+                   </form>
+                </div>
+                <!-- кнопки с соц сетями -->
+                <div class="fab fab-right-bottom color-black">
+                    <a class="" href="#">
+                        <i class="icon material-icons">share</i>
+                        <i class="icon material-icons">close</i>
+                     </a>
+                     <div class="fab-buttons fab-buttons-top">
+                         <a class="fab-label-button brand-bg-color-facebook popup-open" data-popup=".popupFB" href="#">
+                             <span class="fab fa-facebook-f"></span>
+                             <span class="fab-label">Facebook</span>
+                         </a>
+                         <a class="fab-label-button brand-bg-color-twitter popup-open" data-popup=".popupTwit" href="#">
+                             <span class="fab fa-twitter"></span>
+                             <span class="fab-label">Twitter</span>
+                         </a>
+                         <a class="fab-label-button brand-bg-color-linkedin popup-open" data-popup=".popupLln" href="#">
+                             <span class="fab fa-linkedin-in"></span>
+                             <span class="fab-label">LinkedIn</span>
+                         </a>
+                         <a class="fab-label-button brand-bg-color-whatsapp popup-open" data-popup=".popupWap" href="#">
+                             <span class="fab fa-whatsapp"></span>
+                             <span class="fab-label">WhatsApp</span>
+                         </a>
+                         <a class="fab-label-button brand-bg-color-pinterest popup-open" data-popup=".popupPr" href="#">
+                             <span class="fab fa-pinterest-p"></span>
+                             <span class="fab-label">Pinterest</span>
+                         </a>
+                     </div>
+                 </div>
+                <!---->
+                <!-- popups с соц сетями-->
+                <!-- * смотри в components/signIn.js-->
+                <sign-in social-name="Pinterest" popup-class="popupPr" signin-form="loginPr" signin-icon="../assets/custom/img/pr-icon.svg">
+
+                </sign-in>
+                <sign-in social-name="Facebook" popup-class="popupFB" signin-form="loginFB" signin-icon="../assets/custom/img/fb-icon.svg">
+                </sign-in>
+                <sign-in social-name="linkedLn" popup-class="popupLln" signin-form="loginLln" signin-icon="../assets/custom/img/linkedin-icon.svg">
+                </sign-in>
+                <sign-in social-name="What`sapp" popup-class="popupWap" signin-form="loginWap" signin-icon="../assets/custom/img/wap-icon.svg">
+                </sign-in>
+                <sign-in social-name="Twitter" popup-class="popupTwit" signin-form="loginTwit" signin-icon="../assets/custom/img/twit-icon.png">
+                </sign-in>
+                <!---->
+        </div>
+        <!---->
+   <!-- регистрация через GO -->
+    <div class="page tab" id="tab-signUp"  >
+        <div class="page-content">
             <div class="block-title text-align-center">
               Регистрация через Go
             </div>
@@ -123,9 +256,9 @@
                             </div>
                         </li>
                         <li>
-                            <label class="item-radio item-content">
-                              <input type="radio"  name="form-accept-terms-policies" @change="onValidateFieldSignUp" required value="Accept_terms"  />
-                              <i class="icon icon-radio"></i>
+                            <label class="checkbox color-green item-content">
+                              <input type="checkbox"  name="form-accept-terms-policies" @change="onValidateFieldSignUp" required value="Accept_terms"  />
+                              <i class="icon icon-checkbox"></i>
                               <div class="item-inner">
                                 <div class="item-title">Мое согласие <a href="#" >terms</a> and <a href="#">privacy policy</a></div>
                                 
@@ -141,115 +274,15 @@
                 </div>
                 <a @click="onClickSignUp" class="button button-raised button-fill send button-large color-gray" href="#">Зарегистрироваться</a>
           </form>
-        </div>
-        </div>
-    
-    
-       <!---->
-      <!-- авторизация через GO-->
-     <div class="page tab tab-active" id="tab-signIn">
-         <div class="page-content">
-        <div class="block-title text-align-center">
-            Авторизация через GO
-          </div>
-          <form name="signInGo" id="signInGo" action="#" method="POST" enctype="multipart/form-data">
-            <div class="list no-hairlines no-hairlines-between no-margin-bottom">
-               
-                    <li>
-                        <div class="item-content item-input item-input-with-info">
-                            
-                            <div class="item-inner">
-                                <div class="item-title item-floating-label">userNickName</div>
-                                <div class="item-input-wrap">
-                                    <input type="text" 
-                                           name="form-login" 
-                                           placeholder="userNickName"  
-                                           required
-                                           @input="onValidateFieldSignIn"
-                                           >
-                                    <div class="item-input-info input-error-message">
-                                        Поле должно быть заполнено
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="item-content item-input item-input-with-info">
-                            
-                            <div class="item-inner">
-                                <div class="item-title item-floating-label">Пароль</div>
-                                <div class="item-input-wrap">
-                                    <input type="password" 
-                                           name="form-pass" 
-                                           placeholder="Пароль"  
-                                           
-                                           @input="onValidateFieldSignIn"
-                                           required>
-                                    <div class="item-input-info input-error-message">
-                                        Пароль должен состоять из > 9 символов
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </div>
-                <a @click="onClickSignIn" class="button button-raised button-fill send button-large color-gray" href="#">Войти</a>
-           </form>
-    </div>
-</div>
-    <!----> 
         
+    </div>
      
-</div>
-   
-              <div class="fab fab-right-bottom color-black">
-       <a class="" href="#">
-           <i class="icon material-icons">share</i>
-           <i class="icon material-icons">close</i>
-        </a>
-        <div class="fab-buttons fab-buttons-top">
-            <a class="fab-label-button brand-bg-color-facebook popup-open" data-popup=".popupFB" href="#">
-                <span class="fab fa-facebook-f"></span>
-                <span class="fab-label">Facebook</span>
-            </a>
-            <a class="fab-label-button brand-bg-color-twitter popup-open" data-popup=".popupTwit" href="#">
-                <span class="fab fa-twitter"></span>
-                <span class="fab-label">Twitter</span>
-            </a>
-            <a class="fab-label-button brand-bg-color-linkedin popup-open" data-popup=".popupLln" href="#">
-                <span class="fab fa-linkedin-in"></span>
-                <span class="fab-label">LinkedIn</span>
-            </a>
-            <a class="fab-label-button brand-bg-color-whatsapp popup-open" data-popup=".popupWap" href="#">
-                <span class="fab fa-whatsapp"></span>
-                <span class="fab-label">WhatsApp</span>
-            </a>
-            <a class="fab-label-button brand-bg-color-pinterest popup-open" data-popup=".popupPr" href="#">
-                <span class="fab fa-pinterest-p"></span>
-                <span class="fab-label">Pinterest</span>
-            </a>
-        </div>
-   </div>
-</div>
-
-<sign-in social-name="Pinterest" popup-class="popupPr" signin-form="loginPr" signin-icon="../assets/custom/img/pr-icon.svg">
-
-</sign-in>
-<sign-in social-name="Facebook" popup-class="popupFB" signin-form="loginFB" signin-icon="../assets/custom/img/fb-icon.svg">
-</sign-in>
-<sign-in social-name="linkedLn" popup-class="popupLln" signin-form="loginLln" signin-icon="../assets/custom/img/linkedin-icon.svg">
-</sign-in>
-<sign-in social-name="What`sapp" popup-class="popupWap" signin-form="loginWap" signin-icon="../assets/custom/img/wap-icon.svg">
-</sign-in>
-<sign-in social-name="Twitter" popup-class="popupTwit" signin-form="loginTwit" signin-icon="../assets/custom/img/twit-icon.png">
-</sign-in>
-
+    </div>
+    <!-- -->
+    </div>
+    
 </div>
 </div>
-
-</div>
-
 </div>
 <style>
  /*
@@ -510,31 +543,40 @@
                         }
                     })
                 ;
-    
+    let submitSignIn = false,
+        submitSignUp = false;
     return {
-        on: {
-        pageInit: (e,page)=> {
-            /* для регистрации */
-            $('[name="loginGo"] .invalid-field').removeClass('invalid-field');
-           
-           $('[name="loginGo"] :invalid').addClass('invalid-field');
-          
-           $('[name="loginGo"] .input-error-message').hide();
-           $('[name="loginGo"] .invalid-field').parent().children('.input-error-message').show();
-           $('[name="loginGo"] .invalid-field').parent().parent().children('.input-error-message').show();
-            /*  для авторизации */
-            $('[name="signInGo"] .invalid-field').removeClass('invalid-field');
-           
-           $('[name="signInGo"] :invalid').addClass('invalid-field');
-          
-           $('[name="signInGo"] .input-error-message').hide();
-           $('[name="signInGo"] .invalid-field').parent().children('.input-error-message').show();
-           $('[name="signInGo"] .invalid-field').parent().parent().children('.input-error-message').show();
+      data:function() {
+        return {
+           isPasswordVisible: false
+        }
+      },
+       on: {
+        pageInit: function() {
+            $('.input-error-message').hide();
+
         }
        },
+    
        methods: {
+        showHidePassword: function(event) {
+                var self = this;
+                var input = self.$('input[data-toggle=show-hide-password]');
+                if (input.attr('type') == 'password') {
+                    input.attr('type', 'text');
+                    self.$setState({
+                        isPasswordVisible: true
+                    });
+                } else {
+                    input.attr('type', 'password');
+                    self.$setState({
+                        isPasswordVisible: false
+                    });
+                }
+            },
            /* валидация регистрации */
         onValidateFieldSignUp() {
+            if(submitSignUp) { 
             $('[name="loginGo"] .invalid-field').removeClass('invalid-field');
            
              $('[name="loginGo"] :invalid').addClass('invalid-field');
@@ -542,9 +584,11 @@
              $('[name="loginGo"] .input-error-message').hide();
              $('[name="loginGo"] .invalid-field').parent().children('.input-error-message').show();
              $('[name="loginGo"] .invalid-field').parent().parent().children('.input-error-message').show();
-           },
+            }
+            },
            /* валидация авторизации */
         onValidateFieldSignIn() {
+            if(submitSignIn) {
             $('[name="signInGo"] .invalid-field').removeClass('invalid-field');
            
              $('[name="signInGo"] :invalid').addClass('invalid-field');
@@ -552,11 +596,21 @@
              $('[name="signInGo"] .input-error-message').hide();
              $('[name="signInGo"] .invalid-field').parent().children('.input-error-message').show();
              $('[name="signInGo"] .invalid-field').parent().parent().children('.input-error-message').show();
-        },
+            }        
+            },
            onClickSignUp() {
             if($$('[name="loginGo"] :invalid').length != 0) 
             { 
-                
+                if(!submitSignUp) {
+                    $('[name="loginGo"] .invalid-field').removeClass('invalid-field');
+           
+           $('[name="loginGo"] :invalid').addClass('invalid-field');
+          
+           $('[name="loginGo"] .input-error-message').hide();
+           $('[name="loginGo"] .invalid-field').parent().children('.input-error-message').show();
+           $('[name="loginGo"] .invalid-field').parent().parent().children('.input-error-message').show();
+                submitSignUp = true;
+                }
                app.toast.show({
                               icon: '<i class="icon fas fa-lg fa-times"></i>',
                               position: 'bottom',
@@ -602,6 +656,17 @@
            onClickSignIn() {
             if($$('[name="signInGo"] :invalid').length != 0) 
             { 
+              if(!submitSignIn) {
+                $('[name="signInGo"] .invalid-field').removeClass('invalid-field');
+           
+           $('[name="signInGo"] :invalid').addClass('invalid-field');
+          
+           $('[name="signInGo"] .input-error-message').hide();
+           $('[name="signInGo"] .invalid-field').parent().children('.input-error-message').show();
+           $('[name="signInGo"] .invalid-field').parent().parent().children('.input-error-message').show();
+              submitSignIn = true;
+              }
+              
                app.toast.show({
                                 icon: '<i class="icon fas fa-lg fa-times"></i>',
                                 text: 'Проверьте правильность введенных данных',
