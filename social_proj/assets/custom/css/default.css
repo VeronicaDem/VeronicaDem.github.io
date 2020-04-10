@@ -1426,7 +1426,7 @@ span.toggle-icon::after {
 .md .toolbar-bottom-md,
 .toolbar-bottom {
     bottom: 0;
-    height: 66px;
+    height: 66px !important;
     border-radius: 24px 24px 0px 0px;
 }
 

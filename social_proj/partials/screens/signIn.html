@@ -1,6 +1,6 @@
 <template>
 
-<div data-name="signin " class="page">
+<div data-name="signin " class="page page-categoryloayout no-toolbar">
     <div class="page-content">
         <div class="back-nav-header">
             <div class="first-blok">
@@ -116,89 +116,22 @@
       },
       on: {
         pageInit: function() {
-            $('.input-error-message').hide();
+            Go.obj.signIn.onInit();
 
         }
        },
       methods: {
        showHidePassword: function(event) {
                 var self = this;
-                var input = self.$('input[data-toggle=show-hide-password]');
-                
-                if (input.attr('type') == 'password') {
-                    input.attr('type', 'text');
-                    self.$setState({
-                        isPasswordVisible: true
-                    });
-                } else {
-                    input.attr('type', 'password');
-                    self.$setState({
-                        isPasswordVisible: false
-                    });
-                }
+                Go.obj.signIn.showHidePassword(self);
             },
         onValidateFieldSignIn: function() {
-            var self = this;
-            if(self.wasFirstSignIn) {
-            $('[name="signInGo"] .invalid-field').removeClass('invalid-field');
-           
-             $('[name="signInGo"] :invalid').addClass('invalid-field');
-            
-             $('[name="signInGo"] .input-error-message').hide();
-             $('[name="signInGo"] .invalid-field').parent().children('.input-error-message').show();
-             $('[name="signInGo"] .invalid-field').parent().parent().children('.input-error-message').show();
-            }        
+           Go.obj.signIn.onValidate(self);
             },
        onClickSignIn: function() {
-            var self = this;
-            if($$('[name="signInGo"] :invalid').length != 0) 
-            { 
-              if(!self.wasFirstSignIn) {
-                $('[name="signInGo"] .invalid-field').removeClass('invalid-field');
-           
-           $('[name="signInGo"] :invalid').addClass('invalid-field');
-          
-           $('[name="signInGo"] .input-error-message').hide();
-           $('[name="signInGo"] .invalid-field').parent().children('.input-error-message').show();
-           $('[name="signInGo"] .invalid-field').parent().parent().children('.input-error-message').show();
-              self.$setState({
-                wasFirstSignIn: true
-              })
-              }
-              
-               app.toast.show({
-                                icon: '<i class="icon fas fa-lg fa-times"></i>',
-                                text: 'Проверьте правильность введенных данных',
-                                closeTimeout:3000,
-                                position: 'bottom',
-                                cssClass: 'toast-round bg-color-red'
-                            })
-                return;
-            }  
-            Framework7.request.post('https://api.godialog.ru/api/v1/333/users/signin/true', {
-                    "form-login": $$('[name="signInGo"] [name="form-login"]').val(),
-                    "form-pass": $$('[name="signInGo"] [name="form-pass"]').val()
-                }, (data)=> {
-                    app.toast.show({
-                                icon: '<i class="icon fas fa-lg fa-check"></i>',
-                                text: 'Вы вошли в систему',
-                                closeTimeout:3000,
-                                position: 'bottom',
-                                cssClass: 'toast-round bg-color-green'
-
-                            })
-                            
-                } , (error)=> {
-                    app.toast.show({
-                                icon: '<i class="icon fas fa-lg fa-times"></i>',
-                                text: JSON.parse(error.response).error.message,
-                                closeTimeout:3000,
-                                position: 'bottom',
-                                cssClass: 'toast-round bg-color-red'
-                            })
-                            
-                })
-           }
-        }
+           var self = this;
+            Go.obj.signIn.onClick(self, app);
+       }
+    }
     }
 </script>

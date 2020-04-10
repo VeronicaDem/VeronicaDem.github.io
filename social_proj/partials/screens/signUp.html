@@ -1,5 +1,5 @@
 <template>
-    <div class="page page-categorylayout" data-name="signup"  >
+    <div class="page page-categoryloayout no-toolbar" data-name="signup"  >
         <div class="popup otp-verification">
             <div class="page no-navbar no-toolbar no-swipeback ">
              <div class="page-content numpad-page-content">
@@ -53,8 +53,14 @@
                          <li>
                              <a href="#" class="item-link smart-select " data-searchbar="true">
                                  <select name="form-area"  >
+                                    {{#each areas}}
                                     
+                                      <option value="{{area_id}}"
                                      
+                                      >{{name}}</option>
+                                      
+
+                                    {{/each}}
                                     
                                  </select>
                                  <div class="item-content">
@@ -63,7 +69,7 @@
                                              Площадка
                                          </div>
                                          <div class="item-after">
-                                            
+                                            {{first_area}}
                                          </div>
                                      </div>
                                  </div>
@@ -295,169 +301,27 @@
         data: function() {
             return {
                
-               wasFirstSignUp: false
-
+               wasFirstSignUp: false,
+               itemAfter: '',
+               areas : [],
+               link: ''
             }
         },
         on: {
-            pageInit: function() {
-                $('.input-error-message').hide();
-                let areas = [];
-                let self = this;
-                Framework7.request.get("https://api.godialog.ru/api/v1/333/areas/all/true",{},(data)=>{
-                data = JSON.parse(data);
-                 Object.keys(data).map((key, index)=> {
-                    areas.push(
-                           {
-                               area_id: data[key].id,
-                               name: data[key].name
-                           }
-                       )
-                    })
-            areas.forEach((item, index)=> {
-                    
-                    if(index == 0) {
-                        $$(".item-after").text(item.name);
-                        $$(`[name="form-area"]`).append(`<option selected value="${item.name}">${item.name}</option>`);
-                    }
-                    else $$(`[name="form-area"]`).append(
-                        `<option  value="${item.name}">${item.name}</option>`
-                    );
-                })
-                })
-                    numpadEl = app.keypad.create({
-                    containerEl: '.numpad',
-                    dotButton: false,
-                    inputEl: 'input[name=otp]',
-                    toolbar: false,
-                    valueMaxLength: 6,
-                    on: {
-                        change: function(keypad, value) {
-                            var self = this;
-                            var value = value.toString();
-                            var length = value.length;
-                            $('.otp-digit').text('');
-                            $('.otp-digit').removeClass('filled')
-                            if (length >= 1 && length <= 6) {
-                    for (var i = 1; i <= length; i++) {
-                        $('.otp-digit:nth-child(' + i + ')').text(value.charAt(i - 1));
-                        $('.otp-digit:nth-child(' + i + ')').addClass('filled');
-                    }
-                   /* проверка на правильность */
-                   if(length == 6) {
-                    console.log(link + "&" + value);
-                    Framework7.request.get(`${link}&code=` + value, {}, (data)=> {
-                    console.log(data);
-                    $('.otp-digit').text('');
-                            $('.otp-digit').removeClass('filled')
-                         
-                            app.toast.show({
-                                icon: '<i class="icon fas fa-lg fa-check"></i>',
-                                text: 'Вы успешно зарегистрированы',
-                                closeTimeout:3000,
-                                position: 'bottom',
-                                cssClass: 'toast-round bg-color-green'
-
-                            })
-                         
-
-                            self.app.views.main.router.navigate('/user-page');
-
-                            app.popup.close('.otp-verification');
-                            app.popup.destroy('.otp-verification');
-                            
-                    }, (error)=> {
-                        console.log(error);
-                        $('.otp-digit').text('');
-                            $('.otp-digit').removeClass('filled')
-                            
-                            app.toast.show({
-                              icon: '<i class="icon fas fa-lg fa-times"></i>',
-                              position: 'bottom',
-                                cssClass: 'toast-round bg-color-red',
-                                text: 'Неправильный код',
-                                closeTimeout:3000
-
-                            })
-                            
-                    })
-                   }
-                }
-                
-                         }
-                    }
-                    
-                });
+            pageInit:  function() {
+                var self = this;
+                Go.obj.signUp.onInit(self, app);
             }
                           },
             methods: {
             onValidateFieldSignUp: function() {
                 var self = this;
-                if(self.wasFirstSignUp) {
-                    
-                    $('[name="loginGo"] .invalid-field').removeClass('invalid-field');
-                    $('[name="loginGo"] :invalid').addClass('invalid-field');
-                    $('[name="loginGo"] .input-error-message').hide();
-                    $('[name="loginGo"] .invalid-field').parent().children('.input-error-message').show();
-                    $('[name="loginGo"] .invalid-field').parent().parent().children('.input-error-message').show();
-                }
+                Go.obj.signUp.onValidate(self);
             },
-            onClickSignUp: function() {
+            onClickSignUp: async function() {
                 var self = this;
-                if($$('[name="loginGo"] :invalid').length != 0) 
-            { 
-                if(!self.wasFirstSignUp) {
-                    $('[name="loginGo"] .invalid-field').removeClass('invalid-field');
-           
-           $('[name="loginGo"] :invalid').addClass('invalid-field');
-          
-           $('[name="loginGo"] .input-error-message').hide();
-           $('[name="loginGo"] .invalid-field').parent().children('.input-error-message').show();
-           $('[name="loginGo"] .invalid-field').parent().parent().children('.input-error-message').show();
-               self.$setState({
-                   wasFirstSignUp:true
-               })
-                }
-               app.toast.show({
-                              icon: '<i class="icon fas fa-lg fa-times"></i>',
-                              position: 'bottom',
-                                cssClass: 'toast-round bg-color-red',
-                                text: 'Проверьте правильность введенных данных',
-                                closeTimeout:3000
-
-                            })
-              
-                return;
-            }
-            Framework7.request.post('https://api.godialog.ru/api/v1/333/users/signup/true', {
-                    "form-fname": $$('[name="loginGo"] [name="form-fname"]').val(),
-                    "form-pass": $$('[name="loginGo"] [name="form-pass"]').val(),
-                    "form-email": $$('[name="loginGo"] [name="form-email"]').val(),
-                    "form-area": $$('[name="loginGo"] [name="form-area"]').val()
-                }, (data)=> {
-                    console.log(data);
-                    data = JSON.parse(data);
-                    link = data.success.link_confirm;
-                    if(link) {
-                    app.popup.open('.otp-verification');
-                    }
-                    else {
-                    app.toast.show({
-                              icon: '<i class="icon fas fa-lg fa-times"></i>',
-                              position: 'bottom',
-                                cssClass: 'toast-round bg-color-red',
-                                text: [data.email , data.area , data.fname , data.pass].filter((item)=> item ? true: false).join(","),
-                                closeTimeout:3000
-
-                            })
-                            
-                    }
-               
-           },(error)=>{
-               console.log(error)
-           })
-           
-            
+                Go.obj.signUp.onClick(app,self);
+                
     
                         
         }

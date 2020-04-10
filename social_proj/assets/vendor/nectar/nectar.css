@@ -58,7 +58,7 @@
 | CSS Variables
 |------------------------------------------------------------------------------
 */
-
+@import url("../../custom/css/app.css");
 :root {
     --ios-color-red: #FF3B30;
     --ios-color-green: #4CD964;

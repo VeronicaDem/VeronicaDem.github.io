@@ -48,24 +48,26 @@
 
     <!-- Begin: Stylesheets -->
     <link class="f7" rel="stylesheet" href="assets/vendor/framework7/css/framework7.min.css" />
+    
 
-    <link rel="stylesheet" href="assets/vendor/chart/chart.min.css" />
     <link rel="stylesheet" href="assets/vendor/font-awesome/css/all.css" />
-    <link rel="stylesheet" href="assets/vendor/framework7-icons/css/framework7-icons.css" />
+  
     <link rel="stylesheet" href="assets/vendor/framework7-plugins/keypad/framework7.keypad.min.css" />
-    <link rel="stylesheet" href="assets/vendor/hamburgers/hamburgers.min.css" />
+    
     <link rel="stylesheet" href="assets/vendor/material-icons/material-icons.css" />
     <link rel="stylesheet" href="assets/vendor/rateyo/jquery.rateyo.min.css" />
-    <link rel="stylesheet" href="assets/vendor/timedropper/timedropper.min.css" />
-
+   
+ <!-- nectar с подключенным app.css из osu.loc -->
     <link rel="stylesheet" href="assets/vendor/nectar/nectar.css" />
-     
-    <link rel="stylesheet" href="assets/custom/css/custom.css" />
-    <link rel="stylesheet" href="assets/custom/css/default.css"/>
-    <!-- End: Stylesheets -->
-    <!-- to use web components 
-    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.0.2/webcomponents-loader.js" defer></script>
+    <link rel="stylesheet" href="assets/custom/css/framework7-icons.css"/>
+    
+    <!-- Attention: change 1429 row in default.css 
+        height !important
     -->
+    <link rel="stylesheet" href="assets/custom/css/default.css"/>
+    <link rel="stylesheet" href="assets/custom/css/my.css"/>
+    <!-- End: Stylesheets -->
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.0.2/webcomponents-loader.js" defer></script>
     <title>Nectar</title>
 
     <style scoped>
@@ -82,56 +84,54 @@
             width: 100%;
         }
     </style>
-    <style>
-        li {
-            list-style-type:none;
-        }
-    </style>
+
 </head>
 
-<body>
-    <div class="guidetab" style=" position: absolute;
-    top: 0px;
-    left: 0px;
-    background: var(--f7-guide-bg);
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 9999;
-    display: none;">
-
-
-
-
-        <div class="search-wrap1 block">
-            <div class="search-block">
-
-
-
-
-            </div>
-            <div class="switch-toggle4">
-
-                <i class="f7-icons">sun_max_fill</i>
+<body >
+ 
+   <div id="app">
+    <div id="nv" class="view view-main view-init custom-nv ">
+        <!-- Toolbar -->
+        <div class="toolbar customtoolbar no-hairline toolbar-bottom  no-navbar no-toolbar">
+            <div class="toolbar-inner">
+                <a href="/today/" class="tab-link todaylist">
+                    <span class="tabbar-label">
+                        <i class="f7-icons">equal_square</i>
+                    </span>
+                    <span class="nv-txt">For You</span> 
+                </a>
+                <a href="/categorylist/" class="tab-link categorylist">
+                    <span class="tabbar-label">
+                        <i class="f7-icons">layers_alt</i>
+                    </span>
+                    <span class="nv-txt">Categories </span>
+                </a>
+                <a href="/explore/" class="tab-link tab-link-active explore">
+                    <span class="tabbar-label">
+                        <i class="f7-icons">house</i>
+                    </span>
+                    <span class="nv-txt">Explore </span>
+                </a>
+                <a href="/author" class="tab-link profilelist">
+                    <span class="tabbar-label">
+                        <i class="f7-icons">person_fill</i>
+                    </span>
+                    <span class="nv-txt">Profile </span>
+                </a>
+                <a href="/profile/" class="tab-link pageslist">
+                    <span class="tabbar-label"><i class="f7-icons">line_horizontal_3</i>
+                        <span class="nv-txt">Pages</span>
+                    </span>
+                </a>
             </div>
         </div>
-
-
-
-        <div class="block search-spacing guide">
-            <h4>Want to change<span class="block-100">theme to night mode?</span></h4>
-            <p class="dismiss-window2-text">Tap the sun icon to turn night mode on <span class="block-100">so its easy to read at night.</span></p>
-            <p class="dismiss-window-text">Tap anywhere to dismiss</p>
-        </div>
-</div>
-<div id="app" class="theme-light">
- <div class="view view-main">
-
- </div>
+    </div>
+    </div>
+        <!-- Toolbar End -->
 </div>
     <!-- Begin: Scripts -->
     <script src="cordova.js"></script>
-
+    
     <script src="assets/vendor/framework7/js/framework7.min.js"></script>
     <script src="assets/vendor/jquery/jquery-3.3.1.min.js"></script>
     <script src="assets/vendor/lazyload/lazyload.min.js"></script>
@@ -156,12 +156,21 @@
     <script src="assets/custom/js/routes.js"></script>
     <script src="assets/custom/js/init.js"></script>
     <script src="assets/custom/js/custom.js"></script>
-     
-
+    <script src="Go.js"></script>
+     <style>
+         li {
+             list-style-type:none;
+         }
+     </style>
+    
     <script>
         (function() {
             app.init();
             
+           app.request.setup({
+                    credentials: 'include'
+            
+            })
         })();
     </script>
     <!-- End: Scripts -->

@@ -30,6 +30,7 @@ var app = new Framework7({
             config: window.config
         }
     },
+    
     /*
     actions: {
         closeByOutsideClick: true,
@@ -86,7 +87,8 @@ var app = new Framework7({
     
     view: {
        
-        pushStateSeparator: ''
+        pushStateSeparator: '',
+        pushState:true
     }
 });
 
@@ -151,7 +153,7 @@ function initializeViews() {
     var mainView = app.views.create('.view-main', {
         url: '/'
     });
-
+  
     if (window.config.theme.navigation == 'tabbar') {
         var componentsView = app.views.create('.view-components', {
             url: '/components'
