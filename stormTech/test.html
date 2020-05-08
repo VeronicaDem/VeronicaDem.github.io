@@ -1,97 +1,124 @@
-<template>
-    <div class="page">
-        <div class="page-content">
-         
-          <div class="alert" >
-            <strong> <p class="display-flex flex-row align-items-center"><img src="../src/img/Lc3LEf8dRKU.jpg" wight= "65" height= "55" <p><font size="6" color="MidnightBlue" face="Palatino Linotype"> Cистема мониторинга радиосети ГМССБ ФГУП "Росморпорт"</font></p></strong>
-           </div>
-           
-        <div class="main-block ">
-           <div style="width: 640px; height: 640px" id="map"></div>
-          
-                  <div id= "table" style="transition: transform 0.6s, opacity 0.6s; transform: translateX(400px); opacity: 0;" class="data-table horizontalScroll">
-                    <table>
-                      <caption> Береговые станции морского района А1 ГМССБ </caption>
-                      <thead>
-                        <tr>
-                          <th class="label-cell">Наименование объекта</th>
-                          <th class="label-cell">Владелец объекта</th>
-                          <th class="label-cell">Свидетельство Росморречфлота</th>
-                          <th class="label-cell">Установленный статус</th>
-                          
-                        </tr>
-                      </thead>
-                      <tbody class="container-data">
-                        
-                      </tbody>
-                    </table>
-                  </div>
-                
-                </div>
-      </div>
-      </div>
-    <style>
-        body {
-          font-size:1em;
-        }
-        html, body html, body { border: 0; margin: 0; padding: 0; }
-        #map { height: 100vh; width: 100%; }
-        .alert {
-          padding: 35px;
-          color: #003366;
-          height: 64px;
-          background:white;
-        }
-        
-       
-        
-         th {
-        background: #B0C4DE; /* Цвет фона */
-        color: #333;  /* Цвет текста */
-       }
-       .data-table tr:hover {
-        background: #F0F8FF; /* Цвет фона при наведении */
-        color: #000; /* Цвет текста при наведении */
-       }
-       .data-table {
-         max-width:100%;
-       }
-       .table {
-         max-width:900px;
-       }
-       .main-block {
-         display:flex;
-         flex-direction: column;
-       }
-       .horizontalScroll {
-         overflow-x:auto;
-         overflow:visible;
-       }
-       .active {
-       background: #cccccc;
-       }
-      .active * {
-      background: #cccccc;
-      }
-       ul {
-         list-style-type:none;
-       }
-       @media screen and (min-device-width: 768px) {
-         .main-block {
-           flex-direction: row;
-         }
-       }
-       .backdrop-in {
-         display:none;
-       }
-       .dynamicPopup {
-         padding:5px;
-       }
-      </style>
+<html lang="ru">
+<head>
+  <title>Cистема мониторинга радиосети ГМССБ ФГУП "Росморпорт"</title>
+  <meta charSet="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <link rel="stylesheet" href="node_modules/framework7/css/framework7.bundle.min.css"/>
+  <link rel="stylesheet" href="app.css"/>
+  <link rel="stylesheet" href="node_modules/framework7/css/framework7.min.css"/>
   
-</template>
+  <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+  <style>
+    body {
+      font-size:1em;
+    }
+    html, body html, body { border: 0; margin: 0; padding: 0; }
+    #map { height: 100vh; width: 100%; }
+    .alert {
+      padding: 35px;
+      
+      
+      color: #003366;
+      
+      height: 64px;
+       
+        /*background-color:rgba(83,116,142,0.14)*/
+        background:white;
+    }
+    
+   
+    
+     th {
+    background: #B0C4DE; /* Цвет фона */
+    color: #333;  /* Цвет текста */
+   }
+   .data-table tr:hover {
+    background: #F0F8FF; /* Цвет фона при наведении */
+    color: #000; /* Цвет текста при наведении */
+   }
+   .data-table {
+     max-width:100%;
+   }
+   .table {
+     max-width:900px;
+   }
+   .main-block {
+     display:flex;
+     flex-direction: column;
+   }
+   .horizontalScroll {
+     overflow-x:auto;
+     overflow:visible;
+   }
+   .active {
+   background: #cccccc;
+   }
+  .active * {
+  background: #cccccc;
+  }
+   ul {
+     list-style-type:none;
+   }
+   @media screen and (min-device-width: 768px) {
+     .main-block {
+       flex-direction: row;
+     }
+   }
+   .backdrop-in {
+     display:none;
+   }
+   .dynamicPopup {
+     padding:5px;
+   }
+  </style>
+</head>
+<body id="app">
+
+<!-- затем весь html код, он также отдельно и js в него не стоит пихать -->
+<div class="view main-view">
+<div class="page ios">
+  <div class="page-content">
+   
+    <div class="alert" >
+      <strong> <p class="display-flex flex-row align-items-center"><img src="./Lc3LEf8dRKU.jpg" wight= "65" height= "55" <p><font size="6" color="MidnightBlue" face="Palatino Linotype"> Cистема мониторинга радиосети ГМССБ ФГУП "Росморпорт"</font></p></strong>
+     </div>
+     
+  <div class="main-block ">
+     <div style="width: 640px; height: 640px" id="map"></div>
+    
+            <div id= "table" style="transition: transform 0.6s, opacity 0.6s; transform: translateX(400px); opacity: 0;" class="data-table horizontalScroll">
+              <table>
+                <caption> Береговые станции морского района А1 ГМССБ </caption>
+                <thead>
+                  <tr>
+                    <th class="label-cell">Наименование объекта</th>
+                    <th class="label-cell">Владелец объекта</th>
+                    <th class="label-cell">Свидетельство Росморречфлота</th>
+                    <th class="label-cell">Установленный статус</th>
+                    
+                  </tr>
+                </thead>
+                <tbody class="container-data">
+                  
+                </tbody>
+              </table>
+            </div>
+          
+          </div>
+</div>
+</div>
+</div>
+
+<script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+<script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+<script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+<script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+<script src="node_modules/framework7/js/framework7.min.js"></script>
+<script src="node_modules/framework7/js/framework7.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script>
-   const STATUS = {
+  
+  const STATUS = {
     "OK" : "В работе",
     "DANGER" : "Отказ",
     "WARNING" : "Предупреждение"
@@ -106,7 +133,10 @@
   
   // instance для фреймворка f7
   // https://framework7.io
-  
+  let app = new Framework7({
+    root: '#app'
+  }
+  ); 
   // получает по index информацию о station
   function getStation(index) {
      for(let i = 0; i < stationInfo.length; i++) {
@@ -442,7 +472,7 @@ $("#table").click((ev)=> {
                      <div class="page-content dynamicPopup">
                        <p><a href="#" class="link popup-close">Закрыть</a></p>
                        <p>Блок-схема базовой БС</p>
-                       <img src="../src/img/1.jpg"/>
+                       <img src="1.jpg"/>
                        <p>Состав оборудования</p>
                        <ul>
                           <li>Printer - <a href="#">тех.документация</a></li>
@@ -474,7 +504,10 @@ $("#table").click((ev)=> {
 
   }
 })    
-    return {
-
-    }
+ 
+  
 </script>
+
+</script>
+</body>
+</html>
