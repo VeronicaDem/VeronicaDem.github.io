@@ -1,0 +1,135 @@
+<template>
+<div data-name="aboutus" class="page author-root">
+    <div class="page-content ">
+		<div id="my-background-cover-src" class="my-header-wraper channel-head" style="background-image: url( {{user.background_user}} ); transform: translate(0px, 0px);">
+
+            <div class="back-nav-header">
+                <div class="first-blok"><a href="#" class="link back"><i class="f7-icons">arrow_left</i> Back   </a></div>
+				<!--
+                <div class="mid-block center-txt">My Profile</div>
+                <div class="last-block align-right"><a href="/my-proflie/">Edit</a></div>
+				-->
+            </div>
+           
+        </div>
+		
+		<div class="my--profile-chan-flow-list">
+		
+            <div class="section-row1-item1 chan-flow">
+                <div class="chan-item">
+                    <b>964</b>
+                    <span class="chan-flow-count">
+               Following
+               </span>
+                </div>
+                <div class="chan-item">
+                    <b>78</b>
+                    <span class="chan-flow-count">
+               Posts
+               </span>
+                </div>
+                <div class="chan-item">
+                    <b>21K</b>
+                    <span class="chan-flow-count">
+               Followers
+               </span>
+                </div>
+                <div class="chan-item">
+                    <b>542</b>
+                    <span class="chan-flow-count">
+               Images
+               </span>
+                </div>
+            </div>
+		
+		</div>
+		<div class="my--profile-img"><img class="lazy lazy-fade-in img-responsive" src="{{user.avatar_user}}" alt=""></div>
+		<div class="my--profile-follow-settings">
+			<a href="/my-proflie/"><button class="my--dark-button scaleffect">Settings</button> </a>
+			<!--<div class="follow-us-btn"><button class="follow-b scaleffect no-active-state">Follow</button></div> при проверке подставлять если это страница не твоя-->
+		</div>
+		<div class="my--profile-detal">
+			<h4>{{user.name_user}}</h4>
+			<h5>{{data.userID}}</h5>
+			<span class="chan-sub-heading">{{user.name_area}}@{{user.username}}</span>
+		</div>
+        
+		<div class="block channel-section-row1"></div>
+		
+		
+        <div class="block Followings follwoing-tabs">
+		<!-- tabs -->
+            <div class="Followings-tabs-section">
+                <a href="#" class="tab-link tab-link-active" data-tab=".tab1"><span>TabOne</span></a>
+                <a href="#" class="tab-link" data-tab=".tab2"><span>TabTwho</span></a>
+                <a href="#" class="tab-link" data-tab=".tab3"><span>TabTre</span></a>
+            </div>
+            <div class="tabs tabs-bottom">
+                <div class="tab tab1 tab-active">
+				<!-- tabs content-->
+				One
+				</div>
+                <div class="tab tab2">
+				<!-- tabs content-->
+				Twho
+				</div>
+                <div class="tab tab3">
+				<!-- tabs content-->
+				Tre
+				</div>
+		
+		    </div>
+
+        <!-- tabs -->
+		
+    </div>
+
+
+
+
+
+
+
+
+        <!-- Section Latest Posts End-->
+
+        <!-- Section Following End-->
+
+    </div>
+</div>
+</template>
+<script>
+  
+  return {
+      on: {
+        pageMounted: function (e, page) {
+    console.log('page mounted');
+  },
+  pageInit: function (e, page) {
+   
+    console.log('page init'); // -> 'johndoe'
+    console.log(page);
+  },
+  pageBeforeIn: function (e, page) {
+    console.log('page before in');
+  },
+  pageAfterIn: function (e, page) {
+    console.log('page after in');
+  },
+  pageBeforeOut: function (e, page) {
+    console.log('page before out');
+  },
+  pageAfterOut: function (e, page) {
+    console.log('page after out');
+  },
+  pageBeforeUnmount: function (e, page) {
+    console.log('page before unmount');
+  },
+  pageBeforeRemove: function (e, page) {
+    console.log('page before remove');
+  },    
+}
+     
+  
+  }
+</script>
