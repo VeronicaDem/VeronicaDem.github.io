@@ -131,7 +131,6 @@ span.info-name {
 }
     .certificates {
         flex-direction:row;
-        justify-content: space-between;
     }
     main {
         padding: 10px 50px;
