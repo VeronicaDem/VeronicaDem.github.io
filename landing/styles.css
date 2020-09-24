@@ -114,6 +114,7 @@ footer {
     height:131px;
     background: rgba(0,0,0,84%);
 }
+
 @media screen and (min-device-width: 768px) {
     span.info-title {
     display:inline-block;
@@ -121,6 +122,10 @@ footer {
 }
 span.info-tags {
     font-size:2em;
+}
+.break {
+    flex-basis:100%;
+    height:0;
 }
 span.info-name {
     font-size:2em;
