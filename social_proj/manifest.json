@@ -1,7 +1,0 @@
-{
-	"name": "Social project",
-	"short_name": "Social proj",
-	"description": "Mobile Web App Kit",
-	"start_url": ".",
-	"display": "standalone"
-}
