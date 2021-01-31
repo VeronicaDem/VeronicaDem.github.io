@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>JWT Example</title>
+</head>
+
+<body style="background:#333">
+  <div>
+
+	<button id="goSignUp">Go Sign Up</button>
+	<button id="getToken">Go Gen New Token</button>
+	
+	<div id="out" style="margin:4px;width:100%;overflow:hidden;background:rgba(0,0,0, .2);color:#fff;padding:10px"></div>
+  </div>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function() {
+  
+	
+	
+
+let authToken = localStorage.authToken;
+const hostName = location.hostname;
+const hostnameProtocol = document.location.protocol == "https:" ? "https" : "http";
+const thisHost = hostnameProtocol+'://'+ hostName +''; // этот домен
+const apiHost = 'https://api.godialog.ru'; // домен поставщик API
+const apiVersion = 'v1';
+const apiKey = 'cfa6efe331fad9c4657c7557ff07c2b2';
+const apiURI = apiHost +'/api/'+ apiVersion +'/'+ apiKey +'';
+//console.log(apiURI);
+
+/**/
+      /*
+let goSignUp = {
+		methodRequest : 'POST',
+		object : 'process',
+		method : 'signup',
+		key	   : 'true',
+		dataRequest   : {
+			auth_token:	localStorage.authToken,
+			form_area:	33905,
+			form_email:	"test.gpu@mail.ru",
+			form_fname:	"Иван Иванов",
+			form_pass:	"Aa123456789@",
+			form_accept_policies: 0,
+		}
+	};
+	
+let getToken = {
+		methodRequest : 'GET',
+		object : 'users',
+		method : 'test',
+		key	   : 'true',
+		dataRequest   : {}
+	};
+	
+    $('#goSignUp').click(function() {
+      console.log(goSignUp);
+	  let go = goRequest(goSignUp);
+	  
+	});
+	
+    $('#getToken').click(function() {
+	  let go = goRequest(getToken);
+	  
+	});
+
+
+function goRequest(api=[]) {
+	let url = apiURI +'/'+ api.object +'/'+ api.method +'/'+ api.key;
+	  $.ajax({
+        type: api.methodRequest,
+        url: url,
+        headers: {},
+        dataType: "json",
+        data: api.dataRequest,
+        //data: JSON.stringify( api.dataRequest ),
+        success: function(data) {
+          localStorage.authToken = data['JWT']; // добавим полученый токен в хранилище на клиенте
+		  goSignUp.dataRequest.auth_token = localStorage.authToken;
+          console.log(data);
+		  //$("div").data("options")
+		  //$("#out").html('<div>'+ data.auth_token +'</div>');
+		  return data;
+        },
+        error: function() {
+		  console.log( "Error: Login Failed" );
+        }
+      });
+} */
+// Example POST method implementation:
+async function postData(url = '', data = {}) {
+// Default options are marked with *
+const response = await fetch(url, {
+method: 'POST', // *GET, POST, PUT, DELETE, etc.
+mode: 'cors', // no-cors, *cors, same-origin
+cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+credentials: 'same-origin', // include, *same-origin, omit
+headers: {
+'Content-Type': 'application/json'
+// 'Content-Type': 'application/x-www-form-urlencoded',
+},
+redirect: 'follow', // manual, *follow, error
+referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+body: JSON.stringify(data) // body data type must match "Content-Type" header
+});
+return response.json(); // parses JSON response into native JavaScript objects
+}
+
+postData(apiURI +'/users/mult/bart', {})
+.then((data) => {
+localStorage.authToken = data['JWT'];
+console.log(data); // JSON data parsed by response.json() call
+});
+
+  });
+  </script>
+</body>
+
+</html>

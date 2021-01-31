@@ -1,0 +1,723 @@
+<!--
+    -- TODO:
+       * перевести на шаблонизатор задачу вставки areas
+       * включать загрузку areas <=> нажата вкладка signUp
+-->
+<!--
+    версия на 04.04.2019
+-->
+<template>
+  
+   
+    
+    <div class="page">
+   
+    <div class="views tabs ios-edges">
+
+    
+        <div class="toolbar toolbar-bottom-md tabbar tabbar-labels">
+            <div class="toolbar-inner">
+                <a href="#tab-signIn" class="tab-link tab-link-active">
+                    <i class="icon f7-icons ios-only">home</i>
+                    <i class="icon material-icons md-only">home</i>
+                    <span class="tabbar-label">Войти через GO</span>
+                </a>
+                <a href="#tab-signUp" class="tab-link ">
+                        <i class="icon f7-icons ios-only">home</i>
+                        <i class="icon material-icons md-only">home</i>
+                        <span class="tabbar-label">Регистрация через GO</span>
+                    </a>
+                    
+            </div>
+        
+    </div>
+    <div class="page-content">
+    <div class="tabs">
+    
+        <!-- авторизация через GO и соц сети-->
+        <div class="page tab tab-active" id="tab-signIn">
+            <div class="page-content">
+                <div class="block-title text-align-center">
+                    Авторизация через GO
+                  </div>
+                  <form name="signInGo" id="signInGo" action="#" method="POST" enctype="multipart/form-data">
+                    <div class="list no-hairlines-between no-margin-bottom">
+                       
+                            <li>
+                                <div class="item-content item-input item-input-with-info">
+                                    <div class="item-media">
+                                        <i class="icon f7-icons ios-only">
+                                            email
+                                        </i>
+                                    </div>
+                                    <div class="item-inner">
+                                        <div class="item-title item-floating-label">userNickName</div>
+                                        <div class="item-input-wrap">
+                                            <input type="text" 
+                                                   name="form-login" 
+                                                   placeholder="userNickName"  
+                                                   required
+                                                   @input="onValidateFieldSignIn"
+                                                   >
+                                            <div class="item-input-info input-error-message">
+                                                Поле должно быть заполнено
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content item-input item-input-with-info">
+                                    <div class="item-media">
+                                        <i class="icon f7-icons ios-only">
+                                            lock
+                                        </i>
+                                    </div>
+                                    <div class="item-inner">
+                                        <div class="item-title item-floating-label">Пароль</div>
+                                        <div class="item-input-wrap">
+                                            <input type="password" 
+                                                   name="form-pass" 
+                                                   placeholder="Пароль"  
+                                                   data-toggle="show-hide-password"
+                                                   @input="onValidateFieldSignIn"
+                                                   required>
+                                            
+                                            <div class="item-input-info input-error-message">
+                                                Пароль должен состоять из > 9 символов
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="item-media">
+                                        <a class="" href="#"
+                                          @click="showHidePassword">
+                                          {{#if isPasswordVisible}}
+                                          <i class="icon f7-icons ios-only">eye_off</i>
+                                          <i class="icon material-icons md-only">visibility_off</i>
+                                          {{else}}
+                                          <i class="icon f7-icons ios-only">eye</i>
+                                          <i class="icon material-icons md-only">visibility</i>
+                                          {{/if}}
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="block mo-margin-top text-align-right">
+                                    <a href="/forgot-password">
+                                        Забыли пароль?
+                                    </a>
+                                </div>
+                            </li>
+                        </div>
+                        <a @click="onClickSignIn" class="button button-raised button-fill send button-large color-gray" href="#">Войти</a>
+                   </form>
+                </div>
+                <!-- кнопки с соц сетями -->
+                <div class="fab fab-right-bottom color-black">
+                    <a class="" href="#">
+                        <i class="icon material-icons">share</i>
+                        <i class="icon material-icons">close</i>
+                     </a>
+                     <div class="fab-buttons fab-buttons-top">
+                         <a class="fab-label-button brand-bg-color-facebook popup-open" data-popup=".popupFB" href="#">
+                             <span class="fab fa-facebook-f"></span>
+                             <span class="fab-label">Facebook</span>
+                         </a>
+                         <a class="fab-label-button brand-bg-color-twitter popup-open" data-popup=".popupTwit" href="#">
+                             <span class="fab fa-twitter"></span>
+                             <span class="fab-label">Twitter</span>
+                         </a>
+                         <a class="fab-label-button brand-bg-color-linkedin popup-open" data-popup=".popupLln" href="#">
+                             <span class="fab fa-linkedin-in"></span>
+                             <span class="fab-label">LinkedIn</span>
+                         </a>
+                         <a class="fab-label-button brand-bg-color-whatsapp popup-open" data-popup=".popupWap" href="#">
+                             <span class="fab fa-whatsapp"></span>
+                             <span class="fab-label">WhatsApp</span>
+                         </a>
+                         <a class="fab-label-button brand-bg-color-pinterest popup-open" data-popup=".popupPr" href="#">
+                             <span class="fab fa-pinterest-p"></span>
+                             <span class="fab-label">Pinterest</span>
+                         </a>
+                     </div>
+                 </div>
+                <!---->
+                <!-- popups с соц сетями-->
+                <!-- * смотри в components/signIn.js-->
+                <sign-in social-name="Pinterest" popup-class="popupPr" signin-form="loginPr" signin-icon="../assets/custom/img/pr-icon.svg">
+
+                </sign-in>
+                <sign-in social-name="Facebook" popup-class="popupFB" signin-form="loginFB" signin-icon="../assets/custom/img/fb-icon.svg">
+                </sign-in>
+                <sign-in social-name="linkedLn" popup-class="popupLln" signin-form="loginLln" signin-icon="../assets/custom/img/linkedin-icon.svg">
+                </sign-in>
+                <sign-in social-name="What`sapp" popup-class="popupWap" signin-form="loginWap" signin-icon="../assets/custom/img/wap-icon.svg">
+                </sign-in>
+                <sign-in social-name="Twitter" popup-class="popupTwit" signin-form="loginTwit" signin-icon="../assets/custom/img/twit-icon.png">
+                </sign-in>
+                <!---->
+        </div>
+        <!---->
+   <!-- регистрация через GO -->
+    <div class="page tab" id="tab-signUp"  >
+        <div class="page-content">
+            <div class="block-title text-align-center">
+              Регистрация через Go
+            </div>
+          <form name="loginGo" id="loginGo" action="#" method="POST" enctype="multipart/form-data">
+             <div class="list no-hairlines no-hairlines-between no-margin-bottom">
+                 
+                <ul>
+                    
+                         <li>
+                             <a href="#" class="item-link smart-select " data-searchbar="true">
+                                 <select name="form-area"  >
+                                    
+                                     
+                                    
+                                 </select>
+                                 <div class="item-content">
+                                     <div class="item-inner">
+                                         <div class="item-title">
+                                             Площадка
+                                         </div>
+                                         <div class="item-after">
+                                            
+                                         </div>
+                                     </div>
+                                 </div>
+                             </a>
+                         </li>
+                         <li>
+                            <div class="item-content item-input item-input-with-info">
+                                
+                                <div class="item-inner">
+                                    <div class="item-title item-floating-label">You name Fan</div>
+                                    <div class="item-input-wrap">
+                                        <input type="text" 
+                                               name="form-fname" 
+                                               placeholder="You Name Fan" 
+                                               pattern=".{6,}"  required
+                                               
+                                               @input="onValidateFieldSignUp"
+                                               data-error-message="> 5 символов"
+                                               >
+                                               <span class="input-clear-button"></span>
+                                               <div class="item-input-info input-error-message">
+                                                Поле должно содержать > 5 символов
+                                            </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        
+                        <li>
+                            <div class="item-content item-input item-input-with-info">
+                                <div class="item-media">
+                                    <i class="icon f7-icons ios-only">
+                                        email
+                                    </i>
+                                </div>
+                                <div class="item-inner">
+                                    <div class="item-title item-floating-label">Email</div>
+                                    <div class="item-input-wrap">
+                                        <input type="email" 
+                                               name="form-email"  
+                                               @input="onValidateFieldSignUp"
+                                               placeholder="Email" required
+                                               validate
+                                               >
+                                        <span class="input-clear-button"></span>
+                                        <div class="item-input-info input-error-message">
+                                            Следуйте формату записи email
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        
+                        <li>
+                            <div class="item-content item-input item-input-with-info">
+                                <div class="item-media">
+                                    <i class="icon f7-icons ios-only">
+                                        lock
+                                    </i>
+                                </div>
+                                <div class="item-inner">
+                                    <div class="item-title item-floating-label">Пароль</div>
+                                    <div class="item-input-wrap">
+                                        <input type="password" 
+                                               name="form-pass"  
+                                               @input="onValidateFieldSignUp"
+                                               placeholder="Пароль"  
+                                               pattern=".{10,126}" 
+                                               required
+                                               
+                                               >
+                                        <span class="input-clear-button"></span>
+                                        <div class="item-input-info input-error-message">
+                                            Поле должно содержать > 9 символов
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <label class="checkbox color-green item-content">
+                              <input type="checkbox"  name="form-accept-terms-policies" @change="onValidateFieldSignUp" required value="Accept_terms"  />
+                              <i class="icon icon-checkbox"></i>
+                              <div class="item-inner">
+                                <div class="item-title">Мое согласие <a href="#" >terms</a> and <a href="#">privacy policy</a></div>
+                                
+                            </div>
+                            </label>
+                            <div class="item-input-info input-error-message">
+                                Прочитайте и согласитесь с правилами           
+                             </div>
+                          </li>
+                 </ul>
+                 
+                
+                </div>
+                <a @click="onClickSignUp" class="button button-raised button-fill send button-large color-gray" href="#">Зарегистрироваться</a>
+          </form>
+        
+    </div>
+     
+    </div>
+    <!-- -->
+    </div>
+    
+</div>
+</div>
+</div>
+<style>
+ /*
+  * **************  NUMPAD *********************
+ */
+    .numpad {
+        margin: 0 auto;
+        margin-top: auto;
+        max-width: 640px;
+        width: 100%;
+    }
+
+    .otp-digit {
+        align-items: center;
+        background-color: #F5F5F5;
+        color: #222222;
+        border-radius: 50%;
+        display: inline-flex;
+        font-size: 24px;
+        font-weight: bold;
+        height: 32px;
+        justify-content: center;
+        margin: 0 4px;
+        padding: 8px;
+        vertical-align: top;
+        width: 32px;
+    }
+
+    .otp-digit.filled {
+        color: #FFFFFF;
+    }
+    .otp-digit.filled {
+        background-color: var(--ios-color-blue);
+    }
+    .otp-digit.filled {
+        background-color: var(--ios-color-red);
+    }
+    .otp-digit.filled {
+        background-color: var(--ios-color-green);
+    }
+    .otp-digit.filled {
+        background-color: var(--ios-color-blue);
+    }
+    .otp-digit.filled {
+        background-color: var(--ios-color-pink);
+    }
+    .otp-digit.filled {
+        background-color: var(--ios-color-yellow);
+    }
+    .otp-digit.filled {
+        background-color: var(--ios-color-orange);
+    }
+    .otp-digit.filled {
+        background-color: var(--ios-color-gray);
+    }
+    .otp-digit.filled {
+        background-color: var(--ios-color-black);
+    }
+    .otp-digit.filled {
+        background-color: var(--md-color-blue);
+    }
+    .otp-digit.filled {
+        background-color: var(--md-color-red);
+    }
+    .otp-digit.filled {
+        background-color: var(--md-color-green);
+    }
+    .otp-digit.filled {
+        background-color: var(--md-color-blue);
+    }
+    .otp-digit.filled {
+        background-color: var(--md-color-pink);
+    }
+    .otp-digit.filled {
+        background-color: var(--md-color-yellow);
+    }
+    .otp-digit.filled {
+        background-color: var(--md-color-orange);
+    }
+    .otp-digit.filled {
+        background-color: var(--md-color-gray);
+    }
+    .otp-digit.filled {
+        background-color: var(--md-color-black);
+    }
+
+
+    
+
+    .keypad-button,.keypad-button.keypad-dummy-button {
+        background-color: transparent;
+    }
+
+    .keypad-button:before {
+        display: none;
+    }
+
+    .keypad-button:after {
+        display: none;
+    }
+
+    .keypad-button-letters {
+        display: none;
+    }
+   
+    .keypad-button:not(.keypad-dummy-button).active-state {
+        background-color: #292929;
+    }
+    .numpad-page-content {
+        display:flex;
+        flex-direction:column;
+    }
+    
+    /* *****   END NUMPAD */
+</style>
+</template>
+
+<script>
+    
+    function loadScript(src) {
+      return new Promise(function(resolve, reject) {
+        const script = document.createElement('script');
+        script.src = src;
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+    }
+    WebComponents.waitFor(()=> {
+        return loadScript("./partials/components/signIn.js");
+        
+    })
+    var $$ = Dom7;
+    var areas = [];
+    
+     Framework7.request.get("https://api.godialog.ru/api/v1/333/areas/all/true",{},(data)=>{
+                data = JSON.parse(data);
+                 Object.keys(data).map((key, index)=> {
+                    areas.push(
+                           {
+                               area_id: data[key].id,
+                               name: data[key].name
+                           }
+                       )
+                    })
+            areas.forEach((item, index)=> {
+                    
+                    if(index == 0) {
+                        $$(".item-after").text(item.name);
+                        $$(`[name="form-area"]`).append(`<option selected value="${item.name}">${item.name}</option>`);
+                    }
+                    else $$(`[name="form-area"]`).append(
+                        `<option  value="${item.name}">${item.name}</option>`
+                    );
+                })
+                })
+    var link = "";
+    var numpadEl = null;
+    var dynamicPopup = app.popup.create({
+                        content: `
+                          <div class="popup">
+                            <div class="page no-navbar no-toolbar no-swipeback ">
+                             <div class="page-content numpad-page-content">
+                                <div class="block">
+                          <div class="row justify-content-center">
+                          <p>Please enter the OTP we have sent on your mobile number.</p>
+                             </div>
+                            </div>
+              <div class="block">
+                <div class="row justify-content-center">
+                <span class="otp-digit"></span>
+                <span class="otp-digit"></span>
+                <span class="otp-digit"></span>
+                <span class="otp-digit"></span>
+                <span class="otp-digit"></span>
+                <span class="otp-digit"></span>
+                </div>
+                   </div>
+         <form name="otp-verification" action="#" method="POST" enctype="multipart/form-data">
+           <input type="hidden" name="otp" />
+           
+         </form>
+
+ <div class="numpad"></div>
+
+</div>
+
+</div>
+ </div>
+        `,
+                        on: {
+                          open: function(popup) {
+                            console.log(popup);
+                        if(!numpadEl) {
+                            numpadEl = app.keypad.create({
+                    containerEl: '.numpad',
+                    dotButton: false,
+                    inputEl: 'input[name=otp]',
+                    toolbar: false,
+                    valueMaxLength: 6,
+                    on: {
+                        change: function(keypad, value) {
+                            
+                            var value = value.toString();
+                            var length = value.length;
+                            $('.otp-digit').text('');
+                            $('.otp-digit').removeClass('filled')
+                            if (length >= 1 && length <= 6) {
+                    for (var i = 1; i <= length; i++) {
+                        $('.otp-digit:nth-child(' + i + ')').text(value.charAt(i - 1));
+                        $('.otp-digit:nth-child(' + i + ')').addClass('filled');
+                    }
+                   /* проверка на правильность */
+                   if(length == 6) {
+                    console.log(link + "&" + value);
+                    Framework7.request.get(`${link}&code=` + value, {}, (data)=> {
+                    console.log(data);
+                    $('.otp-digit').text('');
+                            $('.otp-digit').removeClass('filled')
+                         
+                          
+
+                           
+                        
+                            app.toast.show({
+                                icon: '<i class="icon fas fa-lg fa-check"></i>',
+                                text: 'Вы успешно зарегистрированы',
+                                closeTimeout:3000,
+                                position: 'bottom',
+                                cssClass: 'toast-round bg-color-green'
+
+                            })
+                         
+
+                            self.app.views.main.router.navigate('/user-page');
+
+                            dynamicPopup.close();
+                            dynamicPopup.destroy();
+                            
+                    }, (error)=> {
+                        console.log(error);
+                        $('.otp-digit').text('');
+                            $('.otp-digit').removeClass('filled')
+                            
+                            app.toast.show({
+                              icon: '<i class="icon fas fa-lg fa-times"></i>',
+                              position: 'bottom',
+                                cssClass: 'toast-round bg-color-red',
+                                text: 'Неправильный код',
+                                closeTimeout:3000
+
+                            })
+                            
+                    })
+                   }
+                }
+                
+                         }
+                    }
+                    
+                });
+            }
+                          }
+                        }
+                    })
+                ;
+    let submitSignIn = false,
+        submitSignUp = false;
+    return {
+      data:function() {
+        return {
+           isPasswordVisible: false
+        }
+      },
+       on: {
+        pageInit: function() {
+            $('.input-error-message').hide();
+
+        }
+       },
+    
+       methods: {
+        showHidePassword: function(event) {
+                var self = this;
+                var input = self.$('input[data-toggle=show-hide-password]');
+                if (input.attr('type') == 'password') {
+                    input.attr('type', 'text');
+                    self.$setState({
+                        isPasswordVisible: true
+                    });
+                } else {
+                    input.attr('type', 'password');
+                    self.$setState({
+                        isPasswordVisible: false
+                    });
+                }
+            },
+           /* валидация регистрации */
+        onValidateFieldSignUp() {
+            if(submitSignUp) { 
+            $('[name="loginGo"] .invalid-field').removeClass('invalid-field');
+           
+             $('[name="loginGo"] :invalid').addClass('invalid-field');
+            
+             $('[name="loginGo"] .input-error-message').hide();
+             $('[name="loginGo"] .invalid-field').parent().children('.input-error-message').show();
+             $('[name="loginGo"] .invalid-field').parent().parent().children('.input-error-message').show();
+            }
+            },
+           /* валидация авторизации */
+        onValidateFieldSignIn() {
+            if(submitSignIn) {
+            $('[name="signInGo"] .invalid-field').removeClass('invalid-field');
+           
+             $('[name="signInGo"] :invalid').addClass('invalid-field');
+            
+             $('[name="signInGo"] .input-error-message').hide();
+             $('[name="signInGo"] .invalid-field').parent().children('.input-error-message').show();
+             $('[name="signInGo"] .invalid-field').parent().parent().children('.input-error-message').show();
+            }        
+            },
+           onClickSignUp() {
+            if($$('[name="loginGo"] :invalid').length != 0) 
+            { 
+                if(!submitSignUp) {
+                    $('[name="loginGo"] .invalid-field').removeClass('invalid-field');
+           
+           $('[name="loginGo"] :invalid').addClass('invalid-field');
+          
+           $('[name="loginGo"] .input-error-message').hide();
+           $('[name="loginGo"] .invalid-field').parent().children('.input-error-message').show();
+           $('[name="loginGo"] .invalid-field').parent().parent().children('.input-error-message').show();
+                submitSignUp = true;
+                }
+               app.toast.show({
+                              icon: '<i class="icon fas fa-lg fa-times"></i>',
+                              position: 'bottom',
+                                cssClass: 'toast-round bg-color-red',
+                                text: 'Проверьте правильность введенных данных',
+                                closeTimeout:3000
+
+                            })
+              
+                return;
+            }
+            Framework7.request.post('https://api.godialog.ru/api/v1/333/users/signup/true', {
+                    "form-fname": $$('[name="loginGo"] [name="form-fname"]').val(),
+                    "form-pass": $$('[name="loginGo"] [name="form-pass"]').val(),
+                    "form-email": $$('[name="loginGo"] [name="form-email"]').val(),
+                    "form-area": $$('[name="loginGo"] [name="form-area"]').val()
+                }, (data)=> {
+                    console.log(data);
+                    data = JSON.parse(data);
+                    link = data.success.link_confirm;
+                    if(link) {
+                    dynamicPopup.open();
+                    }
+                    else {
+                    app.toast.show({
+                              icon: '<i class="icon fas fa-lg fa-times"></i>',
+                              position: 'bottom',
+                                cssClass: 'toast-round bg-color-red',
+                                text: [data.email , data.area , data.fname , data.pass].filter((item)=> item ? true: false).join(","),
+                                closeTimeout:3000
+
+                            })
+                            
+                    }
+               
+           },(error)=>{
+               console.log(error)
+           })
+           
+        }
+        
+        ,
+           onClickSignIn() {
+            if($$('[name="signInGo"] :invalid').length != 0) 
+            { 
+              if(!submitSignIn) {
+                $('[name="signInGo"] .invalid-field').removeClass('invalid-field');
+           
+           $('[name="signInGo"] :invalid').addClass('invalid-field');
+          
+           $('[name="signInGo"] .input-error-message').hide();
+           $('[name="signInGo"] .invalid-field').parent().children('.input-error-message').show();
+           $('[name="signInGo"] .invalid-field').parent().parent().children('.input-error-message').show();
+              submitSignIn = true;
+              }
+              
+               app.toast.show({
+                                icon: '<i class="icon fas fa-lg fa-times"></i>',
+                                text: 'Проверьте правильность введенных данных',
+                                closeTimeout:3000,
+                                position: 'bottom',
+                                cssClass: 'toast-round bg-color-red'
+                            })
+                return;
+            }  
+            Framework7.request.post('https://api.godialog.ru/api/v1/333/users/signin/true', {
+                    "form-login": $$('[name="signInGo"] [name="form-login"]').val(),
+                    "form-pass": $$('[name="signInGo"] [name="form-pass"]').val()
+                }, (data)=> {
+                    app.toast.show({
+                                icon: '<i class="icon fas fa-lg fa-check"></i>',
+                                text: 'Вы вошли в систему',
+                                closeTimeout:3000,
+                                position: 'bottom',
+                                cssClass: 'toast-round bg-color-green'
+
+                            })
+                            
+                } , (error)=> {
+                    app.toast.show({
+                                icon: '<i class="icon fas fa-lg fa-times"></i>',
+                                text: JSON.parse(error.response).error.message,
+                                closeTimeout:3000,
+                                position: 'bottom',
+                                cssClass: 'toast-round bg-color-red'
+                            })
+                            
+                })
+           }
+       }
+    }
+</script>
+
+

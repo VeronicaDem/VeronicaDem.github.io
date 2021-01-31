@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>JWT Example</title>
+</head>
+
+<body style="background:#333">
+  <div>
+
+
+
+	<button id="getToken">New Token(браузер получает токен)</button><br>
+	<!--
+	<button id="goSignUp">Sign Up(регистрация)</button><br>
+	<button id="tokenCha">Token Change(просто проверить актуальность токена)</button><br>
+	<button id="getUser">показать юзера</button><br>
+	-->
+	
+	<button id="getLogin">Login User Data(получить данные этого юзера)</button><br>
+
+	<button id="Logout">Logout</button><br>
+	<br>
+
+	<div id="out" style="width:100%;overflow:hidden;background:rgba(0,0,0, .2);color:#fff;padding:10px"></div>
+	<div id="user" style="width:100%;overflow:hidden;background:rgba(200,200,200, .2);color:#fff;padding:20px"></div>
+
+	<div id="out" style="width:100%;overflow:hidden;background:rgba(0,0,0, .2);color:#fff;padding:10px"></div>
+  </div>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function() {
+  
+	console.log( localStorage.authToken );
+	
+
+let authToken = localStorage.authToken;
+const hostName = location.hostname;
+const hostnameProtocol = document.location.protocol == "https:" ? "https" : "http";
+const thisHost = hostnameProtocol+'://'+ hostName +''; // этот домен
+const apiHost = 'https://api.godialog.ru'; // домен поставщик API
+const apiVersion = 'v1';
+const apiKey = 'cfa6efe331fad9c4657c7557ff07c2b2';
+const apiURI = apiHost +'/api/'+ apiVersion +'/'+ apiKey +'';
+//console.log(apiURI);
+
+/**/
+let auth_token = localStorage.authToken;
+$('#goSignUp').click(function() {
+    goSignUp.dataRequest.auth_token = localStorage.authToken;
+	goRequest(goSignUp) ;
+});
+$('#getUser').click(function() {
+	queryGo(getUser);
+});
+$('#getToken').click(function() {
+	/*
+    getToken.dataRequest.auth_token = localStorage.authToken;
+	goRequest(getToken);
+	*/
+	queryGo(getToken);
+});
+$('#tokenCha').click(function() {
+    tokenCha.dataRequest.auth_token = localStorage.authToken;
+	goRequest(tokenCha) ;
+});
+$('#getLogin').click(function() {
+    //getLogin.dataRequest.auth_token = localStorage.authToken;
+	//goRequest(getLogin) ;
+	queryGo(getLogin);
+});
+$('#Logout').click(function() {
+    delete localStorage.authToken;
+    delete localStorage.loginData;
+	//queryGo(Logout);
+});
+
+
+if(!localStorage.userLogin){
+	$('#loginGen').html('<a href="#" onclick=location.href="/gen.html">login</a>');
+}
+	
+	
+/*
+  пользуемся значением сохраненным в localStorage
+  localStorage.auth_token - как бы играет роль глобальной переменной в коде
+
+
+*/	
+	
+	
+   
+
+/* 3 вариант */
+async function requestGo(method, url=false, data={}) {
+  // Default options are marked with *
+  const response = await fetch(url, {
+    method: method, // *GET, POST, PUT, DELETE, etc.
+    mode: 'cors', // no-cors, *cors, same-origin
+    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: 'same-origin', // include, *same-origin, omit
+   headers: {
+     'Content-Type': 'application/json',
+     'Authorization': localStorage.authToken,
+},
+    redirect: 'follow', // manual, *follow, error
+    referrerPolicy: 'no-referrer', // no-referrer, *client
+	//credentials: 'include',
+    body: JSON.stringify(data) // body data type must match "Content-Type" header
+  }); 
+  let JWT = response.headers.get('Expires');
+  console.log(JWT);
+	if (response.ok) {
+	  //process jwt
+	  if(JWT){
+		  if(JWT == 'end'){
+			console.log('jwt-end');
+			delete localStorage.authToken;
+			delete localStorage.loginData;
+			//window.location.replace("/gen.html");//go login
+		  }else{
+			localStorage.authToken = JWT;
+			console.log(JWT);
+			console.log('jwt-good');
+		  }
+	  }else{
+        // ошибка на сервере
+		console.log('server-bad-request');
+		
+	  }
+	} else {//if server-error
+		
+		console.log("error HTTP: " + response.status);
+	}
+	console.log(response);
+  return await response.json(); // parses JSON response into native JavaScript objects
+}
+
+
+
+
+async function queryGo(api=[]){
+	let uri = apiURI +'/'+ api.object +'/'+ api.method +'/'+ api.key;
+	console.log(api);
+	requestGo(api.methodRequest, uri, api.dataRequest)
+	  .then((data) => {
+			if(data.name_user){
+				//$("#user").html('<div>'+ data.name_user +'</div><div><img src="'+ data.avatar_user +'.s.jpg" /></div>');
+				//СЃРѕС…СЂР°РЅРёРј РґР°РЅРЅС‹Рµ СЋР·РµСЂР° 
+				localStorage.setItem("loginData", JSON.stringify( data ));
+				window.location.replace("/");
+			}
+		//console.log(data);
+	  });
+}
+
+function goRequest2(api=[]) {
+	let url = apiURI +'/'+ api.object +'/'+ api.method +'/'+ api.key;
+	  $.ajax({
+        type: api.methodRequest,
+        url: url,
+        
+        dataType: "json",
+        data: api.dataRequest,
+        //data: JSON.stringify( api.dataRequest ),
+        success: function(data) {
+          if(data.JWT){
+			localStorage.authToken = data.JWT; // добавим полученый токен в хранилище на клиенте
+		  }else{
+			console.log('403 : JWT died');
+		  }
+		  /* 
+            api.dataRequest.auth_token = localStorage.authToken - рассинхронность этого api с другими
+            изменился только один api
+          */
+		  
+          console.log(data);
+		  //$("div").data("options")
+		  $("#out").html('<div>'+ localStorage.authToken +'</div>');
+		  return data;
+        },
+        error: function() {
+		  console.log( "Error: Login Failed" );
+        }
+      });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+function goRequestA(api=[]) {
+	let url = apiURI +'/'+ api.object +'/'+ api.method +'/'+ api.key;
+	  $.ajax({
+        type: api.methodRequest,
+        url: url,
+        headers: {},
+        dataType: "json",
+        data: api.dataRequest,
+        //data: JSON.stringify( api.dataRequest ),
+        success: function(data) {
+          if(data.JWT){
+			localStorage.authToken = data.JWT; // добавим полученый токен в хранилище на клиенте
+		  }else{
+			console.log('403 : JWT died');
+		  }
+		  
+		  api.dataRequest.auth_token = localStorage.authToken;
+          console.log(data);
+		  //$("div").data("options")
+		  $("#out").html('<div>'+ localStorage.authToken +'</div>');
+		  return data;
+        },
+        error: function() {
+		  console.log( "Error: Login Failed" );
+        }
+      });
+} 
+
+function goRequestB(api=[]) {
+	let url = apiURI +'/'+ api.object +'/'+ api.method +'/'+ api.key;
+	  $.ajax({
+        type: api.methodRequest,
+        url: url,
+        headers: {},
+        dataType: "json",
+        data: api.dataRequest,
+        //data: JSON.stringify( api.dataRequest ),
+        success: function(data) {
+          if(data.JWT){
+			localStorage.authToken = data.JWT; // добавим полученый токен в хранилище на клиенте
+		  }else{
+			console.log('403 : JWT died');
+		  }
+		  
+		  api.dataRequest.auth_token = localStorage.authToken;
+          console.log(data);
+		  //$("div").data("options")
+		  $("#out").html('<div>'+ localStorage.authToken +'</div>');
+		  return data;
+        },
+        error: function() {
+		  console.log( "Error: Login Failed" );
+        }
+      });
+} 
+
+
+
+$("#getLogin").click(function(e){
+        e.preventDefault();
+        $.ajax({
+            url: apiURI +'/process/login/true',
+            beforeSend: function(request){
+                request.setRequestHeader('Authorization', 'Bearer ' + localStorage.authToken)
+            },
+            type: 'GET',
+            success: function(data) {
+                console.log(data)
+            },
+            error: function() {
+                alert('error');
+            }
+        });
+    });
+
+
+
+$(function(){
+  var output = $('#output'); // блок вывода информации
+  $('#btn').on('click', function(){
+    $.ajax({
+      url: apiURI +'/process/login/true',
+      type: 'POST', // метод передачи данных
+      dataType: 'json', // тип ожидаемых данных в ответе
+      data: {
+			//localStorage.authToken = data.JWT; // добавим полученый токен в хранилище на клиенте
+		  
+		  
+		  
+	  }, // данные, которые передаем на сервер
+      beforeSend: function(){ // Функция вызывается перед отправкой запроса
+        output.text('Запрос отправлен. Ждите ответа.');
+      },
+      error: function(req, text, error){ // отслеживание ошибок во время выполнения ajax-запроса
+        output.text('Хьюстон, У нас проблемы! ' + text + ' | ' + error);
+      },
+      complete: function(){ // функция вызывается по окончании запроса
+        output.append('<p>Запрос полностью завершен!</p>');
+      },
+      success: function(json){ // функция, которая будет вызвана в случае удачного завершения запроса к серверу
+        // json - переменная, содержащая данные ответа от сервера. Обзывайте её как угодно ;)
+        output.html(json); // выводим на страницу данные, полученные с сервера
+      }
+    });
+  });
+});
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  });
+  </script>
+</body>
+
+</html>

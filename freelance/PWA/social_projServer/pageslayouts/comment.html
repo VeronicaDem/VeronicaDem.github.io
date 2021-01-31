@@ -1,0 +1,140 @@
+<template>
+<div class="page">
+  <div class="page-content infinite-scroll-content">
+    <div id="appComments"></div>
+  </div>
+</div>
+<style>
+   button {
+       width: auto;
+   }
+   .page-content {
+       padding:24px;
+   }
+  
+    body {
+				
+				
+				font-size: 14px;
+				font-family: "Arial", Georgia, Serif;
+				
+			}
+</style>
+</template>
+
+<script>
+    /* 
+      есть ли родитель уже показан, то показывать дочерние комменты
+    */
+    var allowInfinite = true;
+    var maxIndex = 0;
+    var incrementBy = 5;
+    var wasScroll = false;
+    return {
+    
+      methods: {
+        saveComment: function(data) {
+		// Convert pings to human readable format
+		$(Object.keys(data.pings)).each(function(index, userId) {
+		    var fullname = data.pings[userId];
+		    var pingText = '@' + fullname;
+            
+		    data.content = data.content.replace(new RegExp('@' + userId, 'g'), pingText);
+		});
+		return data;
+    },
+      createComments: function() {
+        $('#appComments').comments({
+		profilePictureURL: 'https://api.godialog.ru/content/storage/users/t/5/q5d/av_1581303980.jpg.s.jpg',
+		currentUserId: 1,
+		roundProfilePictures: true,
+		textareaRows: 1,
+		enableAttachments: true,
+		enableNavigation: false,
+		enableHashtags: true,
+		enablePinging: true,
+		searchUsers: function(term, success, error) {
+		    setTimeout(function() {
+                
+		        success(usersArray.filter(function(user) {
+		            var containsSearchTerm = user.fullname.toLowerCase().indexOf(term.toLowerCase()) != -1;
+		            var isNotSelf = user.id != 1;
+		            return containsSearchTerm && isNotSelf;
+		        }));
+		    }, 500);
+		},
+		
+		
+		//methods comment action
+		getComments: function(success, error) {
+			setTimeout(function() {
+               
+                if(commentsArray.length - incrementBy <= incrementBy + maxIndex) {
+                    allowInfinite = false;
+                    
+                }
+                console.log(commentsArray.slice(0, maxIndex));
+                success(commentsArray.slice(0, maxIndex));
+               if(wasScroll) {
+                   console.log($(document).scrollTop() + 500);
+                    $(document).scrollTop($(document).scrollTop() + 500);
+                    wasScroll = false;
+                }
+			}, 500);
+		},
+		postComment: function(data, success, error) {
+			setTimeout(function() {
+				success(this.saveComment(data));
+			}, 500);
+		},
+		putComment: function(data, success, error) {
+			setTimeout(function() {
+				success(this.saveComment(data));
+			}, 500);
+		},
+		deleteComment: function(data, success, error) {
+			setTimeout(function() {
+				success();
+			}, 500);
+		},
+		upvoteComment: function(data, success, error) {
+			setTimeout(function() {
+				success(data);
+			}, 500);
+		},
+		uploadAttachments: function(dataArray, success, error) {
+			setTimeout(function() {
+				success(dataArray);
+			}, 500);
+		},
+		
+	
+		
+	});
+      }
+	
+	
+      }
+    ,
+       on: {
+           pageInit: function(event, page) {
+            maxIndex = maxIndex + incrementBy;
+            var self = this;
+             
+             this.createComments();
+            $$('.infinite-scroll-content').on('infinite', function(el, event) {
+             if(!allowInfinite) {
+                   app.infiniteScroll.destroy('.infinite-scroll-content');
+                   return;
+             }
+             maxIndex = maxIndex + incrementBy;
+             wasScroll = true;
+             self.createComments();
+             
+             
+            })
+              
+           }
+       }
+    }
+</script>

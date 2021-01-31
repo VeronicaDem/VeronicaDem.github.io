@@ -1,0 +1,8 @@
+{
+    "scripts": {
+        "start": "lite-server"
+    },
+    "dependencies": {
+        "@webcomponents/webcomponentsjs": "^2.4.3"
+    }
+}

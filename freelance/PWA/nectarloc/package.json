@@ -1,0 +1,8 @@
+{
+    "scripts": {
+        "start": "lite-server"
+    },
+    "dependencies": {
+        "framework7-plugin-keypad": "^3.0.1"
+    }
+}

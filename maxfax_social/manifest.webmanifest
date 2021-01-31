@@ -1,0 +1,24 @@
+{
+	"name": "Go PWA",
+	"short_name": "Demo",
+	"description": "Demo for progressive web app from Go",
+	"start_url": "/",
+	"display": "standalone",
+	"orientation": "portrait",
+	"background_color": "#f5f5f5",
+	"theme_color": "#000000",
+	"icons" : [
+			{
+				"src": "https://api.godialog.ru/content/storage/system/pwaicon.png",
+				"sizes": "200x200",
+				"type": "image/png"
+			}],
+	"author": {
+		"name": "Max Master",
+		"website": "#",
+		"github": "https://github.com/x",
+		"source-repo": "#"
+	},
+	"gcm_sender_id": "0",
+	"gcm_user_visible_only": true
+}

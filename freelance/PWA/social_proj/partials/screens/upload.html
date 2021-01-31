@@ -1,0 +1,161 @@
+<template>
+<!--
+    layout бывает двух видов:
+      - с ошибкой
+      - оповещающий об успешной загрузке
+  ----TODO------
+    large-* не работает - выяснить почему
+-->
+<div class="page  page-categoryloayout no-toolbar" data-name="upload">
+    <div class="page-content">
+        
+    <div class="popup theme-dark">
+        <div class="view">
+            <div class="page">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <div class="title">Popup</div>
+                        <div class="right">
+                            <a href="#" class="link popup-close">Close</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="page-content ">
+                      <div class="row ">
+                          <div class="img large">
+                              <div class="layout layout-error">
+                                <i class="icon f7-icons ios-only icon-tooltip-error">
+                                    question_circle
+                                </i>
+                                <div class="renew">
+                                <i class="icon f7-icons  size-50">
+                                    arrow_down_circle_fill
+                                </i>
+                                </div>
+                              </div>
+                              <img src="../../assets/custom/img/404.svg"/>
+                          </div>
+                          <div class="img large">
+                            <div class="layout layout-success">
+                                
+                              <div class="renew">
+                              <i class="material-icons size-50">
+                                  check
+                              </i>
+                              </div>
+                            </div>
+                            <img src="../../assets/custom/img/404.svg"/>
+                        </div>
+
+                        <div class="img large">
+                            <div class="layout layout-info">
+                                
+                              
+                              <i class="icon f7-icons size-50">
+                                  trash
+                              </i>
+                              
+                            </div>
+                            <img src="../../assets/custom/img/404.svg"/>
+                        </div>
+                        
+                      </div>
+                        <form id="form-upload" class=" list no-hairlines no-hairlines-between Regform-style1 layer1" action="#" method="POST" enctype="multipart/form-data">
+                             <ul>
+                                <li>
+                                    <div class="item-content item-input item-input-with-info" >
+                                        
+                                        <div class="item-inner">
+                                            <div class="item-title item-floating-label"></div>
+                                            <div class="item-input-wrap">
+                                                <textarea placeholder="Пишите здесь..."></textarea>
+                                              </div>
+                                        </div>
+                                    </div>
+                                </li>
+                             </ul>
+                        </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</div>
+<style>
+    .page-content {
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+        margin-left:10px;
+    }
+    .img {
+        position:relative;
+    }
+    .size-29 {font-size:29px;}
+    .size-50 { font-size: 50px;}
+    .layout {
+        position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    opacity:.8;
+    z-index:0;
+    display:flex;
+    flex-direction:column;
+    
+    }
+    .layout-error {
+        background: rgba(224, 59, 59, 0.3);
+    }
+    .layout-success {
+        background:rgba(37, 192, 31, 0.3);
+        justify-content:center;
+    }
+    .layout-info {
+        background: rgba(195, 194, 194, 0.3);
+        justify-content: center;
+    }
+    .large {
+        width:50%;
+        
+    }
+   
+    .icon-tooltip-error {
+        align-self:start;
+    }
+    .renew {
+        
+        
+        align-self:center;
+    }
+    @media screen and (min-device-width: 768px) {
+        .large {
+            width:33.333333333333336%;
+            
+        }
+    }
+    @media (orientation:landscape) {
+        .large {
+            width:33.333333333333336%;
+            
+        }
+    }
+</style>
+</template>
+<script>
+    return {
+        on: {
+            pageInit: function() {
+                app.popup.open('.popup');
+                app.tooltip.create({
+                    targetEl: '.icon-tooltip-error',
+                    text:'Ошибка отправки'
+                })
+            }
+        }
+    }
+</script>

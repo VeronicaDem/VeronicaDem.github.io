@@ -1,0 +1,33 @@
+GO
+ Типы:
+  obj - смысловые элементы
+    .название элемента.selectors
+                                .root
+  fn - функции
+    .название функции.vars - переменные функции ?
+  * Что хранит fn, кроме ссылок на функции?
+
+Пример obj.config
+      GO.obj.config = {
+	base_url: "",
+	json_api: "/json/",
+	listing: {
+		items_per_page: 24
+	},
+	animation: {
+		easingFn: "ease",
+		normal: 400,
+		fast: 250
+	}
+   };
+link api key
+Решение с template
+Там где понадобится экземпляр объекта, добавлять self как аргумент функции
+разобраться с созданием динамических элементов на странице (нужно добавлять их на конкретную страницу или достаточно вызвать из нужной страницы функцию)?
+data определенного template
+https://framework7.io/docs/infinite-scroll.html#infinite-scroll-app-methods - infinite scroll
+// routes 
+
+    
+
+    

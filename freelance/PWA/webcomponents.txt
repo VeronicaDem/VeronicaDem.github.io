@@ -1,0 +1,8 @@
+Web components
+https://habr.com/ru/post/210058/ - web components (! статья 2014)
+https://www.polymer-project.org/ -  поллифилы
+npm install --save @webcomponents/webcomponentsjs - загрузка полифилла
+https://developers.google.com/web/fundamentals/web-components/customelements?hl=ru
+https://learn.javascript.ru/slots-composition
+https://learn.javascript.ru/shadow-dom-style
+https://yandex.ru/video/preview/?filmId=12347131265112287928&from=tabbar&reqid=1585481627506181-1560239725603222879900169-vla1-2901-V&text=workbox+precached

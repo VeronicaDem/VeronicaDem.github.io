@@ -1,0 +1,24 @@
+.go-comments ul.main li.comment .wrapper .content {
+	color:#eee;
+}
+.go-comments .tag {
+    color: #aaa;
+    background: rgba(255,255,255, .1);
+    border: 0px solid #555;
+}
+.go-comments ul.main li.comment .name {
+	color:#999;
+	font-size:11px;
+}
+.go-comments ul.main li.comment .comment-wrapper {
+    border-top: 1px solid #333;
+    overflow: hidden;
+}
+.go-comments.mobile ul.main li.comment .actions {
+    font-size: 1em;
+	float:right;
+}
+.go-comments .textarea-wrapper .textarea {
+    background: #444;
+	color:#aaa;
+}

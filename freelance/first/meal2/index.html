@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <script src="./jquery.min.js"></script>
+        <script src="./jquery.nicescroll.js"></script>
+        <script src="./jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+       <!-- <script src="./jquery-ui-1.12.1.custom/datepicker-ru.js"></script> -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="./style.css"/>
+    </head>
+    <body>
+    <div class="title-block">
+        <div class="title p-3 border-bottom borderColor">
+            <span class="title-user">Анна</span>, Ваше меню на 
+            <span class="title-date">15 февраля 2020</span>
+        </div>
+        
+    </div>
+    <div class="meals">
+        <div class="breakfast-block ">
+            <p class="border-bottom borderColor p-3 ">Завтрак</p>
+            <div class="breakfast p-2 d-flex flex-row justify-content-between ">
+                
+                <div class="breakfast-info  d-flex flex-row justify-content-between">
+                    <img src="./s1200.webp" width="30" height="30" class="rounded-circle align-self-center"/>
+                    <div class="breakfast-info-text ">
+                    
+                    <div class="breakfast-info-text-name">Каша с персиками</div>
+                    <div class="breakfast-info-text-prop">
+                        <span class="breakfast-info-text-prop-protein">12</span>/<span class="breakfast-info-text-prop-fat">12</span>/<span class="breakfast-info-text-prop-carbs">12</span>/<span class="breakfast-info-text-prop-kkl">122</span>К
+
+                    </div>
+                </div>
+                </div>
+                <div >
+                <div class="btn btn-outline-secondary">
+                    Выбрать
+                </div>
+            </div>
+            </div>
+            <div class="breakfast p-2 d-flex flex-row justify-content-between">
+            <div class="breakfast-info  d-flex flex-row justify-content-between">
+                <img src="./s1200.webp" width="30" height="30" class="rounded-circle align-self-center"/>
+                <div class="breakfast-info-text ">
+                
+                <div class="breakfast-info-text-name">Омлет с семгой и горгонзолой</div>
+                <div class="breakfast-info-text-prop">
+                    <span class="breakfast-info-text-prop-protein">12</span>/<span class="breakfast-info-text-prop-fat">12</span>/<span class="breakfast-info-text-prop-carbs">12</span>/<span class="breakfast-info-text-prop-kkl">122</span>К
+
+                </div>
+            </div>
+            </div>
+            
+            
+                <div>
+                <div class="btn btn-outline-success">
+                    <i class="fas fa-check"></i>В меню
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        
+        .borderColor {
+            border-color:rgb(118, 120, 123);
+        }
+        #calendar2 {
+            width: 200px;
+        }
+        /*#calendar2 {
+          width: 100%;
+          font: monospace;
+          line-height: 1.2em;
+          font-size: 15px;
+          text-align: center;
+        }
+        #calendar2 thead tr:last-child {
+          font-size: small;
+          color: rgb(85, 85, 85);
+        }
+        #calendar2 thead tr:nth-child(1) td:nth-child(2) {
+          color: rgb(50, 50, 50);
+        }
+        #calendar2 thead tr:nth-child(1) td:nth-child(1):hover, #calendar2 thead tr:nth-child(1) td:nth-child(3):hover {
+          cursor: pointer;
+        }
+        #calendar2 tbody td {
+          color: rgb(44, 86, 122);
+        }
+        #calendar2 tbody td:nth-child(n+6), #calendar2 .holiday {
+          color: rgb(231, 140, 92);
+        }
+        #calendar2 tbody td.today {
+          background: rgb(220, 0, 0);
+          color: #fff;
+        }*/
+       .breakfast-prop {
+           color: silver;
+       }
+       .calendar2-icon {
+           color: #1F76E8;
+       }
+       .calendar2-inactiveDay {
+           background:white;
+           color: silver;
+       }
+       .calendar2-activeDay {
+           background:grey;
+       }
+        </style>
+        
+        <table id="calendar2">
+          <thead>
+            <tr>
+                <td colspan="2"><i class="fas fa-calendar-alt calendar2-icon"></i></td>
+                <td colspan="7" id="date-text"></td>
+                <td colspan="2"><i class="fas fa-chevron-left" id="backward"></i></td>
+                <td colspan="2"><i class="fas fa-chevron-right" id="forward"></i></td>
+            
+            <tr>
+                <td>Пн</td>
+                <td></td>
+                <td>Вт</td>
+                <td></td>
+                <td>Ср</td>
+                <td></td>
+                <td>Чт</td>
+                <td></td>
+                <td>Пт</td>
+                <td></td>
+                <td>Сб</td>
+                <td></td>
+                <td>Вс</td>
+            </tr>
+          <tbody id="calendar-data">
+          </tbody>
+        </table>
+        
+        <script>
+        
+        let objJSON = {
+            dateOfMenu: ["2020-02-15"] //год-месяц-день
+        }
+        let currentDate;
+        function getMaxDay(date) {
+           let d = new Date(date);
+        
+               d.setMonth(d.getMonth() + 1);
+        
+           d.setDate(0);
+           return d;
+        }
+          let months =["Январь" ,"Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"]
+          let days = [1,2,3,4,5,6,0];
+          let daysRus = ["Пн","Вт","Ср","Чт","Пт","Сб","Вс"];
+          let day = 1;
+          /* getDay возвращает 0 - Вс*/
+          function Calendar(initialDate) {
+              currentDate = initialDate;
+             let month = initialDate.getMonth();
+             let maxDay = getMaxDay(initialDate);
+             let minDay = new Date(initialDate.getFullYear(), month, 1);
+            
+             let index = days.indexOf(minDay.getDay());
+             let diff = index ;
+             
+             let TBODY = "";
+             if(index != 0) {
+                 TBODY = "<tr>";
+                 let dayStart = new Date(minDay);
+                 dayStart.setDate(dayStart.getDate() - diff);
+                 
+                 
+                for(let i = 0; i <= diff; i++) { // день недели
+                   let dayObj = new Date(dayStart);
+                    dayObj.setDate(dayObj.getDate() + i);
+                    let dataYear = dayObj.getFullYear();
+                    let dataMonth = dayObj.getMonth() + 1;
+                    let dataDay = dayObj.getDate();
+                    if(objJSON.dateOfMenu.indexOf(`${dataYear}-${dataMonth < 10 ? "0" + dataMonth : dataMonth}-${dataDay}`) == -1) {
+                        TBODY+=`<td  data-year=${dataYear} class="calendar2-inactiveDay" data-month=${dataMonth} data-day=${dataDay} data-week=${daysRus[i]}>` + dayObj.getDate() + "</td>"
+                    }
+                    else TBODY+=`<td data-active data-year=${dataYear} class="calendar2-activeDay" data-month=${dataMonth} data-day=${dataDay} data-week=${daysRus[i]}>` + dayObj.getDate() + "</td>";
+                    TBODY+="<td></td>";
+                }
+                if(index == 6) {
+                  TBODY += "</tr>";
+                  index = 0;
+                  
+                }
+                else {
+                    index++;
+                }
+                day = 2;
+             }
+             
+             for(day; day <= maxDay.getDate(); day++) {
+               
+                if(index == 7) {
+                     TBODY += "</tr>";
+                     index = 0;
+                 }
+                 if(index == 0) {
+                     TBODY += "<tr>";
+                 }
+                 let dayObj = new Date(initialDate.getFullYear(), month, day);
+                 let dataYear = dayObj.getFullYear();
+                    let dataMonth = dayObj.getMonth() + 1;
+                    let dataDay = dayObj.getDate();
+                    if(objJSON.dateOfMenu.indexOf(`${dataYear}-${dataMonth < 10 ? "0" + dataMonth : dataMonth}-${dataDay}`) == -1) {
+                        TBODY+=`<td data-year=${dataYear}  class="calendar2-inactiveDay" data-month=${dataMonth} data-day=${dataDay} data-week=${daysRus[index]}>` + dayObj.getDate() + "</td>"
+                    }
+                    else TBODY+=`<td data-year=${dataYear} data-active class="calendar2-activeDay" data-month=${dataMonth} data-day=${dataDay} data-week=${daysRus[index]}>` + dayObj.getDate() + "</td>";
+                    TBODY+="<td></td>";
+                 index++;
+                 
+                 
+                }
+
+            document.getElementById("calendar-data").innerHTML = TBODY;
+          }
+          document.getElementById("date-text").innerHTML = "сб, 15 февр.";
+          Calendar(new Date(2020, 1,1));
+           document.getElementById("backward").onclick = (e)=> {
+              currentDate.setMonth(currentDate.getMonth() - 1);
+              console.log(currentDate);
+              Calendar(currentDate);
+           }
+           document.getElementById("forward").onclick = (e) => {
+               currentDate.setMonth(currentDate.getMonth() + 1);
+               console.log(currentDate);
+               Calendar(currentDate);
+           }
+            $("body").niceScroll();
+
+          
+        </script>
+    
+        
+
+        
+    
+</body>
+</html>

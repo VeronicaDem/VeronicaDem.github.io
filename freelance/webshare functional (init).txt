@@ -1,0 +1,26 @@
+$(document).on("click", ".webshare", function(e) {
+    e.preventDefault();
+    if (navigator.share == undefined) {
+		/**
+		 * @todo Web Share not supported גלוסעמ Web Share only possible...
+		 */
+        app.dialog.alert("Web Share only possible with https web sites");
+    } else {
+        let wstitle = $(this).attr('data-webshare-title') || app.name;
+        let wstext;
+        let textref = $(this).attr('data-webshare-textref') || app.name;
+        if (textref) {
+            wstext = $(textref).text() || '';
+        }
+        let url = window.location.href;
+        let imgref = $(this).attr('data-webshare-imgref');
+        if (imgref) {
+            url = $(imgref).attr('src') || '';
+        }
+        navigator.share({
+            title: wstitle,
+            url: url,
+            text: wstext
+        })
+    }
+});

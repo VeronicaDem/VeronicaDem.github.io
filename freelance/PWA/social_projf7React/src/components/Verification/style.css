@@ -1,0 +1,17 @@
+/*
+ // TODO
+  сделать height и width для мобильных устройств
+*/
+.otp-digit {
+    background-color:white;
+    height:50px; 
+    width:50px;
+    
+    margin:10px;
+   color:black;
+    border-radius:50%;
+   
+   
+    
+}
+

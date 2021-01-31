@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    </head>
+    <style>
+        #cap{
+  width: 64px;
+  border: solid 2px #ccc;
+}
+#output{
+  display: inline-block;
+  top: 4px;
+  position: relative;
+  border: dotted 1px #ccc;
+  padding: 2px;
+}
+        div {
+            display:none;
+        } 
+    </style>
+<body>
+<div>
+<video id="video" width="400" controls >
+  <source src="C:\\Users\\HP\\Videos\\1.mp4" id="video_here" type="video/mp4">
+    Your browser does not support HTML5 video.
+</video>
+</div>
+<br>
+<button id="cap">Get Capture</button><br/>
+<div id="output"></div>
+<script>
+    
+const video  = document.getElementById('video');
+
+const output = document.getElementById('output');
+const snapshots = [];
+ 
+const capture = (video) => {  
+  video.style.display = "block";
+  const w = video.videoWidth * 0.25;
+  console.log(w);
+  const h = video.videoHeight * 0.25;
+  const canvas = document.createElement('canvas');
+        canvas.width  = w;
+        canvas.height = h;
+  console.log(video.duration);
+video.currentTime = video.duration * 0.05;
+  const ctx = canvas.getContext('2d');
+        ctx.drawImage(video, 0, 0, w, h);
+  video.style.display = "none";
+  return canvas;
+} 
+ 
+const shoot = () => {
+const canvas = capture(video);   
+    canvas.onclick = () => window.open(this.toDataURL());
+    snapshots.unshift(canvas);
+    output.innerHTML = '';
+    for(var i=0; i<4; i++){
+        output.appendChild(snapshots[i]);
+    }
+}
+
+document.getElementById("cap").addEventListener("click", function(){
+  shoot();
+});
+
+    </script>
+</body>
+</html>
