@@ -377,8 +377,7 @@ const BS = [
  
 
   // запрос на получение stationInfo
-  $.getJSON(`https://xyz.api.here.com/hub/spaces/
-     ${stationInfo_spaceId}/iterate?access_token=${access_token}`).done(async(data)=>{
+  $.getJSON(`https://xyz.api.here.com/hub/spaces/${stationInfo_spaceId}/iterate?access_token=${access_token}`).done(async(data)=>{
     let promises = [];
    
     data.features.map(async (station, index) => {
