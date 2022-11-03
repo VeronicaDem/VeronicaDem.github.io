@@ -12,7 +12,7 @@
     "react-custom-scrollbars-with-mobile": "^4.2.2",
     "react-dom": "^16.13.0",
     "react-sam-scrollbar": "^1.0.2",
-    "react-scripts": "3.4.0"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
