@@ -1,8 +1,0 @@
-service worker
-https://developer.mozilla.org/ru/docs/Web/API/Service_Worker_API/Using_Service_Workers - пример с фоточками
-https://habr.com/ru/company/2gis/blog/345552/ - рецепты
-https://jakearchibald.github.io/isserviceworkerready/  как дебажжить в разных браузерах
-https://github.com/mdn/sw-test - примерчик проекта с sw
-https://serviceworke.rs/ - рецепты 
-https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle - sw с примерами теоретическими
-https://developers.google.com/web/tools/workbox/modules/workbox-background-sync?hl=nb - workbox
